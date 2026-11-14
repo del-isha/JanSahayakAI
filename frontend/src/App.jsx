@@ -107,6 +107,23 @@ const SCHEME_LABELS = {
 
 // Citizen Profiles
 const SAMPLE_CITIZENS = {
+  'delisha': {
+    id: 'delisha',
+    name: 'Delisha',
+    age: 20,
+    gender: 'female',
+    occupation: '2nd Year College Student',
+    occKey: 'student',
+    income: 240000,
+    state: 'Punjab',
+    district: 'SAS Nagar (Mohali)',
+    familyCategory: 'General',
+    aadhaarVerified: true,
+    hasGirlChild: false,
+    isTaxPayer: false,
+    propertyBuyer: false,
+    desc: '2nd Year College Student exploring merit scholarships, tuition fee waivers & AI research programs'
+  },
   'novalabs': {
     id: 'novalabs',
     name: 'KS ORIGIN COLLECTIVE PRIVATE LIMITED',
@@ -254,6 +271,14 @@ const STATUTORY_COMPLIANCES = [
 ];
 
 const INITIAL_CHATS = {
+  delisha: [
+    {
+      role: 'assistant',
+      text: `Hello Delisha! I am JanSahayak AI, your personal government & education assistant. As a 2nd-year college student in Punjab, I am tracking for you:\n• Central Sector Scheme of Scholarship for College & University Students (NSP — ₹12,000/yr)\n• AICTE Pragati Scholarship for Girls in Technical Education (₹50,000/yr tuition & contingency)\n• State Post-Matric Merit Scholarship & College Tuition Fee Waiver eligibility\n• Student Concessions, Digital Library Access & Tehsildar Income Certificate documentation\n\nHow can I help you with your college schemes, scholarships, or documents today?`,
+      meta: 'Verified Citizen Assistant · National Scholarship Portal & AICTE',
+      portal: 'https://scholarships.gov.in'
+    }
+  ],
   novalabs: [
     {
       role: 'assistant',
@@ -737,7 +762,7 @@ export default function App() {
   }, [theme]);
 
   // Active Citizen State
-  const [activeCitizenId, setActiveCitizenId] = useState('novalabs');
+  const [activeCitizenId, setActiveCitizenId] = useState('delisha');
   const [trainedDocs, setTrainedDocs] = useState([]);
   const [apiDeadlines, setApiDeadlines] = useState([]);
   const [backendHealth, setBackendHealth] = useState({ ok: true, service: 'JanSahayak AI Citizen Platform', llm: { connected: false, provider: 'Grounded Rules Engine', model: 'Deterministic Legal KB' } });
@@ -882,7 +907,7 @@ export default function App() {
   const [dpiitRecognised, setDpiitRecognised] = useState(false);
   const [womanPromoter, setWomanPromoter] = useState(false);
   const [agmDate, setAgmDate] = useState('2026-09-30');
-  const citizen = SAMPLE_CITIZENS[activeCitizenId] || SAMPLE_CITIZENS.rajesh;
+  const citizen = SAMPLE_CITIZENS[activeCitizenId] || SAMPLE_CITIZENS.delisha || SAMPLE_CITIZENS.rajesh;
 
   // Concise Profile & Login Modal State
   const [showProfileModal, setShowProfileModal] = useState(false);
@@ -1077,7 +1102,7 @@ export default function App() {
   const [chatBusy, setChatBusy] = useState(false);
 
   // Active chat stream for current citizen
-  const activeChatMessages = chatHistories[activeCitizenId] || INITIAL_CHATS[activeCitizenId] || INITIAL_CHATS.rajesh;
+  const activeChatMessages = chatHistories[activeCitizenId] || INITIAL_CHATS[activeCitizenId] || INITIAL_CHATS.delisha || INITIAL_CHATS.rajesh;
 
   const clearChatForCitizen = () => {
     setChatHistories(prev => ({
@@ -1501,7 +1526,7 @@ Please upload valid competent authority income certificate and ensure NPCI bank 
             <div className="card" style={{ background: 'var(--panel)', border: '1px solid var(--bd)', padding: 12, marginBottom: 14 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                 <div style={{ fontSize: 28, width: 44, height: 44, borderRadius: '50%', background: 'var(--card)', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid var(--bd)' }}>
-                  {activeCitizenId === 'rajesh' ? '👔' : activeCitizenId === 'priya' ? '👩‍🎓' : activeCitizenId === 'gurpreet' ? '🌾' : activeCitizenId === 'sunita' ? '👩‍💼' : '👴'}
+                  {activeCitizenId === 'delisha' ? '👩‍🎓' : activeCitizenId === 'novalabs' ? '🏢' : activeCitizenId === 'rajesh' ? '👔' : activeCitizenId === 'priya' ? '👩‍🎓' : activeCitizenId === 'gurpreet' ? '🌾' : activeCitizenId === 'sunita' ? '👩‍💼' : '👴'}
                 </div>
                 <div style={{ flex: 1 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
@@ -1546,7 +1571,7 @@ Please upload valid competent authority income certificate and ensure NPCI bank 
                     }}
                   >
                     <span style={{ fontSize: 16 }}>
-                      {c.id === 'rajesh' ? '👔' : c.id === 'priya' ? '👩‍🎓' : c.id === 'gurpreet' ? '🌾' : c.id === 'sunita' ? '👩‍💼' : '👴'}
+                      {c.id === 'delisha' ? '👩‍🎓' : c.id === 'novalabs' ? '🏢' : c.id === 'rajesh' ? '👔' : c.id === 'priya' ? '👩‍🎓' : c.id === 'gurpreet' ? '🌾' : c.id === 'sunita' ? '👩‍💼' : '👴'}
                     </span>
                     <div style={{ flex: 1 }}>
                       <div style={{ fontWeight: 600, fontSize: 12.5 }}>{c.name}</div>
