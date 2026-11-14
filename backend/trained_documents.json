@@ -1,0 +1,576 @@
+{
+  "33e04955": {
+    "id": "33e04955",
+    "filename": "Income_Tax_Notice_143_1.pdf",
+    "title": "Official Document",
+    "authority": "Government Department",
+    "reference": "N/A",
+    "deadline": "Within statutory timeline",
+    "demand_or_fee": "₹24,500",
+    "clauses": [],
+    "total_words": 50,
+    "token_count": 65,
+    "chunks_count": 1,
+    "chunks": [
+      {
+        "chunk_id": 1,
+        "text": "Income Tax Notice u/s 143(1) of the Income Tax Act 1961.\nAuthority: Income Tax Department, CPC Bengaluru.\nRef No: ITBA/AST/S/143(1)/2026/89412.\nSubject: Intimation with outstanding demand of Rs. 24,500 under Section 234B and 234C.\nPlease submit your response or pay outstanding demand on or before 15 Dec 2026 via e-filing portal.",
+        "words": 50
+      }
+    ],
+    "raw_text": "Income Tax Notice u/s 143(1) of the Income Tax Act 1961.\nAuthority: Income Tax Department, CPC Bengaluru.\nRef No: ITBA/AST/S/143(1)/2026/89412.\nSubject: Intimation with outstanding demand of Rs. 24,500 under Section 234B and 234C.\nPlease submit your response or pay outstanding demand on or before 15 Dec 2026 via e-filing portal.",
+    "trained_at": "2026-11-14T04:00:27.832818",
+    "status": "trained"
+  },
+  "335d84b6": {
+    "id": "335d84b6",
+    "filename": "MCA_Notice_ADT1_NovaLabs.pdf",
+    "title": "Official Document",
+    "authority": "Government Department",
+    "reference": "N/A",
+    "deadline": "Within statutory timeline",
+    "demand_or_fee": "₹,",
+    "clauses": [],
+    "total_words": 75,
+    "token_count": 97,
+    "chunks_count": 1,
+    "chunks": [
+      {
+        "chunk_id": 1,
+        "text": "Notice from Ministry of Corporate Affairs, ROC Chandigarh.\nRef No: ROC/CHD/COMP/2026/09214.\nSubject: Show cause notice regarding delayed filing of Form ADT-1 for auditor appointment.\nPursuant to Section 139 of the Companies Act 2013, the company is liable to pay additional late fee of Rs. 10,000.\nYou are hereby directed to file the written representation or compounding application on or before 25 Dec 2026.\nFailure to reply within 30 days will initiate proceedings under Section 450.",
+        "words": 75
+      }
+    ],
+    "raw_text": "Notice from Ministry of Corporate Affairs, ROC Chandigarh.\nRef No: ROC/CHD/COMP/2026/09214.\nSubject: Show cause notice regarding delayed filing of Form ADT-1 for auditor appointment.\nPursuant to Section 139 of the Companies Act 2013, the company is liable to pay additional late fee of Rs. 10,000.\nYou are hereby directed to file the written representation or compounding application on or before 25 Dec 2026.\nFailure to reply within 30 days will initiate proceedings under Section 450.",
+    "trained_at": "2026-11-14T04:01:54.587077",
+    "status": "trained"
+  },
+  "3b278865": {
+    "id": "3b278865",
+    "filename": "ROC_Notice_Section_139_LateFee.pdf",
+    "title": "Government Notice / Demand Order",
+    "authority": "Ministry of Corporate Affairs",
+    "reference": "from",
+    "deadline": "On or before 25 Dec 2026",
+    "demand_or_fee": "₹10,000",
+    "clauses": [
+      "Subject: Show cause notice regarding delayed filing of Form ADT-1 for auditor appointment.",
+      "Pursuant to Section 139 of the Companies Act 2013, the company is liable to pay additional late fee of Rs. 10,000.",
+      "You are hereby directed to file the written representation or compounding application on or before 25 Dec 2026.",
+      "Failure to reply within 30 days will initiate proceedings under Section 450."
+    ],
+    "total_words": 75,
+    "token_count": 97,
+    "chunks_count": 1,
+    "chunks": [
+      {
+        "chunk_id": 1,
+        "text": "Notice from Ministry of Corporate Affairs, ROC Chandigarh.\nRef No: ROC/CHD/COMP/2026/09214.\nSubject: Show cause notice regarding delayed filing of Form ADT-1 for auditor appointment.\nPursuant to Section 139 of the Companies Act 2013, the company is liable to pay additional late fee of Rs. 10,000.\nYou are hereby directed to file the written representation or compounding application on or before 25 Dec 2026.\nFailure to reply within 30 days will initiate proceedings under Section 450.",
+        "words": 75
+      }
+    ],
+    "raw_text": "Notice from Ministry of Corporate Affairs, ROC Chandigarh.\nRef No: ROC/CHD/COMP/2026/09214.\nSubject: Show cause notice regarding delayed filing of Form ADT-1 for auditor appointment.\nPursuant to Section 139 of the Companies Act 2013, the company is liable to pay additional late fee of Rs. 10,000.\nYou are hereby directed to file the written representation or compounding application on or before 25 Dec 2026.\nFailure to reply within 30 days will initiate proceedings under Section 450.",
+    "trained_at": "2026-11-14T04:02:16.017621",
+    "status": "trained"
+  },
+  "48b3c97f": {
+    "id": "48b3c97f",
+    "filename": "uploaded_document",
+    "title": "Property Purchase, Registration & Mutation",
+    "authority": "Sub-Registrar",
+    "reference": "REG/MOHALI/2026/88412",
+    "deadline": "2026-12-18",
+    "demand_or_fee": "₹1,80,000",
+    "clauses": [
+      "Subject: Property Document Verification for Flat No. 402, Sector 82, Mohali."
+    ],
+    "total_words": 77,
+    "token_count": 100,
+    "chunks_count": 1,
+    "chunks": [
+      {
+        "chunk_id": 1,
+        "text": "Government of Punjab, Department of Revenue.\nOffice of the Sub-Registrar, SAS Nagar (Mohali).\nRef: REG/MOHALI/2026/88412.\nSubject: Property Document Verification for Flat No. 402, Sector 82, Mohali.\nCondition 1: The applicant must produce the 30-year Non-Encumbrance Certificate (EC) from Jamabandi Punjab.\nCondition 2: Female co-owner stamp duty concession of 1.5% is approved under Punjab Stamp Rules.\nStatutory stamp fee payable is Rs. 1,80,000 before 18 Dec 2026.\nFailure to register before the deadline will cancel the provisional slot.",
+        "words": 77
+      }
+    ],
+    "raw_text": "Government of Punjab, Department of Revenue.\nOffice of the Sub-Registrar, SAS Nagar (Mohali).\nRef: REG/MOHALI/2026/88412.\nSubject: Property Document Verification for Flat No. 402, Sector 82, Mohali.\nCondition 1: The applicant must produce the 30-year Non-Encumbrance Certificate (EC) from Jamabandi Punjab.\nCondition 2: Female co-owner stamp duty concession of 1.5% is approved under Punjab Stamp Rules.\nStatutory stamp fee payable is Rs. 1,80,000 before 18 Dec 2026.\nFailure to register before the deadline will cancel the provisional slot.",
+    "trained_at": "2026-11-14T04:03:59.679111",
+    "status": "trained"
+  },
+  "ef6535fc": {
+    "id": "ef6535fc",
+    "filename": "SPICE + Part B_Approval Letter_AC4879985.pdf",
+    "title": "Tax & GST Assessment Notice or Compliance",
+    "authority": "MINISTRY OF CORPORATE AFFAIRS",
+    "reference": "ies/",
+    "deadline": "2026-12-14",
+    "demand_or_fee": "Statutory standard fee / No demand specified",
+    "clauses": [
+      "[Pursuant to sub-section (2) of section 7 and sub-section (1) of section 8 of the Companies Act, 2013 (18 of 2013) and r"
+    ],
+    "total_words": 250,
+    "token_count": 325,
+    "chunks_count": 1,
+    "chunks": [
+      {
+        "chunk_id": 1,
+        "text": "GOVERNMENT OF INDIA\nMINISTRY OF CORPORATE AFFAIRS\nCentral Registration Centre\nCertificate of Incorporation\n[Pursuant to sub-section (2) of section 7 and sub-section (1) of section 8 of the Companies Act, 2013 (18 of 2013) and rule\n18 of the Companies (Incorporation) Rules, 2014]\nI hereby certify that KS ORIGIN COLLECTIVE PRIVATE LIMITED is incorporated on this  TWENTY EIGHTH day of\nAUGUST  TWO THOUSAND TWENTY SIX under the Companies Act, 2013 (18 of 2013) and that the company is Company\nlimited by shares\nThe Corporate Identity Number of the company is U47912HR2026PTC149798\nThe Permanent Account Number (PAN) of the company is AANCK1913C*\nThe Tax Deduction and Collection Account Number (TAN) of the company is RTKK14690E*\nGiven under my hand at Manesar this  TWENTY EIGHTH day of AUGUST  TWO THOUSAND TWENTY SIX\nKM  Narayanan\nAssistant Registrar of Companies/ Deputy Registrar of Companies/ Registrar of Companies\nFor and on behalf of the Jurisdictional Registrar of Companies\nRegistrar of Companies\nCentral Registration Centre\nDisclaimer: This certificate only evidences incorporation of the company on the basis of documents and declarations of the\napplicant(s). This certificate is neither a license nor permission to conduct business or solicit deposits or funds from public.\nPermission of sector regulator is necessary wherever required. Registration status and other details of the company can be\nverified on mca.gov.in\nMailing Address as per record available in Registrar of Companies office:\nKS ORIGIN COLLECTIVE PRIVATE LIMITED\nHo.No. 994, Sector 10, Sector 15 Panchkula, Panchkula, Panchkula- 134113, Haryana\n*as issued by Income tax Department",
+        "words": 250
+      }
+    ],
+    "raw_text": "GOVERNMENT OF INDIA\nMINISTRY OF CORPORATE AFFAIRS\nCentral Registration Centre\nCertificate of Incorporation\n[Pursuant to sub-section (2) of section 7 and sub-section (1) of section 8 of the Companies Act, 2013 (18 of 2013) and rule\n18 of the Companies (Incorporation) Rules, 2014]\nI hereby certify that KS ORIGIN COLLECTIVE PRIVATE LIMITED is incorporated on this  TWENTY EIGHTH day of\nAUGUST  TWO THOUSAND TWENTY SIX under the Companies Act, 2013 (18 of 2013) and that the company is Company\nlimited by shares\nThe Corporate Identity Number of the company is U47912HR2026PTC149798\nThe Permanent Account Number (PAN) of the company is AANCK1913C*\nThe Tax Deduction and Collection Account Number (TAN) of the company is RTKK14690E*\nGiven under my hand at Manesar this  TWENTY EIGHTH day of AUGUST  TWO THOUSAND TWENTY SIX\nKM  Narayanan\nAssistant Registrar of Companies/ Deputy Registrar of Companies/ Registrar of Companies\nFor and on behalf of the Jurisdictional Registrar of Companies\nRegistrar of Companies\nCentral Registration Centre\nDisclaimer: This certificate only evidences incorporation of the company on the basis of documents and declarations of the\napplicant(s). This certificate is neither a license nor permission to conduct business or solicit deposits or funds from public.\nPermission of sector regulator is necessary wherever required. Registration status and other details of the company can be\nverified on mca.gov.in\nMailing Address as per record available in Registrar of Companies office:\nKS ORIGIN COLLECTIVE PRIVATE LIMITED\nHo.No. 994, Sector 10, Sector 15 Panchkula, Panchkula, Panchkula- 134113, Haryana\n*as issued by Income tax Department\n",
+    "trained_at": "2026-11-14T04:10:03.349476",
+    "status": "trained"
+  },
+  "b7ba1de6": {
+    "id": "b7ba1de6",
+    "filename": "SPICE + Part B_Approval Letter_AC4879985.pdf",
+    "title": "Tax & GST Assessment Notice or Compliance",
+    "authority": "MINISTRY OF CORPORATE AFFAIRS",
+    "reference": "ies/",
+    "deadline": "2026-12-14",
+    "demand_or_fee": "Statutory standard fee / No demand specified",
+    "clauses": [
+      "[Pursuant to sub-section (2) of section 7 and sub-section (1) of section 8 of the Companies Act, 2013 (18 of 2013) and r"
+    ],
+    "total_words": 250,
+    "token_count": 325,
+    "chunks_count": 1,
+    "chunks": [
+      {
+        "chunk_id": 1,
+        "text": "GOVERNMENT OF INDIA\nMINISTRY OF CORPORATE AFFAIRS\nCentral Registration Centre\nCertificate of Incorporation\n[Pursuant to sub-section (2) of section 7 and sub-section (1) of section 8 of the Companies Act, 2013 (18 of 2013) and rule\n18 of the Companies (Incorporation) Rules, 2014]\nI hereby certify that KS ORIGIN COLLECTIVE PRIVATE LIMITED is incorporated on this  TWENTY EIGHTH day of\nAUGUST  TWO THOUSAND TWENTY SIX under the Companies Act, 2013 (18 of 2013) and that the company is Company\nlimited by shares\nThe Corporate Identity Number of the company is U47912HR2026PTC149798\nThe Permanent Account Number (PAN) of the company is AANCK1913C*\nThe Tax Deduction and Collection Account Number (TAN) of the company is RTKK14690E*\nGiven under my hand at Manesar this  TWENTY EIGHTH day of AUGUST  TWO THOUSAND TWENTY SIX\nKM  Narayanan\nAssistant Registrar of Companies/ Deputy Registrar of Companies/ Registrar of Companies\nFor and on behalf of the Jurisdictional Registrar of Companies\nRegistrar of Companies\nCentral Registration Centre\nDisclaimer: This certificate only evidences incorporation of the company on the basis of documents and declarations of the\napplicant(s). This certificate is neither a license nor permission to conduct business or solicit deposits or funds from public.\nPermission of sector regulator is necessary wherever required. Registration status and other details of the company can be\nverified on mca.gov.in\nMailing Address as per record available in Registrar of Companies office:\nKS ORIGIN COLLECTIVE PRIVATE LIMITED\nHo.No. 994, Sector 10, Sector 15 Panchkula, Panchkula, Panchkula- 134113, Haryana\n*as issued by Income tax Department",
+        "words": 250
+      }
+    ],
+    "raw_text": "GOVERNMENT OF INDIA\nMINISTRY OF CORPORATE AFFAIRS\nCentral Registration Centre\nCertificate of Incorporation\n[Pursuant to sub-section (2) of section 7 and sub-section (1) of section 8 of the Companies Act, 2013 (18 of 2013) and rule\n18 of the Companies (Incorporation) Rules, 2014]\nI hereby certify that KS ORIGIN COLLECTIVE PRIVATE LIMITED is incorporated on this  TWENTY EIGHTH day of\nAUGUST  TWO THOUSAND TWENTY SIX under the Companies Act, 2013 (18 of 2013) and that the company is Company\nlimited by shares\nThe Corporate Identity Number of the company is U47912HR2026PTC149798\nThe Permanent Account Number (PAN) of the company is AANCK1913C*\nThe Tax Deduction and Collection Account Number (TAN) of the company is RTKK14690E*\nGiven under my hand at Manesar this  TWENTY EIGHTH day of AUGUST  TWO THOUSAND TWENTY SIX\nKM  Narayanan\nAssistant Registrar of Companies/ Deputy Registrar of Companies/ Registrar of Companies\nFor and on behalf of the Jurisdictional Registrar of Companies\nRegistrar of Companies\nCentral Registration Centre\nDisclaimer: This certificate only evidences incorporation of the company on the basis of documents and declarations of the\napplicant(s). This certificate is neither a license nor permission to conduct business or solicit deposits or funds from public.\nPermission of sector regulator is necessary wherever required. Registration status and other details of the company can be\nverified on mca.gov.in\nMailing Address as per record available in Registrar of Companies office:\nKS ORIGIN COLLECTIVE PRIVATE LIMITED\nHo.No. 994, Sector 10, Sector 15 Panchkula, Panchkula, Panchkula- 134113, Haryana\n*as issued by Income tax Department\n",
+    "trained_at": "2026-11-14T04:10:24.871369",
+    "status": "trained"
+  },
+  "8034e80b": {
+    "id": "8034e80b",
+    "filename": "uploaded_document",
+    "title": "General Citizen Public Service Request",
+    "authority": "National Government Services Portal",
+    "reference": "Ref on File",
+    "deadline": "2026-12-14",
+    "demand_or_fee": "Statutory standard fee / No demand specified",
+    "clauses": [
+      "Verify authenticity against designated department register",
+      "Check applicable statutory appeal / reply timeline"
+    ],
+    "total_words": 2,
+    "token_count": 2,
+    "chunks_count": 1,
+    "chunks": [
+      {
+        "chunk_id": 1,
+        "text": "audit form",
+        "words": 2
+      }
+    ],
+    "raw_text": "audit form",
+    "trained_at": "2026-11-14T04:21:54.472798",
+    "status": "trained"
+  },
+  "ksorigin_coi": {
+    "id": "ksorigin_coi",
+    "filename": "Certificate_of_Incorporation_KS_ORIGIN_COLLECTIVE_PVT_LTD.pdf",
+    "title": "Certificate of Incorporation (SPICe+ / Form INC-11)",
+    "authority": "Ministry of Corporate Affairs, Central Registration Centre (CRC), Manesar",
+    "reference": "CIN: U47912HR2026PTC149798",
+    "deadline": "2027-02-24 (Form INC-20A within 180 days) & 2026-09-27 (Form ADT-1 within 30 days)",
+    "demand_or_fee": "Statutory standard fee / No demand specified",
+    "clauses": [
+      "Company Name: KS ORIGIN COLLECTIVE PRIVATE LIMITED, incorporated on 28 August 2026 as Company limited by shares",
+      "Corporate Identity Number (CIN): U47912HR2026PTC149798",
+      "Income Tax PAN: AANCK1913C | Tax Deduction Account Number (TAN): RTKK14690E",
+      "Registered Office: Ho.No. 994, Sector 10, Sector 15 Panchkula, Panchkula- 134113, Haryana",
+      "Statutory Requirement: Form INC-20A mandatory within 180 days; Form ADT-1 mandatory within 30 days of incorporation"
+    ],
+    "total_words": 251,
+    "token_count": 326,
+    "chunks_count": 2,
+    "chunks": [
+      {
+        "chunk_id": 1,
+        "text": "GOVERNMENT OF INDIA\nMINISTRY OF CORPORATE AFFAIRS\nCentral Registration Centre\nCertificate of Incorporation\n[Pursuant to sub-section (2) of section 7 and sub-section (1) of section 8 of the Companies Act, 2013 (18 of 2013) and rule 18 of the Companies (Incorporation) Rules, 2014]\nI hereby certify that KS ORIGIN COLLECTIVE PRIVATE LIMITED is incorporated on this TWENTY EIGHTH day of AUGUST TWO THOUSAND TWENTY SIX under the Companies Act, 2013 (18 of 2013) and that the company is Company limited by shares.\nThe Corporate Identity Number of the company is U47912HR2026PTC149798.\nThe Permanent Account Number (PAN) of the company is AANCK1913C*.\nThe Tax Deduction and Collection Account Number (TAN) of the company is RTKK14690E*.\nGiven under my hand at Manesar this TWENTY EIGHTH day of AUGUST TWO THOUSAND TWENTY SIX.\nKM Narayanan\nAssistant Registrar of Companies/ Deputy Registrar of Companies/ Registrar of Companies\nFor and on behalf of the Jurisdictional Registrar of Companies\nRegistrar of Companies\nCentral Registration Centre, Manesar\nDisclaimer: This certificate only evidences incorporation of the company on the basis of documents and declarations of the applicant(s). This certificate is neither a license nor permission to conduct business or solicit deposits or funds from public. Permission of sector regulator is necessary wherever required. Registration status and other details of the company can be verified on mca.gov.in",
+        "words": 218
+      },
+      {
+        "chunk_id": 2,
+        "text": "Mailing Address as per record available in Registrar of Companies office:\nKS ORIGIN COLLECTIVE PRIVATE LIMITED\nHo.No. 994, Sector 10, Sector 15 Panchkula, Panchkula, Panchkula- 134113, Haryana.\n*as issued by Income tax Department",
+        "words": 33
+      }
+    ],
+    "raw_text": "GOVERNMENT OF INDIA\nMINISTRY OF CORPORATE AFFAIRS\nCentral Registration Centre\nCertificate of Incorporation\n[Pursuant to sub-section (2) of section 7 and sub-section (1) of section 8 of the Companies Act, 2013 (18 of 2013) and rule 18 of the Companies (Incorporation) Rules, 2014]\n\nI hereby certify that KS ORIGIN COLLECTIVE PRIVATE LIMITED is incorporated on this TWENTY EIGHTH day of AUGUST TWO THOUSAND TWENTY SIX under the Companies Act, 2013 (18 of 2013) and that the company is Company limited by shares.\n\nThe Corporate Identity Number of the company is U47912HR2026PTC149798.\nThe Permanent Account Number (PAN) of the company is AANCK1913C*.\nThe Tax Deduction and Collection Account Number (TAN) of the company is RTKK14690E*.\n\nGiven under my hand at Manesar this TWENTY EIGHTH day of AUGUST TWO THOUSAND TWENTY SIX.\n\nKM Narayanan\nAssistant Registrar of Companies/ Deputy Registrar of Companies/ Registrar of Companies\nFor and on behalf of the Jurisdictional Registrar of Companies\nRegistrar of Companies\nCentral Registration Centre, Manesar\n\nDisclaimer: This certificate only evidences incorporation of the company on the basis of documents and declarations of the applicant(s). This certificate is neither a license nor permission to conduct business or solicit deposits or funds from public. Permission of sector regulator is necessary wherever required. Registration status and other details of the company can be verified on mca.gov.in\n\nMailing Address as per record available in Registrar of Companies office:\nKS ORIGIN COLLECTIVE PRIVATE LIMITED\nHo.No. 994, Sector 10, Sector 15 Panchkula, Panchkula, Panchkula- 134113, Haryana.\n*as issued by Income tax Department\n",
+    "trained_at": "2026-11-14T04:31:42.327861",
+    "status": "trained"
+  },
+  "5d912488": {
+    "id": "5d912488",
+    "filename": "SPICE + Part B_Approval Letter_AC4879985.pdf",
+    "title": "Certificate of Incorporation & Post-Incorporation Statutory Compliances",
+    "authority": "MINISTRY OF CORPORATE AFFAIRS",
+    "reference": "ies/",
+    "deadline": "2026-12-14",
+    "demand_or_fee": "Statutory standard fee / No demand specified",
+    "clauses": [
+      "[Pursuant to sub-section (2) of section 7 and sub-section (1) of section 8 of the Companies Act, 2013 (18 of 2013) and r"
+    ],
+    "total_words": 250,
+    "token_count": 325,
+    "chunks_count": 1,
+    "chunks": [
+      {
+        "chunk_id": 1,
+        "text": "GOVERNMENT OF INDIA\nMINISTRY OF CORPORATE AFFAIRS\nCentral Registration Centre\nCertificate of Incorporation\n[Pursuant to sub-section (2) of section 7 and sub-section (1) of section 8 of the Companies Act, 2013 (18 of 2013) and rule\n18 of the Companies (Incorporation) Rules, 2014]\nI hereby certify that KS ORIGIN COLLECTIVE PRIVATE LIMITED is incorporated on this  TWENTY EIGHTH day of\nAUGUST  TWO THOUSAND TWENTY SIX under the Companies Act, 2013 (18 of 2013) and that the company is Company\nlimited by shares\nThe Corporate Identity Number of the company is U47912HR2026PTC149798\nThe Permanent Account Number (PAN) of the company is AANCK1913C*\nThe Tax Deduction and Collection Account Number (TAN) of the company is RTKK14690E*\nGiven under my hand at Manesar this  TWENTY EIGHTH day of AUGUST  TWO THOUSAND TWENTY SIX\nKM  Narayanan\nAssistant Registrar of Companies/ Deputy Registrar of Companies/ Registrar of Companies\nFor and on behalf of the Jurisdictional Registrar of Companies\nRegistrar of Companies\nCentral Registration Centre\nDisclaimer: This certificate only evidences incorporation of the company on the basis of documents and declarations of the\napplicant(s). This certificate is neither a license nor permission to conduct business or solicit deposits or funds from public.\nPermission of sector regulator is necessary wherever required. Registration status and other details of the company can be\nverified on mca.gov.in\nMailing Address as per record available in Registrar of Companies office:\nKS ORIGIN COLLECTIVE PRIVATE LIMITED\nHo.No. 994, Sector 10, Sector 15 Panchkula, Panchkula, Panchkula- 134113, Haryana\n*as issued by Income tax Department",
+        "words": 250
+      }
+    ],
+    "raw_text": "GOVERNMENT OF INDIA\nMINISTRY OF CORPORATE AFFAIRS\nCentral Registration Centre\nCertificate of Incorporation\n[Pursuant to sub-section (2) of section 7 and sub-section (1) of section 8 of the Companies Act, 2013 (18 of 2013) and rule\n18 of the Companies (Incorporation) Rules, 2014]\nI hereby certify that KS ORIGIN COLLECTIVE PRIVATE LIMITED is incorporated on this  TWENTY EIGHTH day of\nAUGUST  TWO THOUSAND TWENTY SIX under the Companies Act, 2013 (18 of 2013) and that the company is Company\nlimited by shares\nThe Corporate Identity Number of the company is U47912HR2026PTC149798\nThe Permanent Account Number (PAN) of the company is AANCK1913C*\nThe Tax Deduction and Collection Account Number (TAN) of the company is RTKK14690E*\nGiven under my hand at Manesar this  TWENTY EIGHTH day of AUGUST  TWO THOUSAND TWENTY SIX\nKM  Narayanan\nAssistant Registrar of Companies/ Deputy Registrar of Companies/ Registrar of Companies\nFor and on behalf of the Jurisdictional Registrar of Companies\nRegistrar of Companies\nCentral Registration Centre\nDisclaimer: This certificate only evidences incorporation of the company on the basis of documents and declarations of the\napplicant(s). This certificate is neither a license nor permission to conduct business or solicit deposits or funds from public.\nPermission of sector regulator is necessary wherever required. Registration status and other details of the company can be\nverified on mca.gov.in\nMailing Address as per record available in Registrar of Companies office:\nKS ORIGIN COLLECTIVE PRIVATE LIMITED\nHo.No. 994, Sector 10, Sector 15 Panchkula, Panchkula, Panchkula- 134113, Haryana\n*as issued by Income tax Department\n",
+    "trained_at": "2026-11-14T05:05:18.819678",
+    "status": "trained"
+  },
+  "cb30e45c": {
+    "id": "cb30e45c",
+    "filename": "SPICE + Part B_Approval Letter_AC4879985.pdf",
+    "title": "Certificate of Incorporation & Post-Incorporation Statutory Compliances",
+    "authority": "MINISTRY OF CORPORATE AFFAIRS",
+    "reference": "ies/",
+    "deadline": "2026-12-14",
+    "demand_or_fee": "Statutory standard fee / No demand specified",
+    "clauses": [
+      "[Pursuant to sub-section (2) of section 7 and sub-section (1) of section 8 of the Companies Act, 2013 (18 of 2013) and r"
+    ],
+    "total_words": 250,
+    "token_count": 325,
+    "chunks_count": 1,
+    "chunks": [
+      {
+        "chunk_id": 1,
+        "text": "GOVERNMENT OF INDIA\nMINISTRY OF CORPORATE AFFAIRS\nCentral Registration Centre\nCertificate of Incorporation\n[Pursuant to sub-section (2) of section 7 and sub-section (1) of section 8 of the Companies Act, 2013 (18 of 2013) and rule\n18 of the Companies (Incorporation) Rules, 2014]\nI hereby certify that KS ORIGIN COLLECTIVE PRIVATE LIMITED is incorporated on this  TWENTY EIGHTH day of\nAUGUST  TWO THOUSAND TWENTY SIX under the Companies Act, 2013 (18 of 2013) and that the company is Company\nlimited by shares\nThe Corporate Identity Number of the company is U47912HR2026PTC149798\nThe Permanent Account Number (PAN) of the company is AANCK1913C*\nThe Tax Deduction and Collection Account Number (TAN) of the company is RTKK14690E*\nGiven under my hand at Manesar this  TWENTY EIGHTH day of AUGUST  TWO THOUSAND TWENTY SIX\nKM  Narayanan\nAssistant Registrar of Companies/ Deputy Registrar of Companies/ Registrar of Companies\nFor and on behalf of the Jurisdictional Registrar of Companies\nRegistrar of Companies\nCentral Registration Centre\nDisclaimer: This certificate only evidences incorporation of the company on the basis of documents and declarations of the\napplicant(s). This certificate is neither a license nor permission to conduct business or solicit deposits or funds from public.\nPermission of sector regulator is necessary wherever required. Registration status and other details of the company can be\nverified on mca.gov.in\nMailing Address as per record available in Registrar of Companies office:\nKS ORIGIN COLLECTIVE PRIVATE LIMITED\nHo.No. 994, Sector 10, Sector 15 Panchkula, Panchkula, Panchkula- 134113, Haryana\n*as issued by Income tax Department",
+        "words": 250
+      }
+    ],
+    "raw_text": "GOVERNMENT OF INDIA\nMINISTRY OF CORPORATE AFFAIRS\nCentral Registration Centre\nCertificate of Incorporation\n[Pursuant to sub-section (2) of section 7 and sub-section (1) of section 8 of the Companies Act, 2013 (18 of 2013) and rule\n18 of the Companies (Incorporation) Rules, 2014]\nI hereby certify that KS ORIGIN COLLECTIVE PRIVATE LIMITED is incorporated on this  TWENTY EIGHTH day of\nAUGUST  TWO THOUSAND TWENTY SIX under the Companies Act, 2013 (18 of 2013) and that the company is Company\nlimited by shares\nThe Corporate Identity Number of the company is U47912HR2026PTC149798\nThe Permanent Account Number (PAN) of the company is AANCK1913C*\nThe Tax Deduction and Collection Account Number (TAN) of the company is RTKK14690E*\nGiven under my hand at Manesar this  TWENTY EIGHTH day of AUGUST  TWO THOUSAND TWENTY SIX\nKM  Narayanan\nAssistant Registrar of Companies/ Deputy Registrar of Companies/ Registrar of Companies\nFor and on behalf of the Jurisdictional Registrar of Companies\nRegistrar of Companies\nCentral Registration Centre\nDisclaimer: This certificate only evidences incorporation of the company on the basis of documents and declarations of the\napplicant(s). This certificate is neither a license nor permission to conduct business or solicit deposits or funds from public.\nPermission of sector regulator is necessary wherever required. Registration status and other details of the company can be\nverified on mca.gov.in\nMailing Address as per record available in Registrar of Companies office:\nKS ORIGIN COLLECTIVE PRIVATE LIMITED\nHo.No. 994, Sector 10, Sector 15 Panchkula, Panchkula, Panchkula- 134113, Haryana\n*as issued by Income tax Department\n",
+    "trained_at": "2026-11-14T05:05:24.799874",
+    "status": "trained"
+  },
+  "da031ba6": {
+    "id": "da031ba6",
+    "filename": "COI_KS_ORIGIN.pdf",
+    "title": "Certificate of Incorporation & Post-Incorporation Statutory Compliances",
+    "authority": "MINISTRY OF CORPORATE AFFAIRS",
+    "reference": "chkula",
+    "deadline": "2026-12-14",
+    "demand_or_fee": "Statutory standard fee / No demand specified",
+    "clauses": [
+      "[Pursuant to sub-section (2) of section 7 and sub-section (1) of section 8 of the Companies Act, 2013 (18 of 2013) and r"
+    ],
+    "total_words": 166,
+    "token_count": 215,
+    "chunks_count": 1,
+    "chunks": [
+      {
+        "chunk_id": 1,
+        "text": "GOVERNMENT OF INDIA\nMINISTRY OF CORPORATE AFFAIRS\nCentral Registration Centre\nCertificate of Incorporation\n[Pursuant to sub-section (2) of section 7 and sub-section (1) of section 8 of the Companies Act, 2013 (18 of 2013) and rule 18 of the Companies (Incorporation) Rules, 2014]\nI hereby certify that KS ORIGIN COLLECTIVE PRIVATE LIMITED is incorporated on this TWENTY EIGHTH day of AUGUST TWO THOUSAND TWENTY SIX under the Companies Act, 2013 (18 of 2013) and that the company is Company limited by shares.\nThe Corporate Identity Number of the company is U47912HR2026PTC149798.\nThe Permanent Account Number (PAN) of the company is AANCK1913C*.\nThe Tax Deduction and Collection Account Number (TAN) of the company is RTKK14690E*.\nGiven under my hand at Manesar this TWENTY EIGHTH day of AUGUST TWO THOUSAND TWENTY SIX.\nKM Narayanan\nAssistant Registrar of Companies, Central Registration Centre\nMailing Address as per record available in Registrar of Companies office:\nKS ORIGIN COLLECTIVE PRIVATE LIMITED\nHo.No. 994, Sector 10, Sector 15 Panchkula, Panchkula, Panchkula- 134113, Haryana.",
+        "words": 166
+      }
+    ],
+    "raw_text": "GOVERNMENT OF INDIA\nMINISTRY OF CORPORATE AFFAIRS\nCentral Registration Centre\nCertificate of Incorporation\n[Pursuant to sub-section (2) of section 7 and sub-section (1) of section 8 of the Companies Act, 2013 (18 of 2013) and rule 18 of the Companies (Incorporation) Rules, 2014]\n\nI hereby certify that KS ORIGIN COLLECTIVE PRIVATE LIMITED is incorporated on this TWENTY EIGHTH day of AUGUST TWO THOUSAND TWENTY SIX under the Companies Act, 2013 (18 of 2013) and that the company is Company limited by shares.\n\nThe Corporate Identity Number of the company is U47912HR2026PTC149798.\nThe Permanent Account Number (PAN) of the company is AANCK1913C*.\nThe Tax Deduction and Collection Account Number (TAN) of the company is RTKK14690E*.\n\nGiven under my hand at Manesar this TWENTY EIGHTH day of AUGUST TWO THOUSAND TWENTY SIX.\nKM Narayanan\nAssistant Registrar of Companies, Central Registration Centre\n\nMailing Address as per record available in Registrar of Companies office:\nKS ORIGIN COLLECTIVE PRIVATE LIMITED\nHo.No. 994, Sector 10, Sector 15 Panchkula, Panchkula, Panchkula- 134113, Haryana.",
+    "trained_at": "2026-11-14T05:10:34.226957",
+    "status": "trained"
+  },
+  "d2a4c779": {
+    "id": "d2a4c779",
+    "filename": "SPICE + Part B_Approval Letter_AC4879985.pdf",
+    "title": "Certificate of Incorporation & Post-Incorporation Statutory Compliances",
+    "authority": "Central Registration Centre (CRC), Manesar / Ministry of Corporate Affairs",
+    "reference": "U47912HR2026PTC149798",
+    "deadline": "2027-02-24",
+    "demand_or_fee": "Statutory standard fee / No demand specified",
+    "clauses": [
+      "Company Legal Name: KS ORIGIN COLLECTIVE PRIVATE LIMITED, incorporated on 28 August 2026 as Company Limited by Shares",
+      "Corporate Identity Number (CIN): U47912HR2026PTC149798",
+      "Permanent Account Number (PAN): AANCK1913C | Tax Deduction Account (TAN): RTKK14690E",
+      "Registered Office: Ho.No. 994, Sector 10, Sector 15 Panchkula, Panchkula- 134113, Haryana",
+      "Statutory Requirements: Form INC-20A (Commencement of Business within 180 days) & Form ADT-1 (Auditor Appointment within 30 days / 3 months)"
+    ],
+    "total_words": 250,
+    "token_count": 325,
+    "chunks_count": 1,
+    "chunks": [
+      {
+        "chunk_id": 1,
+        "text": "GOVERNMENT OF INDIA\nMINISTRY OF CORPORATE AFFAIRS\nCentral Registration Centre\nCertificate of Incorporation\n[Pursuant to sub-section (2) of section 7 and sub-section (1) of section 8 of the Companies Act, 2013 (18 of 2013) and rule\n18 of the Companies (Incorporation) Rules, 2014]\nI hereby certify that KS ORIGIN COLLECTIVE PRIVATE LIMITED is incorporated on this  TWENTY EIGHTH day of\nAUGUST  TWO THOUSAND TWENTY SIX under the Companies Act, 2013 (18 of 2013) and that the company is Company\nlimited by shares\nThe Corporate Identity Number of the company is U47912HR2026PTC149798\nThe Permanent Account Number (PAN) of the company is AANCK1913C*\nThe Tax Deduction and Collection Account Number (TAN) of the company is RTKK14690E*\nGiven under my hand at Manesar this  TWENTY EIGHTH day of AUGUST  TWO THOUSAND TWENTY SIX\nKM  Narayanan\nAssistant Registrar of Companies/ Deputy Registrar of Companies/ Registrar of Companies\nFor and on behalf of the Jurisdictional Registrar of Companies\nRegistrar of Companies\nCentral Registration Centre\nDisclaimer: This certificate only evidences incorporation of the company on the basis of documents and declarations of the\napplicant(s). This certificate is neither a license nor permission to conduct business or solicit deposits or funds from public.\nPermission of sector regulator is necessary wherever required. Registration status and other details of the company can be\nverified on mca.gov.in\nMailing Address as per record available in Registrar of Companies office:\nKS ORIGIN COLLECTIVE PRIVATE LIMITED\nHo.No. 994, Sector 10, Sector 15 Panchkula, Panchkula, Panchkula- 134113, Haryana\n*as issued by Income tax Department",
+        "words": 250
+      }
+    ],
+    "raw_text": "GOVERNMENT OF INDIA\nMINISTRY OF CORPORATE AFFAIRS\nCentral Registration Centre\nCertificate of Incorporation\n[Pursuant to sub-section (2) of section 7 and sub-section (1) of section 8 of the Companies Act, 2013 (18 of 2013) and rule\n18 of the Companies (Incorporation) Rules, 2014]\nI hereby certify that KS ORIGIN COLLECTIVE PRIVATE LIMITED is incorporated on this  TWENTY EIGHTH day of\nAUGUST  TWO THOUSAND TWENTY SIX under the Companies Act, 2013 (18 of 2013) and that the company is Company\nlimited by shares\nThe Corporate Identity Number of the company is U47912HR2026PTC149798\nThe Permanent Account Number (PAN) of the company is AANCK1913C*\nThe Tax Deduction and Collection Account Number (TAN) of the company is RTKK14690E*\nGiven under my hand at Manesar this  TWENTY EIGHTH day of AUGUST  TWO THOUSAND TWENTY SIX\nKM  Narayanan\nAssistant Registrar of Companies/ Deputy Registrar of Companies/ Registrar of Companies\nFor and on behalf of the Jurisdictional Registrar of Companies\nRegistrar of Companies\nCentral Registration Centre\nDisclaimer: This certificate only evidences incorporation of the company on the basis of documents and declarations of the\napplicant(s). This certificate is neither a license nor permission to conduct business or solicit deposits or funds from public.\nPermission of sector regulator is necessary wherever required. Registration status and other details of the company can be\nverified on mca.gov.in\nMailing Address as per record available in Registrar of Companies office:\nKS ORIGIN COLLECTIVE PRIVATE LIMITED\nHo.No. 994, Sector 10, Sector 15 Panchkula, Panchkula, Panchkula- 134113, Haryana\n*as issued by Income tax Department\n",
+    "trained_at": "2026-11-14T05:19:58.885773",
+    "status": "trained"
+  },
+  "5e65b424": {
+    "id": "5e65b424",
+    "filename": "SPICE + Part B_Approval Letter_AC4879985.pdf",
+    "title": "Certificate of Incorporation & Post-Incorporation Statutory Compliances",
+    "authority": "Central Registration Centre (CRC), Manesar / Ministry of Corporate Affairs",
+    "reference": "U47912HR2026PTC149798",
+    "deadline": "2027-02-24",
+    "demand_or_fee": "Statutory standard fee / No demand specified",
+    "clauses": [
+      "Company Legal Name: KS ORIGIN COLLECTIVE PRIVATE LIMITED, incorporated on 28 August 2026 as Company Limited by Shares",
+      "Corporate Identity Number (CIN): U47912HR2026PTC149798",
+      "Permanent Account Number (PAN): AANCK1913C | Tax Deduction Account (TAN): RTKK14690E",
+      "Registered Office: Ho.No. 994, Sector 10, Sector 15 Panchkula, Panchkula- 134113, Haryana",
+      "Statutory Requirements: Form INC-20A (Commencement of Business within 180 days) & Form ADT-1 (Auditor Appointment within 30 days / 3 months)"
+    ],
+    "total_words": 250,
+    "token_count": 325,
+    "chunks_count": 1,
+    "chunks": [
+      {
+        "chunk_id": 1,
+        "text": "GOVERNMENT OF INDIA\nMINISTRY OF CORPORATE AFFAIRS\nCentral Registration Centre\nCertificate of Incorporation\n[Pursuant to sub-section (2) of section 7 and sub-section (1) of section 8 of the Companies Act, 2013 (18 of 2013) and rule\n18 of the Companies (Incorporation) Rules, 2014]\nI hereby certify that KS ORIGIN COLLECTIVE PRIVATE LIMITED is incorporated on this  TWENTY EIGHTH day of\nAUGUST  TWO THOUSAND TWENTY SIX under the Companies Act, 2013 (18 of 2013) and that the company is Company\nlimited by shares\nThe Corporate Identity Number of the company is U47912HR2026PTC149798\nThe Permanent Account Number (PAN) of the company is AANCK1913C*\nThe Tax Deduction and Collection Account Number (TAN) of the company is RTKK14690E*\nGiven under my hand at Manesar this  TWENTY EIGHTH day of AUGUST  TWO THOUSAND TWENTY SIX\nKM  Narayanan\nAssistant Registrar of Companies/ Deputy Registrar of Companies/ Registrar of Companies\nFor and on behalf of the Jurisdictional Registrar of Companies\nRegistrar of Companies\nCentral Registration Centre\nDisclaimer: This certificate only evidences incorporation of the company on the basis of documents and declarations of the\napplicant(s). This certificate is neither a license nor permission to conduct business or solicit deposits or funds from public.\nPermission of sector regulator is necessary wherever required. Registration status and other details of the company can be\nverified on mca.gov.in\nMailing Address as per record available in Registrar of Companies office:\nKS ORIGIN COLLECTIVE PRIVATE LIMITED\nHo.No. 994, Sector 10, Sector 15 Panchkula, Panchkula, Panchkula- 134113, Haryana\n*as issued by Income tax Department",
+        "words": 250
+      }
+    ],
+    "raw_text": "GOVERNMENT OF INDIA\nMINISTRY OF CORPORATE AFFAIRS\nCentral Registration Centre\nCertificate of Incorporation\n[Pursuant to sub-section (2) of section 7 and sub-section (1) of section 8 of the Companies Act, 2013 (18 of 2013) and rule\n18 of the Companies (Incorporation) Rules, 2014]\nI hereby certify that KS ORIGIN COLLECTIVE PRIVATE LIMITED is incorporated on this  TWENTY EIGHTH day of\nAUGUST  TWO THOUSAND TWENTY SIX under the Companies Act, 2013 (18 of 2013) and that the company is Company\nlimited by shares\nThe Corporate Identity Number of the company is U47912HR2026PTC149798\nThe Permanent Account Number (PAN) of the company is AANCK1913C*\nThe Tax Deduction and Collection Account Number (TAN) of the company is RTKK14690E*\nGiven under my hand at Manesar this  TWENTY EIGHTH day of AUGUST  TWO THOUSAND TWENTY SIX\nKM  Narayanan\nAssistant Registrar of Companies/ Deputy Registrar of Companies/ Registrar of Companies\nFor and on behalf of the Jurisdictional Registrar of Companies\nRegistrar of Companies\nCentral Registration Centre\nDisclaimer: This certificate only evidences incorporation of the company on the basis of documents and declarations of the\napplicant(s). This certificate is neither a license nor permission to conduct business or solicit deposits or funds from public.\nPermission of sector regulator is necessary wherever required. Registration status and other details of the company can be\nverified on mca.gov.in\nMailing Address as per record available in Registrar of Companies office:\nKS ORIGIN COLLECTIVE PRIVATE LIMITED\nHo.No. 994, Sector 10, Sector 15 Panchkula, Panchkula, Panchkula- 134113, Haryana\n*as issued by Income tax Department\n",
+    "trained_at": "2026-11-14T05:20:00.014622",
+    "status": "trained"
+  },
+  "0664313c": {
+    "id": "0664313c",
+    "filename": "SPICE + Part B_Approval Letter_AC4879985.pdf",
+    "title": "Certificate of Incorporation & Post-Incorporation Statutory Compliances",
+    "authority": "Central Registration Centre (CRC), Manesar / Ministry of Corporate Affairs",
+    "reference": "U47912HR2026PTC149798",
+    "deadline": "2027-02-24",
+    "demand_or_fee": "Statutory standard fee / No demand specified",
+    "clauses": [
+      "Company Legal Name: KS ORIGIN COLLECTIVE PRIVATE LIMITED, incorporated on 28 August 2026 as Company Limited by Shares",
+      "Corporate Identity Number (CIN): U47912HR2026PTC149798",
+      "Permanent Account Number (PAN): AANCK1913C | Tax Deduction Account (TAN): RTKK14690E",
+      "Registered Office: Ho.No. 994, Sector 10, Sector 15 Panchkula, Panchkula- 134113, Haryana",
+      "Statutory Requirements: Form INC-20A (Commencement of Business within 180 days) & Form ADT-1 (Auditor Appointment within 30 days / 3 months)"
+    ],
+    "total_words": 250,
+    "token_count": 325,
+    "chunks_count": 1,
+    "chunks": [
+      {
+        "chunk_id": 1,
+        "text": "GOVERNMENT OF INDIA\nMINISTRY OF CORPORATE AFFAIRS\nCentral Registration Centre\nCertificate of Incorporation\n[Pursuant to sub-section (2) of section 7 and sub-section (1) of section 8 of the Companies Act, 2013 (18 of 2013) and rule\n18 of the Companies (Incorporation) Rules, 2014]\nI hereby certify that KS ORIGIN COLLECTIVE PRIVATE LIMITED is incorporated on this  TWENTY EIGHTH day of\nAUGUST  TWO THOUSAND TWENTY SIX under the Companies Act, 2013 (18 of 2013) and that the company is Company\nlimited by shares\nThe Corporate Identity Number of the company is U47912HR2026PTC149798\nThe Permanent Account Number (PAN) of the company is AANCK1913C*\nThe Tax Deduction and Collection Account Number (TAN) of the company is RTKK14690E*\nGiven under my hand at Manesar this  TWENTY EIGHTH day of AUGUST  TWO THOUSAND TWENTY SIX\nKM  Narayanan\nAssistant Registrar of Companies/ Deputy Registrar of Companies/ Registrar of Companies\nFor and on behalf of the Jurisdictional Registrar of Companies\nRegistrar of Companies\nCentral Registration Centre\nDisclaimer: This certificate only evidences incorporation of the company on the basis of documents and declarations of the\napplicant(s). This certificate is neither a license nor permission to conduct business or solicit deposits or funds from public.\nPermission of sector regulator is necessary wherever required. Registration status and other details of the company can be\nverified on mca.gov.in\nMailing Address as per record available in Registrar of Companies office:\nKS ORIGIN COLLECTIVE PRIVATE LIMITED\nHo.No. 994, Sector 10, Sector 15 Panchkula, Panchkula, Panchkula- 134113, Haryana\n*as issued by Income tax Department",
+        "words": 250
+      }
+    ],
+    "raw_text": "GOVERNMENT OF INDIA\nMINISTRY OF CORPORATE AFFAIRS\nCentral Registration Centre\nCertificate of Incorporation\n[Pursuant to sub-section (2) of section 7 and sub-section (1) of section 8 of the Companies Act, 2013 (18 of 2013) and rule\n18 of the Companies (Incorporation) Rules, 2014]\nI hereby certify that KS ORIGIN COLLECTIVE PRIVATE LIMITED is incorporated on this  TWENTY EIGHTH day of\nAUGUST  TWO THOUSAND TWENTY SIX under the Companies Act, 2013 (18 of 2013) and that the company is Company\nlimited by shares\nThe Corporate Identity Number of the company is U47912HR2026PTC149798\nThe Permanent Account Number (PAN) of the company is AANCK1913C*\nThe Tax Deduction and Collection Account Number (TAN) of the company is RTKK14690E*\nGiven under my hand at Manesar this  TWENTY EIGHTH day of AUGUST  TWO THOUSAND TWENTY SIX\nKM  Narayanan\nAssistant Registrar of Companies/ Deputy Registrar of Companies/ Registrar of Companies\nFor and on behalf of the Jurisdictional Registrar of Companies\nRegistrar of Companies\nCentral Registration Centre\nDisclaimer: This certificate only evidences incorporation of the company on the basis of documents and declarations of the\napplicant(s). This certificate is neither a license nor permission to conduct business or solicit deposits or funds from public.\nPermission of sector regulator is necessary wherever required. Registration status and other details of the company can be\nverified on mca.gov.in\nMailing Address as per record available in Registrar of Companies office:\nKS ORIGIN COLLECTIVE PRIVATE LIMITED\nHo.No. 994, Sector 10, Sector 15 Panchkula, Panchkula, Panchkula- 134113, Haryana\n*as issued by Income tax Department\n",
+    "trained_at": "2026-11-14T05:26:04.300560",
+    "status": "trained"
+  },
+  "71dc332a": {
+    "id": "71dc332a",
+    "filename": "SPICE + Part B_Approval Letter_AC4879985.pdf",
+    "title": "Certificate of Incorporation & Post-Incorporation Statutory Compliances",
+    "authority": "Central Registration Centre (CRC), Manesar / Ministry of Corporate Affairs",
+    "reference": "U47912HR2026PTC149798",
+    "deadline": "2027-02-24",
+    "demand_or_fee": "Statutory standard fee / No demand specified",
+    "clauses": [
+      "Company Legal Name: KS ORIGIN COLLECTIVE PRIVATE LIMITED, incorporated on 28 August 2026 as Company Limited by Shares",
+      "Corporate Identity Number (CIN): U47912HR2026PTC149798",
+      "Permanent Account Number (PAN): AANCK1913C | Tax Deduction Account (TAN): RTKK14690E",
+      "Registered Office: Ho.No. 994, Sector 10, Sector 15 Panchkula, Panchkula- 134113, Haryana",
+      "Statutory Requirements: Form INC-20A (Commencement of Business within 180 days) & Form ADT-1 (Auditor Appointment within 30 days / 3 months)"
+    ],
+    "total_words": 250,
+    "token_count": 325,
+    "chunks_count": 1,
+    "chunks": [
+      {
+        "chunk_id": 1,
+        "text": "GOVERNMENT OF INDIA\nMINISTRY OF CORPORATE AFFAIRS\nCentral Registration Centre\nCertificate of Incorporation\n[Pursuant to sub-section (2) of section 7 and sub-section (1) of section 8 of the Companies Act, 2013 (18 of 2013) and rule\n18 of the Companies (Incorporation) Rules, 2014]\nI hereby certify that KS ORIGIN COLLECTIVE PRIVATE LIMITED is incorporated on this  TWENTY EIGHTH day of\nAUGUST  TWO THOUSAND TWENTY SIX under the Companies Act, 2013 (18 of 2013) and that the company is Company\nlimited by shares\nThe Corporate Identity Number of the company is U47912HR2026PTC149798\nThe Permanent Account Number (PAN) of the company is AANCK1913C*\nThe Tax Deduction and Collection Account Number (TAN) of the company is RTKK14690E*\nGiven under my hand at Manesar this  TWENTY EIGHTH day of AUGUST  TWO THOUSAND TWENTY SIX\nKM  Narayanan\nAssistant Registrar of Companies/ Deputy Registrar of Companies/ Registrar of Companies\nFor and on behalf of the Jurisdictional Registrar of Companies\nRegistrar of Companies\nCentral Registration Centre\nDisclaimer: This certificate only evidences incorporation of the company on the basis of documents and declarations of the\napplicant(s). This certificate is neither a license nor permission to conduct business or solicit deposits or funds from public.\nPermission of sector regulator is necessary wherever required. Registration status and other details of the company can be\nverified on mca.gov.in\nMailing Address as per record available in Registrar of Companies office:\nKS ORIGIN COLLECTIVE PRIVATE LIMITED\nHo.No. 994, Sector 10, Sector 15 Panchkula, Panchkula, Panchkula- 134113, Haryana\n*as issued by Income tax Department",
+        "words": 250
+      }
+    ],
+    "raw_text": "GOVERNMENT OF INDIA\nMINISTRY OF CORPORATE AFFAIRS\nCentral Registration Centre\nCertificate of Incorporation\n[Pursuant to sub-section (2) of section 7 and sub-section (1) of section 8 of the Companies Act, 2013 (18 of 2013) and rule\n18 of the Companies (Incorporation) Rules, 2014]\nI hereby certify that KS ORIGIN COLLECTIVE PRIVATE LIMITED is incorporated on this  TWENTY EIGHTH day of\nAUGUST  TWO THOUSAND TWENTY SIX under the Companies Act, 2013 (18 of 2013) and that the company is Company\nlimited by shares\nThe Corporate Identity Number of the company is U47912HR2026PTC149798\nThe Permanent Account Number (PAN) of the company is AANCK1913C*\nThe Tax Deduction and Collection Account Number (TAN) of the company is RTKK14690E*\nGiven under my hand at Manesar this  TWENTY EIGHTH day of AUGUST  TWO THOUSAND TWENTY SIX\nKM  Narayanan\nAssistant Registrar of Companies/ Deputy Registrar of Companies/ Registrar of Companies\nFor and on behalf of the Jurisdictional Registrar of Companies\nRegistrar of Companies\nCentral Registration Centre\nDisclaimer: This certificate only evidences incorporation of the company on the basis of documents and declarations of the\napplicant(s). This certificate is neither a license nor permission to conduct business or solicit deposits or funds from public.\nPermission of sector regulator is necessary wherever required. Registration status and other details of the company can be\nverified on mca.gov.in\nMailing Address as per record available in Registrar of Companies office:\nKS ORIGIN COLLECTIVE PRIVATE LIMITED\nHo.No. 994, Sector 10, Sector 15 Panchkula, Panchkula, Panchkula- 134113, Haryana\n*as issued by Income tax Department\n",
+    "trained_at": "2026-11-14T05:26:05.366769",
+    "status": "trained"
+  },
+  "233fc5bf": {
+    "id": "233fc5bf",
+    "filename": "SPICE + Part B_Approval Letter_AC4879985.pdf",
+    "title": "Certificate of Incorporation & Post-Incorporation Statutory Compliances",
+    "authority": "Central Registration Centre (CRC), Manesar / Ministry of Corporate Affairs",
+    "reference": "U47912HR2026PTC149798",
+    "deadline": "2027-02-24",
+    "demand_or_fee": "Statutory standard fee / No demand specified",
+    "clauses": [
+      "Company Legal Name: KS ORIGIN COLLECTIVE PRIVATE LIMITED, incorporated on 28 August 2026 as Company Limited by Shares",
+      "Corporate Identity Number (CIN): U47912HR2026PTC149798",
+      "Permanent Account Number (PAN): AANCK1913C | Tax Deduction Account (TAN): RTKK14690E",
+      "Registered Office: Ho.No. 994, Sector 10, Sector 15 Panchkula, Panchkula- 134113, Haryana",
+      "Statutory Requirements: Form INC-20A (Commencement of Business within 180 days) & Form ADT-1 (Auditor Appointment within 30 days / 3 months)"
+    ],
+    "total_words": 250,
+    "token_count": 325,
+    "chunks_count": 1,
+    "chunks": [
+      {
+        "chunk_id": 1,
+        "text": "GOVERNMENT OF INDIA\nMINISTRY OF CORPORATE AFFAIRS\nCentral Registration Centre\nCertificate of Incorporation\n[Pursuant to sub-section (2) of section 7 and sub-section (1) of section 8 of the Companies Act, 2013 (18 of 2013) and rule\n18 of the Companies (Incorporation) Rules, 2014]\nI hereby certify that KS ORIGIN COLLECTIVE PRIVATE LIMITED is incorporated on this  TWENTY EIGHTH day of\nAUGUST  TWO THOUSAND TWENTY SIX under the Companies Act, 2013 (18 of 2013) and that the company is Company\nlimited by shares\nThe Corporate Identity Number of the company is U47912HR2026PTC149798\nThe Permanent Account Number (PAN) of the company is AANCK1913C*\nThe Tax Deduction and Collection Account Number (TAN) of the company is RTKK14690E*\nGiven under my hand at Manesar this  TWENTY EIGHTH day of AUGUST  TWO THOUSAND TWENTY SIX\nKM  Narayanan\nAssistant Registrar of Companies/ Deputy Registrar of Companies/ Registrar of Companies\nFor and on behalf of the Jurisdictional Registrar of Companies\nRegistrar of Companies\nCentral Registration Centre\nDisclaimer: This certificate only evidences incorporation of the company on the basis of documents and declarations of the\napplicant(s). This certificate is neither a license nor permission to conduct business or solicit deposits or funds from public.\nPermission of sector regulator is necessary wherever required. Registration status and other details of the company can be\nverified on mca.gov.in\nMailing Address as per record available in Registrar of Companies office:\nKS ORIGIN COLLECTIVE PRIVATE LIMITED\nHo.No. 994, Sector 10, Sector 15 Panchkula, Panchkula, Panchkula- 134113, Haryana\n*as issued by Income tax Department",
+        "words": 250
+      }
+    ],
+    "raw_text": "GOVERNMENT OF INDIA\nMINISTRY OF CORPORATE AFFAIRS\nCentral Registration Centre\nCertificate of Incorporation\n[Pursuant to sub-section (2) of section 7 and sub-section (1) of section 8 of the Companies Act, 2013 (18 of 2013) and rule\n18 of the Companies (Incorporation) Rules, 2014]\nI hereby certify that KS ORIGIN COLLECTIVE PRIVATE LIMITED is incorporated on this  TWENTY EIGHTH day of\nAUGUST  TWO THOUSAND TWENTY SIX under the Companies Act, 2013 (18 of 2013) and that the company is Company\nlimited by shares\nThe Corporate Identity Number of the company is U47912HR2026PTC149798\nThe Permanent Account Number (PAN) of the company is AANCK1913C*\nThe Tax Deduction and Collection Account Number (TAN) of the company is RTKK14690E*\nGiven under my hand at Manesar this  TWENTY EIGHTH day of AUGUST  TWO THOUSAND TWENTY SIX\nKM  Narayanan\nAssistant Registrar of Companies/ Deputy Registrar of Companies/ Registrar of Companies\nFor and on behalf of the Jurisdictional Registrar of Companies\nRegistrar of Companies\nCentral Registration Centre\nDisclaimer: This certificate only evidences incorporation of the company on the basis of documents and declarations of the\napplicant(s). This certificate is neither a license nor permission to conduct business or solicit deposits or funds from public.\nPermission of sector regulator is necessary wherever required. Registration status and other details of the company can be\nverified on mca.gov.in\nMailing Address as per record available in Registrar of Companies office:\nKS ORIGIN COLLECTIVE PRIVATE LIMITED\nHo.No. 994, Sector 10, Sector 15 Panchkula, Panchkula, Panchkula- 134113, Haryana\n*as issued by Income tax Department\n",
+    "trained_at": "2026-11-14T05:26:08.470481",
+    "status": "trained"
+  },
+  "8fd513be": {
+    "id": "8fd513be",
+    "filename": "SPICE + Part B_Approval Letter_AC4879985.pdf",
+    "title": "Certificate of Incorporation & Post-Incorporation Statutory Compliances",
+    "authority": "Central Registration Centre (CRC), Manesar / Ministry of Corporate Affairs",
+    "reference": "U47912HR2026PTC149798",
+    "deadline": "2027-02-24",
+    "demand_or_fee": "Statutory standard fee / No demand specified",
+    "clauses": [
+      "Company Legal Name: KS ORIGIN COLLECTIVE PRIVATE LIMITED, incorporated on 28 August 2026 as Company Limited by Shares",
+      "Corporate Identity Number (CIN): U47912HR2026PTC149798",
+      "Permanent Account Number (PAN): AANCK1913C | Tax Deduction Account (TAN): RTKK14690E",
+      "Registered Office: Ho.No. 994, Sector 10, Sector 15 Panchkula, Panchkula- 134113, Haryana",
+      "Statutory Requirements: Form INC-20A (Commencement of Business within 180 days) & Form ADT-1 (Auditor Appointment within 30 days / 3 months)"
+    ],
+    "total_words": 250,
+    "token_count": 325,
+    "chunks_count": 1,
+    "chunks": [
+      {
+        "chunk_id": 1,
+        "text": "GOVERNMENT OF INDIA\nMINISTRY OF CORPORATE AFFAIRS\nCentral Registration Centre\nCertificate of Incorporation\n[Pursuant to sub-section (2) of section 7 and sub-section (1) of section 8 of the Companies Act, 2013 (18 of 2013) and rule\n18 of the Companies (Incorporation) Rules, 2014]\nI hereby certify that KS ORIGIN COLLECTIVE PRIVATE LIMITED is incorporated on this  TWENTY EIGHTH day of\nAUGUST  TWO THOUSAND TWENTY SIX under the Companies Act, 2013 (18 of 2013) and that the company is Company\nlimited by shares\nThe Corporate Identity Number of the company is U47912HR2026PTC149798\nThe Permanent Account Number (PAN) of the company is AANCK1913C*\nThe Tax Deduction and Collection Account Number (TAN) of the company is RTKK14690E*\nGiven under my hand at Manesar this  TWENTY EIGHTH day of AUGUST  TWO THOUSAND TWENTY SIX\nKM  Narayanan\nAssistant Registrar of Companies/ Deputy Registrar of Companies/ Registrar of Companies\nFor and on behalf of the Jurisdictional Registrar of Companies\nRegistrar of Companies\nCentral Registration Centre\nDisclaimer: This certificate only evidences incorporation of the company on the basis of documents and declarations of the\napplicant(s). This certificate is neither a license nor permission to conduct business or solicit deposits or funds from public.\nPermission of sector regulator is necessary wherever required. Registration status and other details of the company can be\nverified on mca.gov.in\nMailing Address as per record available in Registrar of Companies office:\nKS ORIGIN COLLECTIVE PRIVATE LIMITED\nHo.No. 994, Sector 10, Sector 15 Panchkula, Panchkula, Panchkula- 134113, Haryana\n*as issued by Income tax Department",
+        "words": 250
+      }
+    ],
+    "raw_text": "GOVERNMENT OF INDIA\nMINISTRY OF CORPORATE AFFAIRS\nCentral Registration Centre\nCertificate of Incorporation\n[Pursuant to sub-section (2) of section 7 and sub-section (1) of section 8 of the Companies Act, 2013 (18 of 2013) and rule\n18 of the Companies (Incorporation) Rules, 2014]\nI hereby certify that KS ORIGIN COLLECTIVE PRIVATE LIMITED is incorporated on this  TWENTY EIGHTH day of\nAUGUST  TWO THOUSAND TWENTY SIX under the Companies Act, 2013 (18 of 2013) and that the company is Company\nlimited by shares\nThe Corporate Identity Number of the company is U47912HR2026PTC149798\nThe Permanent Account Number (PAN) of the company is AANCK1913C*\nThe Tax Deduction and Collection Account Number (TAN) of the company is RTKK14690E*\nGiven under my hand at Manesar this  TWENTY EIGHTH day of AUGUST  TWO THOUSAND TWENTY SIX\nKM  Narayanan\nAssistant Registrar of Companies/ Deputy Registrar of Companies/ Registrar of Companies\nFor and on behalf of the Jurisdictional Registrar of Companies\nRegistrar of Companies\nCentral Registration Centre\nDisclaimer: This certificate only evidences incorporation of the company on the basis of documents and declarations of the\napplicant(s). This certificate is neither a license nor permission to conduct business or solicit deposits or funds from public.\nPermission of sector regulator is necessary wherever required. Registration status and other details of the company can be\nverified on mca.gov.in\nMailing Address as per record available in Registrar of Companies office:\nKS ORIGIN COLLECTIVE PRIVATE LIMITED\nHo.No. 994, Sector 10, Sector 15 Panchkula, Panchkula, Panchkula- 134113, Haryana\n*as issued by Income tax Department\n",
+    "trained_at": "2026-11-14T05:27:36.112174",
+    "status": "trained"
+  },
+  "187fb3eb": {
+    "id": "187fb3eb",
+    "filename": "SPICE + Part B_Approval Letter_AC4879985.pdf",
+    "title": "Certificate of Incorporation & Post-Incorporation Statutory Compliances",
+    "authority": "Central Registration Centre (CRC), Manesar / Ministry of Corporate Affairs",
+    "reference": "U47912HR2026PTC149798",
+    "deadline": "2027-02-24",
+    "demand_or_fee": "Statutory standard fee / No demand specified",
+    "clauses": [
+      "Company Legal Name: KS ORIGIN COLLECTIVE PRIVATE LIMITED, incorporated on 28 August 2026 as Company Limited by Shares",
+      "Corporate Identity Number (CIN): U47912HR2026PTC149798",
+      "Permanent Account Number (PAN): AANCK1913C | Tax Deduction Account (TAN): RTKK14690E",
+      "Registered Office: Ho.No. 994, Sector 10, Sector 15 Panchkula, Panchkula- 134113, Haryana",
+      "Statutory Requirements: Form INC-20A (Commencement of Business within 180 days) & Form ADT-1 (Auditor Appointment within 30 days / 3 months)"
+    ],
+    "total_words": 250,
+    "token_count": 325,
+    "chunks_count": 1,
+    "chunks": [
+      {
+        "chunk_id": 1,
+        "text": "GOVERNMENT OF INDIA\nMINISTRY OF CORPORATE AFFAIRS\nCentral Registration Centre\nCertificate of Incorporation\n[Pursuant to sub-section (2) of section 7 and sub-section (1) of section 8 of the Companies Act, 2013 (18 of 2013) and rule\n18 of the Companies (Incorporation) Rules, 2014]\nI hereby certify that KS ORIGIN COLLECTIVE PRIVATE LIMITED is incorporated on this  TWENTY EIGHTH day of\nAUGUST  TWO THOUSAND TWENTY SIX under the Companies Act, 2013 (18 of 2013) and that the company is Company\nlimited by shares\nThe Corporate Identity Number of the company is U47912HR2026PTC149798\nThe Permanent Account Number (PAN) of the company is AANCK1913C*\nThe Tax Deduction and Collection Account Number (TAN) of the company is RTKK14690E*\nGiven under my hand at Manesar this  TWENTY EIGHTH day of AUGUST  TWO THOUSAND TWENTY SIX\nKM  Narayanan\nAssistant Registrar of Companies/ Deputy Registrar of Companies/ Registrar of Companies\nFor and on behalf of the Jurisdictional Registrar of Companies\nRegistrar of Companies\nCentral Registration Centre\nDisclaimer: This certificate only evidences incorporation of the company on the basis of documents and declarations of the\napplicant(s). This certificate is neither a license nor permission to conduct business or solicit deposits or funds from public.\nPermission of sector regulator is necessary wherever required. Registration status and other details of the company can be\nverified on mca.gov.in\nMailing Address as per record available in Registrar of Companies office:\nKS ORIGIN COLLECTIVE PRIVATE LIMITED\nHo.No. 994, Sector 10, Sector 15 Panchkula, Panchkula, Panchkula- 134113, Haryana\n*as issued by Income tax Department",
+        "words": 250
+      }
+    ],
+    "raw_text": "GOVERNMENT OF INDIA\nMINISTRY OF CORPORATE AFFAIRS\nCentral Registration Centre\nCertificate of Incorporation\n[Pursuant to sub-section (2) of section 7 and sub-section (1) of section 8 of the Companies Act, 2013 (18 of 2013) and rule\n18 of the Companies (Incorporation) Rules, 2014]\nI hereby certify that KS ORIGIN COLLECTIVE PRIVATE LIMITED is incorporated on this  TWENTY EIGHTH day of\nAUGUST  TWO THOUSAND TWENTY SIX under the Companies Act, 2013 (18 of 2013) and that the company is Company\nlimited by shares\nThe Corporate Identity Number of the company is U47912HR2026PTC149798\nThe Permanent Account Number (PAN) of the company is AANCK1913C*\nThe Tax Deduction and Collection Account Number (TAN) of the company is RTKK14690E*\nGiven under my hand at Manesar this  TWENTY EIGHTH day of AUGUST  TWO THOUSAND TWENTY SIX\nKM  Narayanan\nAssistant Registrar of Companies/ Deputy Registrar of Companies/ Registrar of Companies\nFor and on behalf of the Jurisdictional Registrar of Companies\nRegistrar of Companies\nCentral Registration Centre\nDisclaimer: This certificate only evidences incorporation of the company on the basis of documents and declarations of the\napplicant(s). This certificate is neither a license nor permission to conduct business or solicit deposits or funds from public.\nPermission of sector regulator is necessary wherever required. Registration status and other details of the company can be\nverified on mca.gov.in\nMailing Address as per record available in Registrar of Companies office:\nKS ORIGIN COLLECTIVE PRIVATE LIMITED\nHo.No. 994, Sector 10, Sector 15 Panchkula, Panchkula, Panchkula- 134113, Haryana\n*as issued by Income tax Department\n",
+    "trained_at": "2026-11-14T05:27:52.901579",
+    "status": "trained"
+  },
+  "4c9aaacb": {
+    "id": "4c9aaacb",
+    "filename": "SPICE + Part B_Approval Letter_AC4879985.pdf",
+    "title": "Certificate of Incorporation & Post-Incorporation Statutory Compliances",
+    "authority": "Central Registration Centre (CRC), Manesar / Ministry of Corporate Affairs",
+    "reference": "U47912HR2026PTC149798",
+    "deadline": "2027-02-24",
+    "demand_or_fee": "Statutory standard fee / No demand specified",
+    "clauses": [
+      "Company Legal Name: KS ORIGIN COLLECTIVE PRIVATE LIMITED, incorporated on 28 August 2026 as Company Limited by Shares",
+      "Corporate Identity Number (CIN): U47912HR2026PTC149798",
+      "Permanent Account Number (PAN): AANCK1913C | Tax Deduction Account (TAN): RTKK14690E",
+      "Registered Office: Ho.No. 994, Sector 10, Sector 15 Panchkula, Panchkula- 134113, Haryana",
+      "Statutory Requirements: Form INC-20A (Commencement of Business within 180 days) & Form ADT-1 (Auditor Appointment within 30 days / 3 months)"
+    ],
+    "total_words": 250,
+    "token_count": 325,
+    "chunks_count": 1,
+    "chunks": [
+      {
+        "chunk_id": 1,
+        "text": "GOVERNMENT OF INDIA\nMINISTRY OF CORPORATE AFFAIRS\nCentral Registration Centre\nCertificate of Incorporation\n[Pursuant to sub-section (2) of section 7 and sub-section (1) of section 8 of the Companies Act, 2013 (18 of 2013) and rule\n18 of the Companies (Incorporation) Rules, 2014]\nI hereby certify that KS ORIGIN COLLECTIVE PRIVATE LIMITED is incorporated on this  TWENTY EIGHTH day of\nAUGUST  TWO THOUSAND TWENTY SIX under the Companies Act, 2013 (18 of 2013) and that the company is Company\nlimited by shares\nThe Corporate Identity Number of the company is U47912HR2026PTC149798\nThe Permanent Account Number (PAN) of the company is AANCK1913C*\nThe Tax Deduction and Collection Account Number (TAN) of the company is RTKK14690E*\nGiven under my hand at Manesar this  TWENTY EIGHTH day of AUGUST  TWO THOUSAND TWENTY SIX\nKM  Narayanan\nAssistant Registrar of Companies/ Deputy Registrar of Companies/ Registrar of Companies\nFor and on behalf of the Jurisdictional Registrar of Companies\nRegistrar of Companies\nCentral Registration Centre\nDisclaimer: This certificate only evidences incorporation of the company on the basis of documents and declarations of the\napplicant(s). This certificate is neither a license nor permission to conduct business or solicit deposits or funds from public.\nPermission of sector regulator is necessary wherever required. Registration status and other details of the company can be\nverified on mca.gov.in\nMailing Address as per record available in Registrar of Companies office:\nKS ORIGIN COLLECTIVE PRIVATE LIMITED\nHo.No. 994, Sector 10, Sector 15 Panchkula, Panchkula, Panchkula- 134113, Haryana\n*as issued by Income tax Department",
+        "words": 250
+      }
+    ],
+    "raw_text": "GOVERNMENT OF INDIA\nMINISTRY OF CORPORATE AFFAIRS\nCentral Registration Centre\nCertificate of Incorporation\n[Pursuant to sub-section (2) of section 7 and sub-section (1) of section 8 of the Companies Act, 2013 (18 of 2013) and rule\n18 of the Companies (Incorporation) Rules, 2014]\nI hereby certify that KS ORIGIN COLLECTIVE PRIVATE LIMITED is incorporated on this  TWENTY EIGHTH day of\nAUGUST  TWO THOUSAND TWENTY SIX under the Companies Act, 2013 (18 of 2013) and that the company is Company\nlimited by shares\nThe Corporate Identity Number of the company is U47912HR2026PTC149798\nThe Permanent Account Number (PAN) of the company is AANCK1913C*\nThe Tax Deduction and Collection Account Number (TAN) of the company is RTKK14690E*\nGiven under my hand at Manesar this  TWENTY EIGHTH day of AUGUST  TWO THOUSAND TWENTY SIX\nKM  Narayanan\nAssistant Registrar of Companies/ Deputy Registrar of Companies/ Registrar of Companies\nFor and on behalf of the Jurisdictional Registrar of Companies\nRegistrar of Companies\nCentral Registration Centre\nDisclaimer: This certificate only evidences incorporation of the company on the basis of documents and declarations of the\napplicant(s). This certificate is neither a license nor permission to conduct business or solicit deposits or funds from public.\nPermission of sector regulator is necessary wherever required. Registration status and other details of the company can be\nverified on mca.gov.in\nMailing Address as per record available in Registrar of Companies office:\nKS ORIGIN COLLECTIVE PRIVATE LIMITED\nHo.No. 994, Sector 10, Sector 15 Panchkula, Panchkula, Panchkula- 134113, Haryana\n*as issued by Income tax Department\n",
+    "trained_at": "2026-11-14T05:29:06.024188",
+    "status": "trained"
+  },
+  "9818bfe6": {
+    "id": "9818bfe6",
+    "filename": "SPICE + Part B_Approval Letter_AC4879985.pdf",
+    "title": "Certificate of Incorporation & Post-Incorporation Statutory Compliances",
+    "authority": "Central Registration Centre (CRC), Manesar / Ministry of Corporate Affairs",
+    "reference": "U47912HR2026PTC149798",
+    "deadline": "2027-02-24",
+    "demand_or_fee": "Statutory standard fee / No demand specified",
+    "clauses": [
+      "Company Legal Name: KS ORIGIN COLLECTIVE PRIVATE LIMITED, incorporated on 28 August 2026 as Company Limited by Shares",
+      "Corporate Identity Number (CIN): U47912HR2026PTC149798",
+      "Permanent Account Number (PAN): AANCK1913C | Tax Deduction Account (TAN): RTKK14690E",
+      "Registered Office: Ho.No. 994, Sector 10, Sector 15 Panchkula, Panchkula- 134113, Haryana",
+      "Statutory Requirements: Form INC-20A (Commencement of Business within 180 days) & Form ADT-1 (Auditor Appointment within 30 days / 3 months)"
+    ],
+    "total_words": 250,
+    "token_count": 325,
+    "chunks_count": 1,
+    "chunks": [
+      {
+        "chunk_id": 1,
+        "text": "GOVERNMENT OF INDIA\nMINISTRY OF CORPORATE AFFAIRS\nCentral Registration Centre\nCertificate of Incorporation\n[Pursuant to sub-section (2) of section 7 and sub-section (1) of section 8 of the Companies Act, 2013 (18 of 2013) and rule\n18 of the Companies (Incorporation) Rules, 2014]\nI hereby certify that KS ORIGIN COLLECTIVE PRIVATE LIMITED is incorporated on this  TWENTY EIGHTH day of\nAUGUST  TWO THOUSAND TWENTY SIX under the Companies Act, 2013 (18 of 2013) and that the company is Company\nlimited by shares\nThe Corporate Identity Number of the company is U47912HR2026PTC149798\nThe Permanent Account Number (PAN) of the company is AANCK1913C*\nThe Tax Deduction and Collection Account Number (TAN) of the company is RTKK14690E*\nGiven under my hand at Manesar this  TWENTY EIGHTH day of AUGUST  TWO THOUSAND TWENTY SIX\nKM  Narayanan\nAssistant Registrar of Companies/ Deputy Registrar of Companies/ Registrar of Companies\nFor and on behalf of the Jurisdictional Registrar of Companies\nRegistrar of Companies\nCentral Registration Centre\nDisclaimer: This certificate only evidences incorporation of the company on the basis of documents and declarations of the\napplicant(s). This certificate is neither a license nor permission to conduct business or solicit deposits or funds from public.\nPermission of sector regulator is necessary wherever required. Registration status and other details of the company can be\nverified on mca.gov.in\nMailing Address as per record available in Registrar of Companies office:\nKS ORIGIN COLLECTIVE PRIVATE LIMITED\nHo.No. 994, Sector 10, Sector 15 Panchkula, Panchkula, Panchkula- 134113, Haryana\n*as issued by Income tax Department",
+        "words": 250
+      }
+    ],
+    "raw_text": "GOVERNMENT OF INDIA\nMINISTRY OF CORPORATE AFFAIRS\nCentral Registration Centre\nCertificate of Incorporation\n[Pursuant to sub-section (2) of section 7 and sub-section (1) of section 8 of the Companies Act, 2013 (18 of 2013) and rule\n18 of the Companies (Incorporation) Rules, 2014]\nI hereby certify that KS ORIGIN COLLECTIVE PRIVATE LIMITED is incorporated on this  TWENTY EIGHTH day of\nAUGUST  TWO THOUSAND TWENTY SIX under the Companies Act, 2013 (18 of 2013) and that the company is Company\nlimited by shares\nThe Corporate Identity Number of the company is U47912HR2026PTC149798\nThe Permanent Account Number (PAN) of the company is AANCK1913C*\nThe Tax Deduction and Collection Account Number (TAN) of the company is RTKK14690E*\nGiven under my hand at Manesar this  TWENTY EIGHTH day of AUGUST  TWO THOUSAND TWENTY SIX\nKM  Narayanan\nAssistant Registrar of Companies/ Deputy Registrar of Companies/ Registrar of Companies\nFor and on behalf of the Jurisdictional Registrar of Companies\nRegistrar of Companies\nCentral Registration Centre\nDisclaimer: This certificate only evidences incorporation of the company on the basis of documents and declarations of the\napplicant(s). This certificate is neither a license nor permission to conduct business or solicit deposits or funds from public.\nPermission of sector regulator is necessary wherever required. Registration status and other details of the company can be\nverified on mca.gov.in\nMailing Address as per record available in Registrar of Companies office:\nKS ORIGIN COLLECTIVE PRIVATE LIMITED\nHo.No. 994, Sector 10, Sector 15 Panchkula, Panchkula, Panchkula- 134113, Haryana\n*as issued by Income tax Department\n",
+    "trained_at": "2026-11-14T05:40:49.393312",
+    "status": "trained"
+  },
+  "144b847f": {
+    "id": "144b847f",
+    "filename": "SPICE + Part B_Approval Letter_AC4879985.pdf",
+    "title": "Certificate of Incorporation & Post-Incorporation Statutory Compliances",
+    "authority": "Central Registration Centre (CRC), Manesar / Ministry of Corporate Affairs",
+    "reference": "U47912HR2026PTC149798",
+    "deadline": "2027-02-24",
+    "demand_or_fee": "Statutory standard fee / No demand specified",
+    "clauses": [
+      "Company Legal Name: KS ORIGIN COLLECTIVE PRIVATE LIMITED, incorporated on 28 August 2026 as Company Limited by Shares",
+      "Corporate Identity Number (CIN): U47912HR2026PTC149798",
+      "Permanent Account Number (PAN): AANCK1913C | Tax Deduction Account (TAN): RTKK14690E",
+      "Registered Office: Ho.No. 994, Sector 10, Sector 15 Panchkula, Panchkula- 134113, Haryana",
+      "Statutory Requirements: Form INC-20A (Commencement of Business within 180 days) & Form ADT-1 (Auditor Appointment within 30 days / 3 months)"
+    ],
+    "total_words": 250,
+    "token_count": 325,
+    "chunks_count": 1,
+    "chunks": [
+      {
+        "chunk_id": 1,
+        "text": "GOVERNMENT OF INDIA\nMINISTRY OF CORPORATE AFFAIRS\nCentral Registration Centre\nCertificate of Incorporation\n[Pursuant to sub-section (2) of section 7 and sub-section (1) of section 8 of the Companies Act, 2013 (18 of 2013) and rule\n18 of the Companies (Incorporation) Rules, 2014]\nI hereby certify that KS ORIGIN COLLECTIVE PRIVATE LIMITED is incorporated on this  TWENTY EIGHTH day of\nAUGUST  TWO THOUSAND TWENTY SIX under the Companies Act, 2013 (18 of 2013) and that the company is Company\nlimited by shares\nThe Corporate Identity Number of the company is U47912HR2026PTC149798\nThe Permanent Account Number (PAN) of the company is AANCK1913C*\nThe Tax Deduction and Collection Account Number (TAN) of the company is RTKK14690E*\nGiven under my hand at Manesar this  TWENTY EIGHTH day of AUGUST  TWO THOUSAND TWENTY SIX\nKM  Narayanan\nAssistant Registrar of Companies/ Deputy Registrar of Companies/ Registrar of Companies\nFor and on behalf of the Jurisdictional Registrar of Companies\nRegistrar of Companies\nCentral Registration Centre\nDisclaimer: This certificate only evidences incorporation of the company on the basis of documents and declarations of the\napplicant(s). This certificate is neither a license nor permission to conduct business or solicit deposits or funds from public.\nPermission of sector regulator is necessary wherever required. Registration status and other details of the company can be\nverified on mca.gov.in\nMailing Address as per record available in Registrar of Companies office:\nKS ORIGIN COLLECTIVE PRIVATE LIMITED\nHo.No. 994, Sector 10, Sector 15 Panchkula, Panchkula, Panchkula- 134113, Haryana\n*as issued by Income tax Department",
+        "words": 250
+      }
+    ],
+    "raw_text": "GOVERNMENT OF INDIA\nMINISTRY OF CORPORATE AFFAIRS\nCentral Registration Centre\nCertificate of Incorporation\n[Pursuant to sub-section (2) of section 7 and sub-section (1) of section 8 of the Companies Act, 2013 (18 of 2013) and rule\n18 of the Companies (Incorporation) Rules, 2014]\nI hereby certify that KS ORIGIN COLLECTIVE PRIVATE LIMITED is incorporated on this  TWENTY EIGHTH day of\nAUGUST  TWO THOUSAND TWENTY SIX under the Companies Act, 2013 (18 of 2013) and that the company is Company\nlimited by shares\nThe Corporate Identity Number of the company is U47912HR2026PTC149798\nThe Permanent Account Number (PAN) of the company is AANCK1913C*\nThe Tax Deduction and Collection Account Number (TAN) of the company is RTKK14690E*\nGiven under my hand at Manesar this  TWENTY EIGHTH day of AUGUST  TWO THOUSAND TWENTY SIX\nKM  Narayanan\nAssistant Registrar of Companies/ Deputy Registrar of Companies/ Registrar of Companies\nFor and on behalf of the Jurisdictional Registrar of Companies\nRegistrar of Companies\nCentral Registration Centre\nDisclaimer: This certificate only evidences incorporation of the company on the basis of documents and declarations of the\napplicant(s). This certificate is neither a license nor permission to conduct business or solicit deposits or funds from public.\nPermission of sector regulator is necessary wherever required. Registration status and other details of the company can be\nverified on mca.gov.in\nMailing Address as per record available in Registrar of Companies office:\nKS ORIGIN COLLECTIVE PRIVATE LIMITED\nHo.No. 994, Sector 10, Sector 15 Panchkula, Panchkula, Panchkula- 134113, Haryana\n*as issued by Income tax Department\n",
+    "trained_at": "2026-11-14T05:41:07.193000",
+    "status": "trained"
+  }
+}
