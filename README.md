@@ -12,6 +12,10 @@ A multi-agent supervisor graph coordinates specialized agents:
 - **Drafting Agent**: Prepares polite, legally framed representations, application drafts, and affidavits with citizen review.
 - **QA Agent**: Enforces human-in-the-loop sign-off, alerts to deadlines, and prevents unauthorized filings.
 
+-** demonstaration video :
+
+https://github.com/user-attachments/assets/1b9b337c-780b-43bc-aae0-ad7042b53bb1
+
 ---
 
 ## Architecture & Tech Stack
