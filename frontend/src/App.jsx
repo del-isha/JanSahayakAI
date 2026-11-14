@@ -1176,6 +1176,26 @@ export default function App() {
   const [docBusy, setDocBusy] = useState(false);
   const [activeDocDetailTab, setActiveDocDetailTab] = useState('overview');
   const [selectedStartupCategory, setSelectedStartupCategory] = useState('All');
+  const [editedDraft, setEditedDraft] = useState('');
+  const [isEditingDraft, setIsEditingDraft] = useState(false);
+
+  const copyDraftToClipboard = (text) => {
+    if (!text) return;
+    navigator.clipboard.writeText(text);
+    showToast('Draft representation copied to clipboard!');
+  };
+
+  const downloadDraftFile = (filename, content) => {
+    if (!content) return;
+    const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename || 'Notice_Representation_Draft.txt';
+    a.click();
+    URL.revokeObjectURL(url);
+    showToast(`Downloaded ${filename || 'Notice_Representation_Draft.txt'}`);
+  };
 
   const runDocumentAnalysis = async (customText, fileOverride) => {
     const fileToUse = fileOverride !== undefined ? fileOverride : docFile;
@@ -1190,6 +1210,10 @@ export default function App() {
       if (fileToUse) payload.file = fileToUse;
       const res = await api('/documents/analyze', formPost(payload));
       setActiveAnalysisCase(res);
+      if (res && res.draft) {
+        setEditedDraft(res.draft);
+      }
+      setIsEditingDraft(false);
       if (res && res.extracted && res.extracted.category === 'COMPANY_INCORPORATION') {
         setActiveDocDetailTab('startup_docs');
       }
@@ -1206,6 +1230,9 @@ export default function App() {
     try {
       const res = await api(`/notices/${activeAnalysisCase.id}/evidence`, formPost({ docs: docAdditionalEvidence }));
       setActiveAnalysisCase(res);
+      if (res && res.draft) {
+        setEditedDraft(res.draft);
+      }
       setDocAdditionalEvidence('');
       showToast('Additional document registered! Agent checklist updated.');
     } catch (err) {
@@ -1217,7 +1244,11 @@ export default function App() {
     if (!activeAnalysisCase) return;
     try {
       const res = await api(`/notices/${activeAnalysisCase.id}/approve`, { method: 'POST' });
+      if (editedDraft && editedDraft !== res.draft) {
+        res.draft = editedDraft;
+      }
       setActiveAnalysisCase(res);
+      setIsEditingDraft(false);
       // add to tasks
       setTasks(prev => [
         {
@@ -1226,12 +1257,12 @@ export default function App() {
           case: res.extracted.document_type,
           due: res.extracted.response_deadline,
           priority: 'Urgent',
-          status: 'Action Required',
+          status: 'Approved by Citizen',
           next: `Submit signed draft on ${res.research.portal}`
         },
         ...prev
       ]);
-      showToast('Draft approved by citizen! Deadline added to your dashboard.');
+      showToast('Draft approved by citizen! Deadline added to Compliance Calendar & Tasks.');
     } catch (err) {
       showToast('Approval error: ' + err.message);
     }
@@ -1427,6 +1458,25 @@ Date: 08/11/2026
 Subject: Defect flagged in Post-Matric Scholarship Application.
 Institutional verification is pending due to discrepancy between income certificate date and applicant bank account Aadhaar-seeding status.
 Please upload valid competent authority income certificate and ensure NPCI bank mapping before 10/12/2026.`;
+      setDocText(sample);
+      runDocumentAnalysis(sample);
+    } else if (type === 'mca_notice') {
+      const sample = `Notice Reference: ROC/DEL-HR/COMP/2026/SCN-4892
+Ministry of Corporate Affairs, Office of the Registrar of Companies
+Date: 02/11/2026
+Subject: Show Cause Notice under Section 10A & Section 139(6) of Companies Act, 2013.
+To: KS ORIGIN COLLECTIVE PRIVATE LIMITED (CIN: U47912HR2026PTC149798)
+Whereas the company was incorporated on 28 August 2026, and as per statutory records, verified proof of First Statutory Auditor Appointment (Form ADT-1) and Declaration of Commencement of Business (Form INC-20A) have not been entered into MCA V3 register.
+You are hereby called upon to show cause within 15 days from the date of this notice as to why penal proceedings under Section 10A(2) and Section 450 should not be initiated against the company and every officer in default.`;
+      setDocText(sample);
+      runDocumentAnalysis(sample);
+    } else if (type === 'gst_notice') {
+      const sample = `Notice Ref No: GST/PB/MOHALI/DRC-01/2026/1029
+Office of the Assistant Commissioner of State Tax, Mohali Circle
+Date: 05/11/2026
+Subject: Show Cause Notice under Section 73 of CGST/PGST Act, 2017 (Form GST DRC-01).
+Whereas on scrutiny of returns in Form GSTR-3B versus GSTR-1 for the relevant tax period, an apparent discrepancy in tax liability and Input Tax Credit (ITC) of ₹36,500 has been observed.
+You are hereby directed to file your written reply in Form GST DRC-06 on the GST Portal within 30 days of this notice, along with tax payment challans and purchase reconciliation statements.`;
       setDocText(sample);
       runDocumentAnalysis(sample);
     }
@@ -2306,6 +2356,14 @@ Please upload valid competent authority income certificate and ensure NPCI bank 
                       <button className="btn sm o" onClick={() => loadSampleDoc('scholarship')}>
                         Load Scholarship Query Sample
                       </button>
+                      <button
+                        className="btn sm o"
+                        onClick={() => setActiveTab('cal')}
+                        style={{ fontWeight: 600, color: 'var(--blue)', borderColor: 'var(--blue)' }}
+                        title="View Compliance Calendar & statutory deadlines"
+                      >
+                        📅 Open Compliance Calendar →
+                      </button>
                     </div>
                   </div>
 
@@ -2400,9 +2458,19 @@ Please upload valid competent authority income certificate and ensure NPCI bank 
                             Includes First Statutory Auditor appointment (within 30–90 days / 3 months), Corporate Bank Account opening & capital deposit, Form INC-20A (180 days), Stamped Share Certificates (60 days), DPIIT Startup Recognition, and GST.
                           </p>
                         </div>
-                        <button className="btn sm p" onClick={() => loadSampleDoc('coi')}>
-                          🚀 Load & Evaluate Startup COI
-                        </button>
+                        <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+                          <button className="btn sm p" onClick={() => loadSampleDoc('coi')}>
+                            🚀 Load & Evaluate Startup COI
+                          </button>
+                          <button
+                            className="btn sm o"
+                            onClick={() => setActiveTab('cal')}
+                            style={{ fontWeight: 600, color: 'var(--blue)' }}
+                            title="Open Compliance Calendar"
+                          >
+                            📅 View Compliance Calendar →
+                          </button>
+                        </div>
                       </div>
                     </div>
                   )}
@@ -2422,6 +2490,16 @@ Please upload valid competent authority income certificate and ensure NPCI bank 
                         <div style={{ textAlign: 'right' }}>
                           <div className="mu" style={{ fontSize: 12 }}>Statutory Deadline:</div>
                           <b style={{ color: 'var(--bad)', fontSize: 16 }}>{formatDate(activeAnalysisCase.extracted.response_deadline)}</b>
+                          <div style={{ marginTop: 4 }}>
+                            <button
+                              className="btn sm o"
+                              style={{ fontSize: 11, padding: '2px 8px', color: 'var(--blue)' }}
+                              onClick={() => setActiveTab('cal')}
+                              title="Sync and view in Compliance Calendar"
+                            >
+                              📅 View in Compliance Calendar →
+                            </button>
+                          </div>
                         </div>
                       </div>
 
@@ -2468,12 +2546,22 @@ Please upload valid competent authority income certificate and ensure NPCI bank 
                               Mandatory Post-Incorporation Roadmap: First Statutory Audit appointment within 30–90 days (3 months), Corporate Bank Account opening & capital deposit, Form INC-20A within 180 days, and Stamped Share Certificates within 60 days.
                             </p>
                           </div>
-                          <button
-                            className="btn sm p"
-                            onClick={() => setActiveDocDetailTab('startup_docs')}
-                          >
-                            View Startup Documents Hub (8) →
-                          </button>
+                          <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+                            <button
+                              className="btn sm p"
+                              onClick={() => setActiveDocDetailTab('startup_docs')}
+                            >
+                              View Startup Documents Hub (8) →
+                            </button>
+                            <button
+                              className="btn sm o"
+                              onClick={() => setActiveTab('cal')}
+                              style={{ fontWeight: 600 }}
+                              title="Track post-incorporation statutory deadlines"
+                            >
+                              📅 Sync to Compliance Calendar →
+                            </button>
+                          </div>
                         </div>
                       )}
 
@@ -2543,6 +2631,13 @@ Please upload valid competent authority income certificate and ensure NPCI bank 
                                         title="View fees, penalties, and step-by-step process"
                                       >
                                         📋 How to Apply (Process)
+                                      </button>
+                                      <button
+                                        className="btn sm o"
+                                        onClick={() => setActiveTab('cal')}
+                                        title="View statutory deadline in Compliance Calendar"
+                                      >
+                                        📅 View in Calendar
                                       </button>
                                       {doc.portalUrl && (
                                         <a
@@ -3198,13 +3293,23 @@ Please upload valid competent authority income certificate and ensure NPCI bank 
               {/* TAB: COMPLIANCE CALENDAR (Image 4 & 7) */}
               {activeTab === 'cal' && (
                 <div>
-                  <div style={{ marginBottom: 18 }}>
-                    <h1 style={{ fontSize: 32, fontWeight: 800, color: 'var(--navy)', marginBottom: 4 }}>
-                      Compliance Calendar
-                    </h1>
-                    <p className="sub" style={{ fontSize: 15, color: 'var(--mu)', margin: 0 }}>
-                      MCA, GST & Tax statutory deadlines driven by rules engine
-                    </p>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 10, marginBottom: 18 }}>
+                    <div>
+                      <h1 style={{ fontSize: 32, fontWeight: 800, color: 'var(--navy)', marginBottom: 4 }}>
+                        Compliance Calendar
+                      </h1>
+                      <p className="sub" style={{ fontSize: 15, color: 'var(--mu)', margin: 0 }}>
+                        MCA, GST & Tax statutory deadlines driven by rules engine
+                      </p>
+                    </div>
+                    <button
+                      className="btn sm p"
+                      onClick={() => setActiveTab('doc')}
+                      style={{ fontWeight: 600 }}
+                      title="Open Document Intelligence & Vault"
+                    >
+                      📁 Document Intelligence & Vault →
+                    </button>
                   </div>
 
                   {/* Recalculate Card */}
@@ -3289,26 +3394,51 @@ Please upload valid competent authority income certificate and ensure NPCI bank 
                               <td>{row.fee}</td>
                               <td><span className={`badge ${row.statusClass}`}>{row.status}</span></td>
                               <td>
-                                <button
-                                  className="btn sm o"
-                                  onClick={() =>
-                                    setModalData({
-                                      title: `${row.form} Compliance Details`,
-                                      content: (
-                                        <div>
-                                          <div style={{ marginBottom: 10 }}><b>Category:</b> {row.category}</div>
-                                          <div style={{ marginBottom: 10 }}><b>Due Date:</b> {row.due}</div>
-                                          <div style={{ marginBottom: 10 }}><b>Statutory Rule:</b> Companies Act 2013 / CGST Act 2017</div>
-                                          <div style={{ marginBottom: 10 }}><b>Late Fee:</b> {row.fee}</div>
-                                          <div style={{ marginBottom: 14 }}><b>Status:</b> {row.status}</div>
-                                          <button className="btn p" onClick={() => setModalData(null)}>Close</button>
-                                        </div>
-                                      )
-                                    })
-                                  }
-                                >
-                                  View Details
-                                </button>
+                                <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
+                                  <button
+                                    className="btn sm o"
+                                    onClick={() =>
+                                      setModalData({
+                                        title: `${row.form} Compliance Details`,
+                                        content: (
+                                          <div>
+                                            <div style={{ marginBottom: 10 }}><b>Compliance Form:</b> {row.form}</div>
+                                            <div style={{ marginBottom: 10 }}><b>Category:</b> {row.category}</div>
+                                            <div style={{ marginBottom: 10 }}><b>Statutory Due Date:</b> {row.due}</div>
+                                            <div style={{ marginBottom: 10 }}><b>Statutory Rule:</b> Companies Act 2013 / CGST Act 2017</div>
+                                            <div style={{ marginBottom: 10 }}><b>Late Fee:</b> {row.fee}</div>
+                                            <div style={{ marginBottom: 14 }}><b>Status:</b> {row.status}</div>
+                                            <div style={{ display: 'flex', gap: 8 }}>
+                                              <button
+                                                className="btn p"
+                                                onClick={() => {
+                                                  setModalData(null);
+                                                  setActiveTab('doc');
+                                                  loadSampleDoc('coi');
+                                                }}
+                                              >
+                                                📄 Open Document Draft & Rules
+                                              </button>
+                                              <button className="btn o" onClick={() => setModalData(null)}>Close</button>
+                                            </div>
+                                          </div>
+                                        )
+                                      })
+                                    }
+                                  >
+                                    View Details
+                                  </button>
+                                  <button
+                                    className="btn sm p"
+                                    onClick={() => {
+                                      setActiveTab('doc');
+                                      loadSampleDoc('coi');
+                                    }}
+                                    title="Open corresponding statutory legal draft and requirements in Document Vault"
+                                  >
+                                    📄 Document Drafts
+                                  </button>
+                                </div>
                               </td>
                             </tr>
                           ))}
@@ -3601,73 +3731,399 @@ Please upload valid competent authority income certificate and ensure NPCI bank 
               {/* TAB 7: NOTICE RESOLUTION DESK */}
               {activeTab === 'not' && (
                 <div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 10 }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 10, marginBottom: 12 }}>
                     <div>
-                      <h1>Notice Resolution Desk</h1>
-                      <p className="sub">
-                        Multi-agent triage for property tax notices, show cause memos, and compliance demands
+                      <h1 style={{ fontSize: 32, fontWeight: 800, color: 'var(--navy)', marginBottom: 4 }}>
+                        Notice Resolution Desk
+                      </h1>
+                      <p className="sub" style={{ fontSize: 15, color: 'var(--mu)', margin: 0 }}>
+                        Autonomous multi-agent triage for property tax notices, MCA show-cause memos, GST demands, and compliance queries
                       </p>
                     </div>
 
-                    <button
-                      className="btn o"
-                      onClick={() => loadSampleDoc('property_notice')}
-                    >
-                      Load Sample Municipal Notice
-                    </button>
+                    <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+                      <button
+                        className="btn sm o"
+                        onClick={() => loadSampleDoc('property_notice')}
+                        title="Load Municipal Revenue & Valuation Notice"
+                      >
+                        🏛️ Municipal Notice
+                      </button>
+                      <button
+                        className="btn sm o"
+                        onClick={() => loadSampleDoc('mca_notice')}
+                        title="Load MCA Section 10A / 139 Show Cause Notice"
+                      >
+                        🏢 MCA Section 10A
+                      </button>
+                      <button
+                        className="btn sm o"
+                        onClick={() => loadSampleDoc('gst_notice')}
+                        title="Load GST DRC-01 Scrutiny Notice"
+                      >
+                        💼 GST DRC-01
+                      </button>
+                      <button
+                        className="btn sm o"
+                        onClick={() => loadSampleDoc('scholarship')}
+                        title="Load Scholarship Defect Query Memo"
+                      >
+                        🎓 Scholarship Query
+                      </button>
+                    </div>
                   </div>
 
-                  <div className="dis">
-                    Notice replies must be checked and approved by the citizen before submission. JanSahayak AI does not submit replies automatically without your consent.
+                  <div className="dis" style={{ marginBottom: 16 }}>
+                    🛡️ Notice replies must be checked and approved by the citizen before submission. JanSahayak AI formulates grounded statutory defenses but does not submit replies automatically without your consent.
                   </div>
 
-                  <div className="card">
-                    <label className="mu" style={{ fontSize: 13, display: 'block', marginBottom: 6 }}>
-                      Paste Government Notice Text:
-                    </label>
+                  {/* Notice Input & File Upload Card */}
+                  <div className="card" style={{ marginBottom: 18 }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
+                      <label className="mu" style={{ fontSize: 13, fontWeight: 600 }}>
+                        Paste Notice Text or Upload Scanned Copy / PDF:
+                      </label>
+                      <label className="btn sm o" style={{ cursor: 'pointer', fontSize: 12 }}>
+                        📎 {docFile ? `File: ${docFile.name}` : 'Upload Notice File'}
+                        <input
+                          type="file"
+                          accept=".pdf,.txt,.doc,.docx,image/*"
+                          hidden
+                          onChange={(e) => {
+                            if (e.target.files && e.target.files[0]) {
+                              const fileObj = e.target.files[0];
+                              setDocFile(fileObj);
+                              runDocumentAnalysis('', fileObj);
+                            }
+                          }}
+                        />
+                      </label>
+                    </div>
                     <textarea
+                      rows={5}
                       value={docText}
                       onChange={(e) => setDocText(e.target.value)}
-                      placeholder="Paste the received show-cause notice, challan, or departmental communication here..."
+                      placeholder="Paste the received government show-cause notice, penalty demand, summons, or defect memo here..."
+                      style={{ width: '100%', marginBottom: 10 }}
                     />
-                    <div style={{ display: 'flex', gap: 10, marginTop: 10 }}>
+                    <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', alignItems: 'center' }}>
                       <button
                         className="btn p"
                         disabled={docBusy}
                         onClick={() => runDocumentAnalysis()}
+                        style={{ fontWeight: 600 }}
                       >
-                        {docBusy ? 'Executing Multi-Agent Pipeline…' : 'Triage Notice with Agents'}
+                        {docBusy ? 'Executing Multi-Agent Pipeline…' : '🚀 Triage Notice with Multi-Agent Pipeline'}
+                      </button>
+                      {activeAnalysisCase && (
+                        <button
+                          className="btn o"
+                          onClick={() => {
+                            setDocText('');
+                            setActiveAnalysisCase(null);
+                            setDocFile(null);
+                          }}
+                        >
+                          Clear
+                        </button>
+                      )}
+                      <button
+                        className="btn sm o"
+                        onClick={() => setActiveTab('cal')}
+                        style={{ marginLeft: 'auto', fontWeight: 600, color: 'var(--blue)' }}
+                      >
+                        📅 View Compliance Calendar →
                       </button>
                     </div>
                   </div>
 
+                  {/* Multi-Agent Triage Response */}
                   {activeAnalysisCase && (
-                    <div className="card" style={{ marginTop: 16 }}>
-                      <h3>Agent Analysis Result: {activeAnalysisCase.extracted.document_type}</h3>
-                      <div className="grid g2" style={{ gap: 14, margin: '12px 0' }}>
-                        <div>
-                          <b>Authority:</b> {activeAnalysisCase.extracted.authority}<br />
-                          <b>Notice Ref:</b> {activeAnalysisCase.extracted.reference}<br />
-                          <b>Deadline:</b> <span style={{ color: 'var(--bad)', fontWeight: 700 }}>{formatDate(activeAnalysisCase.extracted.response_deadline)}</span>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+                      {/* Notice Header & Critical Metadata */}
+                      <div className="card">
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: 10, borderBottom: '1px solid var(--bd)', paddingBottom: 14 }}>
+                          <div>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap', marginBottom: 4 }}>
+                              <span className="badge b-bad" style={{ fontWeight: 700 }}>
+                                {activeAnalysisCase.extracted.category}
+                              </span>
+                              <span className={`badge ${activeAnalysisCase.status === 'approved_by_citizen' ? 'b-ok' : 'b-warn'}`}>
+                                {activeAnalysisCase.status === 'approved_by_citizen' ? '✓ Approved by Citizen' : '⚠️ Awaiting Citizen Review'}
+                              </span>
+                              <span className="badge b-mu">
+                                {Math.round((activeAnalysisCase.extracted.confidence || 0.85) * 100)}% Extraction Confidence
+                              </span>
+                            </div>
+                            <h2 style={{ fontSize: 22, margin: '6px 0 2px', fontWeight: 700, color: 'var(--navy)' }}>
+                              {activeAnalysisCase.extracted.document_type}
+                            </h2>
+                            <div className="mu" style={{ fontSize: 13 }}>
+                              Issuing Authority: <b>{activeAnalysisCase.extracted.authority}</b> · Notice Ref: <b>{activeAnalysisCase.extracted.reference}</b>
+                            </div>
+                          </div>
+
+                          <div style={{ textAlign: 'right' }}>
+                            <div className="mu" style={{ fontSize: 12 }}>Statutory Response Deadline:</div>
+                            <b style={{ color: 'var(--bad)', fontSize: 18 }}>{formatDate(activeAnalysisCase.extracted.response_deadline)}</b>
+                            <div style={{ marginTop: 6 }}>
+                              <button
+                                className="btn sm o"
+                                onClick={() => setActiveTab('cal')}
+                                style={{ fontSize: 11.5, padding: '3px 10px', color: 'var(--blue)' }}
+                                title="Add statutory notice deadline to Compliance Calendar"
+                              >
+                                📅 Sync to Compliance Calendar →
+                              </button>
+                            </div>
+                          </div>
                         </div>
-                        <div>
-                          <b>Official Portal:</b> {activeAnalysisCase.research.portal}<br />
-                          <b>Status:</b> <span className="badge b-warn">{activeAnalysisCase.status}</span>
+
+                        {/* 4-Box Notice Fact Summary */}
+                        <div className="grid g4" style={{ gap: 12, marginTop: 14 }}>
+                          <div style={{ background: 'var(--bg)', padding: 12, borderRadius: 8, border: '1px solid var(--bd)' }}>
+                            <div className="mu" style={{ fontSize: 11.5, fontWeight: 600 }}>ISSUING AUTHORITY</div>
+                            <div style={{ fontWeight: 600, fontSize: 13, marginTop: 2, color: 'var(--navy)' }}>
+                              {activeAnalysisCase.extracted.authority}
+                            </div>
+                          </div>
+                          <div style={{ background: 'var(--bg)', padding: 12, borderRadius: 8, border: '1px solid var(--bd)' }}>
+                            <div className="mu" style={{ fontSize: 11.5, fontWeight: 600 }}>NOTICE REFERENCE</div>
+                            <div style={{ fontWeight: 700, fontSize: 13, marginTop: 2, color: 'var(--navy)' }}>
+                              {activeAnalysisCase.extracted.reference}
+                            </div>
+                          </div>
+                          <div style={{ background: 'var(--bg)', padding: 12, borderRadius: 8, border: '1px solid var(--bd)' }}>
+                            <div className="mu" style={{ fontSize: 11.5, fontWeight: 600 }}>OFFICIAL PORTAL</div>
+                            <div style={{ fontSize: 13, marginTop: 2 }}>
+                              <a
+                                href={activeAnalysisCase.research.portal.startsWith('http') ? activeAnalysisCase.research.portal : `https://${activeAnalysisCase.research.portal.split(' ')[0]}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{ color: 'var(--blue)', fontWeight: 600 }}
+                              >
+                                {activeAnalysisCase.research.portal.split(' ')[0]} ↗
+                              </a>
+                            </div>
+                          </div>
+                          <div style={{ background: 'var(--bg)', padding: 12, borderRadius: 8, border: '1px solid var(--bd)' }}>
+                            <div className="mu" style={{ fontSize: 11.5, fontWeight: 600 }}>STATUTORY PENALTIES / FEES</div>
+                            <div style={{ fontWeight: 600, fontSize: 13, marginTop: 2, color: 'var(--bad)' }}>
+                              {activeAnalysisCase.research.fees || 'Statutory penalties apply'}
+                            </div>
+                          </div>
                         </div>
                       </div>
 
-                      <h4>Prepared Reply Draft</h4>
-                      <pre style={{ margin: '10px 0' }}>{activeAnalysisCase.draft}</pre>
+                      {/* Multi-Agent Pipeline Execution Trace */}
+                      <div className="card">
+                        <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 10 }}>
+                          <span className="badge b-ok" style={{ fontSize: 11 }}>AUTONOMOUS AGENTS</span>
+                          <h3 style={{ margin: 0, fontSize: 16 }}>Multi-Agent Resolution Pipeline</h3>
+                        </div>
+                        <div className="grid g3" style={{ gap: 10 }}>
+                          {[
+                            { name: 'Document Agent', role: 'Fact Extraction', icon: '🔍', desc: `Extracted ${activeAnalysisCase.extracted.category} Ref: ${activeAnalysisCase.extracted.reference}` },
+                            { name: 'Research Agent', role: 'Statutory Verification', icon: '📚', desc: `Rules from ${activeAnalysisCase.research.dept || 'Department KB'}` },
+                            { name: 'Evidence Agent', role: 'Proof Audit', icon: '📑', desc: `${activeAnalysisCase.evidence.filter(e => e.status === 'received').length} received · ${activeAnalysisCase.evidence.filter(e => e.status === 'missing').length} missing` },
+                            { name: 'Planner Agent', role: 'Timeline Scheduling', icon: '📅', desc: `Deadline scheduled: ${formatDate(activeAnalysisCase.extracted.response_deadline)}` },
+                            { name: 'Draft Agent', role: 'Representation Formulation', icon: '✍️', desc: `Generated formal legal defense reply` },
+                            { name: 'QA Agent', role: 'Consent & Safety', icon: '🛡️', desc: `Verified citizen sign-off requirement` },
+                          ].map((ag, idx) => (
+                            <div key={idx} style={{ background: 'var(--bg)', padding: '10px 12px', borderRadius: 8, border: '1px solid var(--bd)' }}>
+                              <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontWeight: 700, fontSize: 13 }}>
+                                <span>{ag.icon}</span>
+                                <span>{ag.name}</span>
+                              </div>
+                              <div className="mu" style={{ fontSize: 11.5, marginTop: 2 }}>{ag.desc}</div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
 
-                      <button
-                        className="btn p"
-                        disabled={activeAnalysisCase.status === 'approved_by_citizen'}
-                        onClick={approveCaseDraft}
-                      >
-                        {activeAnalysisCase.status === 'approved_by_citizen'
-                          ? 'Approved by Citizen'
-                          : 'Approve & Save Response'}
-                      </button>
+                      {/* Identified Notice Grounds & Statutory Clauses */}
+                      {activeAnalysisCase.extracted.important_clauses && activeAnalysisCase.extracted.important_clauses.length > 0 && (
+                        <div className="card">
+                          <h3 style={{ margin: '0 0 10px', fontSize: 16 }}>Identified Notice Clauses & Legal Allegations</h3>
+                          <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                            {activeAnalysisCase.extracted.important_clauses.map((clause, idx) => (
+                              <div key={idx} className="scheme-callout" style={{ margin: 0 }}>
+                                <span style={{ color: 'var(--bad)', fontWeight: 700 }}>⚠️</span>
+                                <span style={{ fontSize: 13, color: 'var(--tx)' }}>{clause}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Evidence & Supporting Documents Checklist */}
+                      <div className="card">
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12, flexWrap: 'wrap', gap: 8 }}>
+                          <h3 style={{ margin: 0, fontSize: 16 }}>Required Evidence & Supporting Proofs</h3>
+                          <span className="badge b-mu">
+                            {activeAnalysisCase.evidence.filter(e => e.status === 'received').length} / {activeAnalysisCase.evidence.length} Proofs Verified
+                          </span>
+                        </div>
+                        <div className="grid g2" style={{ gap: 10 }}>
+                          {activeAnalysisCase.evidence.map((e, idx) => (
+                            <div
+                              key={idx}
+                              style={{
+                                display: 'flex',
+                                justifyContent: 'space-between',
+                                alignItems: 'center',
+                                padding: '10px 12px',
+                                borderRadius: 8,
+                                background: e.status === 'received' ? 'rgba(16,185,129,0.06)' : 'rgba(239,68,68,0.06)',
+                                border: `1px solid ${e.status === 'received' ? 'rgba(16,185,129,0.3)' : 'rgba(239,68,68,0.3)'}`
+                              }}
+                            >
+                              <div style={{ fontSize: 13, fontWeight: 600 }}>
+                                {e.status === 'received' ? '✓' : '⚠️'} {e.doc}
+                              </div>
+                              <span className={`badge ${e.status === 'received' ? 'b-ok' : 'b-bad'}`} style={{ fontSize: 11 }}>
+                                {e.status === 'received' ? 'Attached' : 'Missing Proof'}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+
+                        {/* Add Supporting Document Form */}
+                        <div style={{ marginTop: 14, paddingTop: 12, borderTop: '1px solid var(--bd)', display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap' }}>
+                          <input
+                            className="in"
+                            style={{ flex: 1, minWidth: 260, fontSize: 13, padding: '7px 10px' }}
+                            placeholder="Register additional attached proof (e.g. Bank Challan receipt, Sale Deed copy, NOC)..."
+                            value={docAdditionalEvidence}
+                            onChange={(e) => setDocAdditionalEvidence(e.target.value)}
+                            onKeyDown={(e) => e.key === 'Enter' && addCaseEvidence()}
+                          />
+                          <button
+                            className="btn sm p"
+                            onClick={addCaseEvidence}
+                            disabled={!docAdditionalEvidence.trim()}
+                          >
+                            + Register Evidence
+                          </button>
+                        </div>
+                      </div>
+
+                      {/* Prepared Legal Representation & Reply Draft */}
+                      <div className="card" style={{ border: '1px solid var(--bd)' }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 10, marginBottom: 12, paddingBottom: 10, borderBottom: '1px solid var(--bd)' }}>
+                          <div>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                              <h3 style={{ margin: 0, fontSize: 17 }}>Formal Representation / Reply Draft</h3>
+                              <span className="badge b-ok">{activeAnalysisCase.draft_source || 'AI Language Model'}</span>
+                            </div>
+                            <p className="mu" style={{ fontSize: 12.5, margin: '2px 0 0' }}>
+                              Ground-researched, legally respectful submission citing notice reference and supporting evidence.
+                            </p>
+                          </div>
+
+                          {/* Toolbar */}
+                          <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
+                            <button
+                              className="btn sm o"
+                              onClick={() => copyDraftToClipboard(editedDraft || activeAnalysisCase.draft)}
+                              title="Copy full representation letter to clipboard"
+                            >
+                              📋 Copy Draft
+                            </button>
+                            <button
+                              className="btn sm o"
+                              onClick={() => setIsEditingDraft(!isEditingDraft)}
+                              title="Toggle inline draft editing"
+                            >
+                              ✏️ {isEditingDraft ? 'Preview Formatted' : 'Edit Draft'}
+                            </button>
+                            <button
+                              className="btn sm o"
+                              onClick={() => downloadDraftFile(`Notice_Reply_${activeAnalysisCase.extracted.reference || 'Draft'}.txt`, editedDraft || activeAnalysisCase.draft)}
+                              title="Download draft letter as text file"
+                            >
+                              📥 Download (.txt)
+                            </button>
+                            <button
+                              className="btn sm o"
+                              onClick={() => setActiveTab('cal')}
+                              title="Track response deadline in Compliance Calendar"
+                            >
+                              📅 Calendar →
+                            </button>
+                            <a
+                              href={activeAnalysisCase.research.portal.startsWith('http') ? activeAnalysisCase.research.portal : `https://${activeAnalysisCase.research.portal.split(' ')[0]}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="btn sm p"
+                              style={{ fontWeight: 600 }}
+                            >
+                              🔗 Official Portal ↗
+                            </a>
+                          </div>
+                        </div>
+
+                        {/* Representation Body */}
+                        {isEditingDraft ? (
+                          <textarea
+                            rows={14}
+                            value={editedDraft}
+                            onChange={(e) => setEditedDraft(e.target.value)}
+                            style={{ width: '100%', fontFamily: 'monospace', fontSize: 13, lineHeight: 1.6, padding: 12 }}
+                          />
+                        ) : (
+                          <div style={{
+                            background: 'var(--panel)',
+                            border: '1px solid var(--bd)',
+                            borderRadius: 8,
+                            padding: '16px 20px',
+                            fontFamily: 'serif',
+                            fontSize: 14,
+                            lineHeight: 1.7,
+                            color: 'var(--tx)',
+                            whiteSpace: 'pre-wrap',
+                            boxShadow: 'inset 0 1px 3px rgba(0,0,0,0.02)'
+                          }}>
+                            {editedDraft || activeAnalysisCase.draft}
+                          </div>
+                        )}
+
+                        {/* Approval Section */}
+                        <div style={{ marginTop: 16, paddingTop: 14, borderTop: '1px solid var(--bd)' }}>
+                          {activeAnalysisCase.status === 'approved_by_citizen' ? (
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'rgba(16,185,129,0.08)', border: '1px solid rgba(16,185,129,0.3)', padding: '12px 16px', borderRadius: 8 }}>
+                              <div>
+                                <b style={{ color: '#047857' }}>✓ Representation Approved by Citizen</b>
+                                <div style={{ fontSize: 13, color: 'var(--tx)', marginTop: 2 }}>
+                                  This response is locked and registered in your Compliance Tasks. You can now copy or download it to submit on the official department portal.
+                                </div>
+                              </div>
+                              <a
+                                href={activeAnalysisCase.research.portal.startsWith('http') ? activeAnalysisCase.research.portal : `https://${activeAnalysisCase.research.portal.split(' ')[0]}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn p"
+                                style={{ fontWeight: 700 }}
+                              >
+                                Submit on Portal ↗
+                              </a>
+                            </div>
+                          ) : (
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 10 }}>
+                              <p className="mu" style={{ fontSize: 13, margin: 0, maxWidth: 520 }}>
+                                By clicking approve, you confirm that all stated facts and attached records are true and accurate. JanSahayak will log this resolution in your compliance records.
+                              </p>
+                              <button
+                                className="btn p"
+                                onClick={approveCaseDraft}
+                                style={{ fontWeight: 700, padding: '9px 20px', fontSize: 14 }}
+                              >
+                                ✅ Approve & Save Response
+                              </button>
+                            </div>
+                          )}
+                        </div>
+                      </div>
                     </div>
                   )}
                 </div>
