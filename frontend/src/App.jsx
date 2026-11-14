@@ -1770,7 +1770,7 @@ You are hereby directed to file your written reply in Form GST DRC-06 on the GST
                 <span style={{ fontSize: 24 }}>⚡</span>
                 <div>
                   <h3 style={{ margin: 0 }}>FastAPI Swagger API Hub</h3>
-                  <div className="mu" style={{ fontSize: 12.5 }}>Interactive OpenAPI v3 integration running on http://127.0.0.1:8001/docs</div>
+                  <div className="mu" style={{ fontSize: 12.5 }}>Interactive OpenAPI v3 integration running on /docs</div>
                 </div>
               </div>
               <button className="btn sm" onClick={() => setSwaggerModalOpen(false)}>✕</button>
@@ -1780,12 +1780,12 @@ You are hereby directed to file your written reply in Form GST DRC-06 on the GST
             <div style={{ background: 'var(--panel)', padding: 12, borderRadius: 8, border: '1px solid var(--bd)', marginBottom: 14, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 10 }}>
               <div>
                 <span className="badge b-ok" style={{ marginRight: 6 }}>FastAPI 0.115+</span>
-                <span className="badge b-mu">Port: 8001</span>
-                <span style={{ fontSize: 13, marginLeft: 6 }}>All 17 API endpoints are fully active and proxy-routed via Vite `/api`.</span>
+                <span className="badge b-mu">Backend Service</span>
+                <span style={{ fontSize: 13, marginLeft: 6 }}>All 17 API endpoints are fully active and routed via `/api`.</span>
               </div>
               <div style={{ display: 'flex', gap: 8 }}>
                 <a
-                  href="http://127.0.0.1:8001/docs"
+                  href="/docs"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn sm p"
@@ -1794,7 +1794,7 @@ You are hereby directed to file your written reply in Form GST DRC-06 on the GST
                   🚀 Open Swagger UI (/docs) ↗
                 </a>
                 <a
-                  href="http://127.0.0.1:8001/redoc"
+                  href="/redoc"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn sm o"
@@ -2088,7 +2088,7 @@ You are hereby directed to file your written reply in Form GST DRC-06 on the GST
                 <button
                   className="btn sm o"
                   onClick={() => setSwaggerModalOpen(true)}
-                  title="Open FastAPI Swagger API Docs (http://127.0.0.1:8001/docs)"
+                  title="Open FastAPI Swagger API Docs (/docs)"
                   style={{ borderRadius: 99, padding: '5px 12px', fontSize: 12.5, display: 'inline-flex', alignItems: 'center', gap: 6 }}
                 >
                   <span style={{ width: 7, height: 7, borderRadius: '50%', background: '#10B981', display: 'inline-block' }} />
@@ -4330,10 +4330,10 @@ You are hereby directed to file your written reply in Form GST DRC-06 on the GST
                       <div className="card">
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
                           <h3 style={{ margin: 0 }}>FastAPI Swagger API Hub</h3>
-                          <span className="badge b-ok" style={{ fontSize: 11 }}>🟢 8001 Operational</span>
+                          <span className="badge b-ok" style={{ fontSize: 11 }}>🟢 Backend Service</span>
                         </div>
                         <p className="mu" style={{ fontSize: 13, margin: '4px 0 12px' }}>
-                          Direct interface for testing all 17 REST endpoints on <code>http://127.0.0.1:8001/docs</code>.
+                          Direct interface for testing all 17 REST endpoints on <code>/docs</code>.
                         </p>
                         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
                           <button
@@ -4343,7 +4343,7 @@ You are hereby directed to file your written reply in Form GST DRC-06 on the GST
                             ⚡ Open Swagger API Hub
                           </button>
                           <a
-                            href="http://127.0.0.1:8001/docs"
+                            href="/docs"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="btn sm o"
@@ -4352,7 +4352,7 @@ You are hereby directed to file your written reply in Form GST DRC-06 on the GST
                             Swagger Docs ↗
                           </a>
                           <a
-                            href="http://127.0.0.1:8001/redoc"
+                            href="/redoc"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="btn sm o"
