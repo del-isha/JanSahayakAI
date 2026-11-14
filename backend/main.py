@@ -2,6 +2,7 @@ import os, io, re
 from typing import Optional, List, Dict, Any
 from datetime import date, datetime
 from fastapi import FastAPI, UploadFile, File, Form, HTTPException
+from fastapi.responses import RedirectResponse
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from dotenv import load_dotenv
@@ -37,6 +38,14 @@ def health():
         "service": "JanSahayak AI Citizen Platform",
         "llm": agents.get_llm_status()
     }
+
+@app.get("/api/docs", include_in_schema=False)
+def api_docs_redirect():
+    return RedirectResponse(url="/docs")
+
+@app.get("/api/redoc", include_in_schema=False)
+def api_redoc_redirect():
+    return RedirectResponse(url="/redoc")
 
 # -------------------------------------------------------------
 # API Key Configuration & Model Intelligence
