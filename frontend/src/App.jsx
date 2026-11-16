@@ -240,6 +240,234 @@ const SAMPLE_CITIZENS = {
   }
 };
 
+// Grounded Curated Schemes by Persona for Instant & Seamless Homepage Showcase
+const CURATED_PERSONA_SCHEMES = {
+  'delisha': [
+    {
+      id: 'aicte_pragati',
+      name: 'AICTE Pragati Scholarship for Girls in Technical Education',
+      category: 'Education & Scholarships',
+      dept: 'Ministry of Education / AICTE',
+      benefits: '₹50,000 per year towards college tuition, books, and educational equipment.',
+      reason: 'Qualified as 2nd year female college student in technical/degree program.',
+      status: 'confirmed',
+      url: 'https://www.aicte-pragati-saksham-gov.in'
+    },
+    {
+      id: 'punjab_ashirwad',
+      name: 'Punjab State Post-Matric Ashirwad & Merit Scholarship',
+      category: 'Education & Scholarships',
+      dept: 'Department of Social Justice & Empowerment, Punjab',
+      benefits: '100% course fee waiver and monthly stipend for post-secondary and higher education in Punjab.',
+      reason: 'Punjab domicile and verified student status meet state scholarship norms.',
+      status: 'potentially_eligible',
+      url: 'https://scholarships.punjab.gov.in'
+    },
+    {
+      id: 'nsp_scholarship',
+      name: 'Central Sector Scheme of Scholarship for College Students',
+      category: 'Education & Scholarships',
+      dept: 'Department of Higher Education, MoE',
+      benefits: '₹12,000 to ₹20,000 per annum for regular undergraduate college degree education via DBT.',
+      reason: 'Regular 2nd year college student with verified family income below ₹4.5 Lakh.',
+      status: 'potentially_eligible',
+      url: 'https://scholarships.gov.in'
+    }
+  ],
+  'novalabs': [
+    {
+      id: 'dpiit_recognition',
+      name: 'DPIIT Startup Recognition & 3-Year Tax Holiday (Section 80-IAC)',
+      category: 'Business & Entrepreneurship',
+      dept: 'DPIIT, Ministry of Commerce and Industry',
+      benefits: '100% income tax exemption on profits for 3 consecutive years out of 10 years, plus angel tax exemption.',
+      reason: 'Incorporated under 10 years and turnover under ₹100 Crore. Eligible upon innovation self-certification.',
+      status: 'potentially_eligible',
+      url: 'https://www.startupindia.gov.in'
+    },
+    {
+      id: 'startup_sisfs',
+      name: 'Startup India Seed Fund Scheme (SISFS)',
+      category: 'Business & Entrepreneurship',
+      dept: 'DPIIT / Incubator Network',
+      benefits: 'Up to ₹20 Lakh grant for proof of concept and prototyping, plus up to ₹50 Lakh debt/convertible debentures.',
+      reason: 'Early-stage startup within 2 years of incorporation with business traction.',
+      status: 'potentially_eligible',
+      url: 'https://seedfund.startupindia.gov.in'
+    },
+    {
+      id: 'cgss',
+      name: 'Credit Guarantee Scheme for Startups (CGSS)',
+      category: 'Business & Entrepreneurship',
+      dept: 'National Credit Guarantee Trustee Company (NCGTC)',
+      benefits: 'Collateral-free debt funding and credit guarantee up to ₹10 Crore across member commercial banks.',
+      reason: 'Recognised private limited company needing non-collateralized growth working capital.',
+      status: 'potentially_eligible',
+      url: 'https://www.ncgtc.in'
+    }
+  ],
+  'rajesh': [
+    {
+      id: 'pmay_urban',
+      name: 'Pradhan Mantri Awas Yojana (PMAY-Urban 2.0 Interest Subsidy)',
+      category: 'Housing & Property',
+      dept: 'Ministry of Housing and Urban Affairs (MoHUA)',
+      benefits: 'Up to ₹2.67 Lakh upfront interest subsidy on home loans for first-time residential home buyers.',
+      reason: 'Purchasing first residential property in Mohali with verified salaried income.',
+      status: 'potentially_eligible',
+      url: 'https://pmay-urban.gov.in'
+    },
+    {
+      id: 'women_stamp_duty',
+      name: 'Punjab State Women / Joint Homebuyer Stamp Duty Concession',
+      category: 'Housing & Property',
+      dept: 'Revenue & Rehabilitation Department, Punjab',
+      benefits: '1% to 2% reduction in registration stamp duty for property registered in the name of a female family member.',
+      reason: 'Applicable on Mohali property conveyance deed when purchasing jointly.',
+      status: 'confirmed',
+      url: 'https://revenue.punjab.gov.in'
+    },
+    {
+      id: 'atal_pension',
+      name: 'Atal Pension Yojana (APY Guaranteed Social Security)',
+      category: 'Senior Citizens & Pensions',
+      dept: 'Pension Fund Regulatory and Development Authority (PFRDA)',
+      benefits: 'Government guaranteed monthly pension from ₹1,000 to ₹5,000 per month starting at age 60.',
+      reason: 'Indian citizen between age 18 and 40 with active bank account.',
+      status: 'potentially_eligible',
+      url: 'https://www.npscra.nsdl.co.in'
+    }
+  ],
+  'priya': [
+    {
+      id: 'punjab_obc_scholarship',
+      name: 'Post-Matric Scholarship Scheme for OBC Students (Punjab)',
+      category: 'Education & Scholarships',
+      dept: 'Ministry of Social Justice & Empowerment / Punjab',
+      benefits: '100% course and examination fee reimbursement plus monthly maintenance stipend.',
+      reason: 'OBC engineering college student with household income under ₹2.5 Lakh.',
+      status: 'confirmed',
+      url: 'https://scholarships.punjab.gov.in'
+    },
+    {
+      id: 'aicte_pragati_priya',
+      name: 'AICTE Pragati Scholarship for Girls in Technical Education',
+      category: 'Education & Scholarships',
+      dept: 'Ministry of Education / AICTE',
+      benefits: '₹50,000 per year towards educational expenses for female technical degree students.',
+      reason: 'Female student admitted to AICTE-approved degree engineering course.',
+      status: 'confirmed',
+      url: 'https://www.aicte-pragati-saksham-gov.in'
+    },
+    {
+      id: 'inspire_she_priya',
+      name: 'DST INSPIRE Scholarship for Higher Education (SHE)',
+      category: 'Education & Scholarships',
+      dept: 'Department of Science & Technology',
+      benefits: '₹80,000 per annum (₹60,000 scholarship + ₹20,000 research mentorship).',
+      reason: 'Merit eligibility in higher technical education.',
+      status: 'potentially_eligible',
+      url: 'https://online-inspire.gov.in'
+    }
+  ],
+  'gurpreet': [
+    {
+      id: 'pmkisan_gurpreet',
+      name: 'PM-KISAN Samman Nidhi (Direct Benefit Transfer)',
+      category: 'Agriculture & Farmers',
+      dept: 'Ministry of Agriculture & Farmers Welfare',
+      benefits: 'Direct cash benefit of ₹6,000 per annum paid in three equal installments of ₹2,000 into farmer bank account.',
+      reason: 'Cultivating farmer family in Punjab with verified landholding.',
+      status: 'confirmed',
+      url: 'https://pmkisan.gov.in'
+    },
+    {
+      id: 'pmkusum_gurpreet',
+      name: 'PM-KUSUM Solar Agriculture Pumps & Solarization',
+      category: 'Agriculture & Farmers',
+      dept: 'Ministry of New and Renewable Energy (MNRE)',
+      benefits: '60% capital subsidy (30% Central + 30% Punjab State) for installing solar irrigation pumps up to 7.5 HP.',
+      reason: 'Eligible for agricultural tube-well solarization in Ludhiana.',
+      status: 'potentially_eligible',
+      url: 'https://pmkusum.mnre.gov.in'
+    },
+    {
+      id: 'kcc_gurpreet',
+      name: 'Kisan Credit Card (KCC Subsidized Crop Loan)',
+      category: 'Agriculture & Farmers',
+      dept: 'Department of Agriculture / NABARD',
+      benefits: 'Subsidized working capital loan up to ₹3 Lakh at an effective interest rate of 4% per annum.',
+      reason: 'Cultivating farmer in Ludhiana with prompt repayment record.',
+      status: 'confirmed',
+      url: 'https://www.myscheme.gov.in/schemes/kcc'
+    }
+  ],
+  'sunita': [
+    {
+      id: 'mudra_sunita',
+      name: 'Pradhan Mantri MUDRA Yojana (PMMY Kishor Loan)',
+      category: 'Business & Entrepreneurship',
+      dept: 'Department of Financial Services / MUDRA',
+      benefits: 'Collateral-free business expansion loan from ₹50,000 to ₹5 Lakh at subsidized interest rates.',
+      reason: 'Self-employed female entrepreneur managing active boutique enterprise.',
+      status: 'potentially_eligible',
+      url: 'https://www.mudra.org.in'
+    },
+    {
+      id: 'standup_sunita',
+      name: 'Stand-Up India Scheme for Women Entrepreneurs',
+      category: 'Business & Entrepreneurship',
+      dept: 'Ministry of Finance / SIDBI',
+      benefits: 'Bank loans between ₹10 Lakh and ₹1 Crore for female-promoted enterprises.',
+      reason: 'Woman entrepreneur launching or scaling a commercial enterprise.',
+      status: 'potentially_eligible',
+      url: 'https://www.standupmitra.in'
+    },
+    {
+      id: 'lakhpati_sunita',
+      name: 'Lakhpati Didi Initiative (Women Enterprise Empowerment)',
+      category: 'Women & Child Welfare',
+      dept: 'Ministry of Rural Development',
+      benefits: 'Micro-credit, financial literacy, and supply chain market linkages for women entrepreneurs.',
+      reason: 'Female entrepreneur eligible for community enterprise support.',
+      status: 'confirmed',
+      url: 'https://lakhpatididi.gov.in'
+    }
+  ],
+  'harbans': [
+    {
+      id: 'vay_vandana_harbans',
+      name: 'Ayushman Bharat Vay Vandana Card (Universal Senior 70+ Cover)',
+      category: 'Healthcare & Social Welfare',
+      dept: 'National Health Authority (NHA)',
+      benefits: 'Universal free annual health insurance of ₹5 Lakh for every citizen aged 70 and above across 29,000+ hospitals.',
+      reason: 'Indian citizen aged 72 with verified Aadhaar e-KYC.',
+      status: 'confirmed',
+      url: 'https://beneficiary.nha.gov.in'
+    },
+    {
+      id: 'ignoaps_harbans',
+      name: 'Indira Gandhi National Old Age Pension Scheme (IGNOAPS)',
+      category: 'Senior Citizens & Pensions',
+      dept: 'Ministry of Rural Development / NSAP',
+      benefits: 'Monthly social security financial assistance deposited directly into senior citizen bank account via DBT.',
+      reason: 'Senior citizen eligible under national social assistance guidelines.',
+      status: 'potentially_eligible',
+      url: 'https://nsap.nic.in'
+    },
+    {
+      id: 'janaushadhi_harbans',
+      name: 'PM Bharatiya Janaushadhi Pariyojana (Generic Medicine 50%-90% Discount)',
+      category: 'Healthcare & Social Welfare',
+      dept: 'Department of Pharmaceuticals',
+      benefits: '2,000+ certified generic high-quality medicines at 50% to 90% discount through 10,000+ Kendras.',
+      reason: 'Universal access to affordable daily and chronic medicines.',
+      status: 'confirmed',
+      url: 'https://janaushadhi.gov.in'
+    }
+  ]
+};
+
 const NAV_MODULES = [
   { id: 'ov', name: 'Overview', icon: 'home' },
   { id: 'comp', name: 'My Company', icon: 'bld' },
@@ -1096,6 +1324,37 @@ export default function App() {
       runSchemeSearch(schemeQuery, schemeCategory);
     }
   }, [activeTab]);
+
+  // Grounded Homepage Schemes Curation: Matches active citizen persona with verified fallbacks
+  const getHomeSchemes = () => {
+    const defaultList = CURATED_PERSONA_SCHEMES[activeCitizenId] || CURATED_PERSONA_SCHEMES.delisha;
+    if (schemes && schemes.length > 0) {
+      const occ = (citizen.occKey || citizen.occupation || '').toLowerCase();
+      let matches = [];
+      if (occ.includes('student')) {
+        matches = schemes.filter(s => s.category === 'Education & Scholarships');
+      } else if (occ.includes('business') || citizen.type === 'company') {
+        matches = schemes.filter(s => s.category === 'Business & Entrepreneurship');
+      } else if (occ.includes('farmer')) {
+        matches = schemes.filter(s => s.category === 'Agriculture & Farmers');
+      } else if (occ.includes('senior')) {
+        matches = schemes.filter(s => s.category === 'Senior Citizens & Pensions' || s.category === 'Healthcare & Social Welfare');
+      } else {
+        matches = schemes.filter(s => s.status === 'confirmed' || s.status === 'potentially_eligible');
+      }
+      if (matches.length >= 3) {
+        return matches.slice(0, 3);
+      }
+      if (matches.length > 0) {
+        const needed = 3 - matches.length;
+        const additional = defaultList.filter(d => !matches.some(m => m.name === d.name)).slice(0, needed);
+        return [...matches, ...additional];
+      }
+    }
+    return defaultList;
+  };
+  const homeMatchedSchemes = getHomeSchemes();
+
 
   // 4. AI Assistant Chat State (Per-Citizen Stream - English Only)
   const [chatInput, setChatInput] = useState('');
@@ -2119,33 +2378,80 @@ You are hereby directed to file your written reply in Form GST DRC-06 on the GST
               {/* TAB 1: CITIZEN DASHBOARD (Overview) */}
               {activeTab === 'ov' && (
                 <div>
-                  <div style={{ marginBottom: 16 }}>
-                    <h1 style={{ fontSize: 36, fontWeight: 800, color: 'var(--navy)', marginBottom: 4 }}>
-                      Good morning, Welcome to JanSahayak AI.
-                    </h1>
-                    <p className="sub" style={{ fontSize: 15, color: 'var(--mu)', margin: 0 }}>
-                      {citizen.desc || `${citizen.name} · FY 2026-27`}
-                    </p>
+                  <div style={{ marginBottom: 18, display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: 12 }}>
+                    <div>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 4 }}>
+                        <span style={{ fontSize: 28 }}>👋</span>
+                        <h1 style={{ fontSize: 'clamp(26px, 3.2vw, 36px)', fontWeight: 800, color: 'var(--navy)', margin: 0, letterSpacing: '-0.02em' }}>
+                          Good morning, Welcome to JanSahayak AI.
+                        </h1>
+                      </div>
+                      <p className="sub" style={{ fontSize: 14.5, color: 'var(--mu)', margin: 0 }}>
+                        {citizen.desc || `${citizen.name} · FY 2026-27`}
+                      </p>
+                    </div>
+
+                    <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+                      <span className="badge b-ok" style={{ fontSize: 12, padding: '5px 12px', fontWeight: 600 }}>
+                        ● Active Persona: {citizen.name}
+                      </span>
+                      <button
+                        className="btn sm o"
+                        onClick={() => setShowProfileModal(true)}
+                        style={{ fontSize: 12.5, borderRadius: 99, padding: '5px 14px', fontWeight: 600 }}
+                      >
+                        Switch Entity ⇄
+                      </button>
+                    </div>
                   </div>
 
-                  {/* Yellow Notice Banner (Screenshot Exact) */}
-                  <div className="compliance-banner">
-                    <span style={{ fontSize: 16 }}>ⓘ</span>
-                    <span>Verified Rules Engine connected. Dates and amounts are computed deterministically.</span>
+                  {/* Yellow Notice Banner with Verified Status */}
+                  <div className="compliance-banner" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 10 }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                      <span style={{ fontSize: 18 }}>🛡️</span>
+                      <span style={{ fontWeight: 500 }}>
+                        <b>Verified Statutory Rules Engine:</b> All compliance dates, interest subsidies & welfare allowances computed deterministically.
+                      </span>
+                    </div>
+                    <span className="badge b-ok" style={{ fontSize: 11, background: '#DCFCE7', color: '#15803D', fontWeight: 700 }}>
+                      LIVE ENGINE
+                    </span>
                   </div>
 
-                  {/* 5 KPI Metric Cards in a single row (Screenshot Exact) */}
+                  {/* 5 KPI Metric Cards in a single row (Enhanced & Visually Interactive) */}
                   <div className="grid g5">
                     {[
-                      ['Compliance Health', '87%'],
-                      ['Upcoming Deadlines', '6'],
-                      ['Pending Actions', '2'],
-                      ['Completed Filings', '1'],
-                      ['Scheme Matches', '4'],
-                    ].map(([label, val], idx) => (
-                      <div className="card kpi" key={idx}>
-                        <span>{label}</span>
-                        <b>{val}</b>
+                      { label: 'Compliance Health', val: '87%', icon: '🛡️', badge: 'Optimal', badgeClass: 'b-ok', tab: 'cal' },
+                      { label: 'Upcoming Deadlines', val: '6', icon: '📅', badge: 'Active Due Dates', badgeClass: 'b-warn', tab: 'cal' },
+                      { label: 'Pending Actions', val: '2', icon: '⚡', badge: 'Needs Attention', badgeClass: 'b-bad', tab: 'cal' },
+                      { label: 'Completed Filings', val: '1', icon: '✅', badge: 'Certified', badgeClass: 'b-ok', tab: 'filings' },
+                      { label: 'Scheme Matches', val: `${homeMatchedSchemes.length || 4}`, icon: '🎁', badge: 'Recommended', badgeClass: 'b-ok', tab: 'sch' },
+                    ].map((kpi, idx) => (
+                      <div
+                        className="card kpi kpi-interactive"
+                        key={idx}
+                        onClick={() => {
+                          if (kpi.tab === 'sch') {
+                            const el = document.getElementById('home-schemes-section');
+                            if (el) {
+                              el.scrollIntoView({ behavior: 'smooth' });
+                            } else {
+                              setActiveTab('sch');
+                            }
+                          } else {
+                            setActiveTab(kpi.tab);
+                          }
+                        }}
+                        title={`Click to view ${kpi.label}`}
+                      >
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 8 }}>
+                          <span style={{ fontSize: 20 }}>{kpi.icon}</span>
+                          <span className={`badge ${kpi.badgeClass}`} style={{ fontSize: 10.5, padding: '2px 7px' }}>
+                            {kpi.badge}
+                          </span>
+                        </div>
+                        <span style={{ fontSize: 13, color: 'var(--mu)', fontWeight: 600 }}>{kpi.label}</span>
+                        <b style={{ fontSize: 28, marginTop: 2, color: 'var(--navy)' }}>{kpi.val}</b>
                       </div>
                     ))}
                   </div>
@@ -2233,6 +2539,133 @@ You are hereby directed to file your written reply in Form GST DRC-06 on the GST
                           </div>
                         ))}
                       </div>
+                    </div>
+                  </div>
+
+                  {/* Matched Government Schemes & Subsidies Showcase */}
+                  <div id="home-schemes-section" style={{ marginTop: 22 }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 14, flexWrap: 'wrap', gap: 10 }}>
+                      <div>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                          <span style={{ fontSize: 22 }}>🎁</span>
+                          <h3 style={{ margin: 0, fontSize: 18, fontWeight: 800, color: 'var(--navy)' }}>
+                            Personalized Government Schemes & Subsidies
+                          </h3>
+                          <span className="badge b-ok" style={{ fontSize: 11.5, fontWeight: 700 }}>
+                            {homeMatchedSchemes.length} Recommended
+                          </span>
+                        </div>
+                        <p className="mu" style={{ fontSize: 13.5, margin: '3px 0 0' }}>
+                          Verified programs matching <b>{citizen.name}</b> ({citizen.occupation || citizen.occKey}, {citizen.state || 'Punjab'}) · Direct statutory portals
+                        </p>
+                      </div>
+
+                      <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+                        <button
+                          className="btn sm o"
+                          onClick={() => {
+                            setActiveTab('sch');
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                          }}
+                          style={{ fontSize: 13, fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: 6 }}
+                        >
+                          <span>Explore All 44 Schemes</span>
+                          <span>→</span>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div className="grid g3" style={{ gap: 16 }}>
+                      {homeMatchedSchemes.map((s, idx) => {
+                        const portalUrl = s.url || 'https://services.india.gov.in';
+                        let displayHost = 'india.gov.in';
+                        try {
+                          displayHost = new URL(portalUrl).hostname.replace(/^www\./, '');
+                        } catch {
+                          displayHost = portalUrl.replace(/^https?:\/\//, '').split('/')[0];
+                        }
+
+                        const catIcons = {
+                          'Education & Scholarships': '🎓',
+                          'Business & Entrepreneurship': '🚀',
+                          'Agriculture & Farmers': '🌾',
+                          'Healthcare & Social Welfare': '🏥',
+                          'Women & Child Welfare': '👩',
+                          'Senior Citizens & Pensions': '👴',
+                          'Housing & Property': '🏠'
+                        };
+                        const catIcon = catIcons[s.category] || '🏛️';
+
+                        return (
+                          <div key={s.id || idx} className="home-scheme-card">
+                            <div>
+                              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 8, marginBottom: 10 }}>
+                                <span className="badge b-mu" style={{ fontSize: 11, fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: 4 }}>
+                                  <span>{catIcon}</span>
+                                  <span>{s.category}</span>
+                                </span>
+                                <span className={`badge ${STATUS_BADGE[s.status] || 'b-ok'}`} style={{ fontSize: 11, fontWeight: 700 }}>
+                                  {SCHEME_LABELS[s.status] || s.status || 'Eligible'}
+                                </span>
+                              </div>
+
+                              <h4 style={{ fontSize: 16, margin: '0 0 4px', fontWeight: 800, color: 'var(--navy)', lineHeight: 1.3 }}>
+                                {s.name}
+                              </h4>
+                              <div className="mu" style={{ fontSize: 12.5, marginBottom: 10 }}>
+                                {s.dept}
+                              </div>
+
+                              <div className="benefit-highlight-box">
+                                <span style={{ fontSize: 15 }}>✨</span>
+                                <span style={{ fontSize: 13, lineHeight: 1.4 }}>{s.benefits}</span>
+                              </div>
+
+                              <div className="scheme-callout" style={{ fontSize: 12.5, margin: '8px 0 14px' }}>
+                                <span>ⓘ</span>
+                                <span>{s.reason}</span>
+                              </div>
+                            </div>
+
+                            <div style={{ paddingTop: 12, borderTop: '1px solid var(--bd)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 8 }}>
+                              <a
+                                href={portalUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{ display: 'inline-flex', alignItems: 'center', gap: 5, color: 'var(--blue)', fontSize: 12.5, fontWeight: 600 }}
+                              >
+                                <span>🔗</span>
+                                <span style={{ textDecoration: 'underline' }}>{displayHost}</span>
+                                <span style={{ fontSize: 10 }}>↗</span>
+                              </a>
+                              <div style={{ display: 'flex', gap: 6 }}>
+                                <a
+                                  href={portalUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="btn sm p"
+                                  style={{ fontSize: 12, padding: '4px 12px', borderRadius: 6, fontWeight: 600 }}
+                                >
+                                  Apply ↗
+                                </a>
+                                <button
+                                  className="btn sm o"
+                                  onClick={() => {
+                                    setActiveTab('sch');
+                                    setSchemeQuery(s.name.split('(')[0].trim());
+                                    runSchemeSearch(s.name.split('(')[0].trim(), s.category);
+                                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                                  }}
+                                  style={{ fontSize: 12, padding: '4px 10px', borderRadius: 6 }}
+                                  title="Inspect complete scheme eligibility details"
+                                >
+                                  Details
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      })}
                     </div>
                   </div>
 
