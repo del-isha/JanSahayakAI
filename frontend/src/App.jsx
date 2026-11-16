@@ -4599,6 +4599,7 @@ You are hereby directed to file your written reply in Form GST DRC-06 on the GST
               <div className="links" style={{ fontSize: 16, gap: 32 }}>
                 <a href="#about">About</a>
                 <a href="#schemes">Government Schemes</a>
+                <a href="#pricing">Pricing</a>
               </div>
               <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
                 <button
@@ -4822,6 +4823,248 @@ You are hereby directed to file your written reply in Form GST DRC-06 on the GST
             </div>
           </section>
 
+          {/* PRICING SECTION */}
+          <section className="s" id="pricing" style={{ padding: '80px 0 96px', borderTop: '1px solid #E5E7EB', background: '#FFFFFF' }}>
+            <div className="wrap">
+              <div style={{ textAlign: 'center', maxWidth: 720, margin: '0 auto 48px' }}>
+                <div style={{ color: '#D97706', fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', marginBottom: 10, textTransform: 'uppercase' }}>
+                  TRANSPARENT & ACCESSIBLE PRICING
+                </div>
+                <h2 className="serif-title" style={{ fontSize: 'clamp(28px, 3.8vw, 44px)', marginBottom: 12, lineHeight: 1.2 }}>
+                  Accessible statutory assistance for every Indian.
+                </h2>
+                <p style={{ fontSize: 16.5, color: 'var(--mu)', margin: 0, lineHeight: 1.6 }}>
+                  Start free to build trust, or upgrade to flexible subscriptions, on-demand reviews, and institutional partnerships without intermediary markups.
+                </p>
+              </div>
+
+              {/* 4 Pricing Cards Grid */}
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: 24, alignItems: 'stretch' }}>
+                {/* 1. Freemium model */}
+                <div className="pricing-card">
+                  <div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
+                      <span className="badge b-ok" style={{ fontSize: 11, fontWeight: 700 }}>User Acquisition</span>
+                    </div>
+                    <h3 style={{ fontSize: 20, fontWeight: 800, margin: '0 0 6px', color: 'var(--navy)' }}>
+                      Freemium Model
+                    </h3>
+                    <div style={{ fontSize: 13, color: 'var(--mu)', marginBottom: 16 }}>
+                      Basic features will be free for everyone.
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'baseline', gap: 6, marginBottom: 18 }}>
+                      <span style={{ fontSize: 36, fontWeight: 800, color: 'var(--navy)' }}>₹0</span>
+                      <span className="mu" style={{ fontSize: 13 }}>/ always free</span>
+                    </div>
+
+                    <div style={{ borderTop: '1px solid var(--bd)', paddingTop: 16, marginBottom: 16 }}>
+                      <div className="pricing-card-feature-item">
+                        <span style={{ color: 'var(--ok)', fontWeight: 700 }}>✓</span>
+                        <span>Basic government document explanations</span>
+                      </div>
+                      <div className="pricing-card-feature-item">
+                        <span style={{ color: 'var(--ok)', fontWeight: 700 }}>✓</span>
+                        <span>General information about government schemes</span>
+                      </div>
+                      <div className="pricing-card-feature-item">
+                        <span style={{ color: 'var(--ok)', fontWeight: 700 }}>✓</span>
+                        <span>Basic process guidance</span>
+                      </div>
+                      <div className="pricing-card-feature-item">
+                        <span style={{ color: 'var(--ok)', fontWeight: 700 }}>✓</span>
+                        <span>Limited document analysis</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div className="pricing-card-why">
+                      <b>💡 Why?</b> Our mission is to make government assistance accessible to everyone. We first build trust and attract users through free services.
+                    </div>
+                    <button
+                      className="btn o"
+                      onClick={() => setViewMode('app')}
+                      style={{ width: '100%', marginTop: 16, fontWeight: 700 }}
+                    >
+                      Get Started Free
+                    </button>
+                  </div>
+                </div>
+
+                {/* 2. Premium subscriptions */}
+                <div className="pricing-card featured">
+                  <div style={{ position: 'absolute', top: -11, left: '50%', transform: 'translateX(-50%)', background: 'var(--blue)', color: '#fff', padding: '2px 14px', borderRadius: 99, fontSize: 11, fontWeight: 700, letterSpacing: '0.04em' }}>
+                    MOST POPULAR
+                  </div>
+                  <div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8, marginTop: 4 }}>
+                      <span className="badge" style={{ fontSize: 11, fontWeight: 700, background: '#EFF6FF', color: 'var(--blue)' }}>Individual & Startup</span>
+                    </div>
+                    <h3 style={{ fontSize: 20, fontWeight: 800, margin: '0 0 6px', color: 'var(--navy)' }}>
+                      Premium Subscriptions
+                    </h3>
+                    <div style={{ fontSize: 13, color: 'var(--mu)', marginBottom: 16 }}>
+                      For individuals who regularly need assistance.
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'baseline', gap: 6, marginBottom: 18 }}>
+                      <span style={{ fontSize: 32, fontWeight: 800, color: 'var(--navy)' }}>₹99–₹199</span>
+                      <span className="mu" style={{ fontSize: 13 }}>/ month</span>
+                    </div>
+
+                    <div style={{ borderTop: '1px solid var(--bd)', paddingTop: 16, marginBottom: 16 }}>
+                      <div className="pricing-card-feature-item">
+                        <span style={{ color: 'var(--blue)', fontWeight: 700 }}>✓</span>
+                        <span>Advanced document analysis</span>
+                      </div>
+                      <div className="pricing-card-feature-item">
+                        <span style={{ color: 'var(--blue)', fontWeight: 700 }}>✓</span>
+                        <span>Multiple document uploads</span>
+                      </div>
+                      <div className="pricing-card-feature-item">
+                        <span style={{ color: 'var(--blue)', fontWeight: 700 }}>✓</span>
+                        <span>Deadline tracking and reminders</span>
+                      </div>
+                      <div className="pricing-card-feature-item">
+                        <span style={{ color: 'var(--blue)', fontWeight: 700 }}>✓</span>
+                        <span>Personalised checklists</span>
+                      </div>
+                      <div className="pricing-card-feature-item">
+                        <span style={{ color: 'var(--blue)', fontWeight: 700 }}>✓</span>
+                        <span>More detailed AI assistance</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div className="pricing-card-why">
+                      <b>💡 Why?</b> Users who need frequent assistance can pay a small monthly amount instead of repeatedly paying intermediaries.
+                    </div>
+                    <button
+                      className="btn p"
+                      onClick={() => setViewMode('app')}
+                      style={{ width: '100%', marginTop: 16, fontWeight: 700 }}
+                    >
+                      Subscribe Monthly
+                    </button>
+                  </div>
+                </div>
+
+                {/* 3. Pay-per-service */}
+                <div className="pricing-card">
+                  <div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
+                      <span className="badge b-warn" style={{ fontSize: 11, fontWeight: 700 }}>On-Demand</span>
+                    </div>
+                    <h3 style={{ fontSize: 20, fontWeight: 800, margin: '0 0 6px', color: 'var(--navy)' }}>
+                      Pay-per-service
+                    </h3>
+                    <div style={{ fontSize: 13, color: 'var(--mu)', marginBottom: 16 }}>
+                      Users pay only when they need a particular advanced service.
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'baseline', gap: 6, marginBottom: 18 }}>
+                      <span style={{ fontSize: 32, fontWeight: 800, color: 'var(--navy)' }}>₹49–₹499</span>
+                      <span className="mu" style={{ fontSize: 13 }}>/ service</span>
+                    </div>
+
+                    <div style={{ borderTop: '1px solid var(--bd)', paddingTop: 16, marginBottom: 16 }}>
+                      <div className="pricing-card-feature-item">
+                        <span style={{ color: 'var(--ok)', fontWeight: 700 }}>✓</span>
+                        <span>Detailed compliance document review</span>
+                      </div>
+                      <div className="pricing-card-feature-item">
+                        <span style={{ color: 'var(--ok)', fontWeight: 700 }}>✓</span>
+                        <span>Application and letter drafting</span>
+                      </div>
+                      <div className="pricing-card-feature-item">
+                        <span style={{ color: 'var(--ok)', fontWeight: 700 }}>✓</span>
+                        <span>Business registration guidance</span>
+                      </div>
+                      <div className="pricing-card-feature-item">
+                        <span style={{ color: 'var(--ok)', fontWeight: 700 }}>✓</span>
+                        <span>Specialised document analysis</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div className="pricing-card-why">
+                      <b>💡 Why?</b> Not everyone needs a subscription. Some people only need assistance once or twice.
+                    </div>
+                    <button
+                      className="btn o"
+                      onClick={() => setViewMode('app')}
+                      style={{ width: '100%', marginTop: 16, fontWeight: 700 }}
+                    >
+                      Pay per Service
+                    </button>
+                  </div>
+                </div>
+
+                {/* 4. B2B and institutional partnerships */}
+                <div className="pricing-card">
+                  <div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
+                      <span className="badge b-mu" style={{ fontSize: 11, fontWeight: 700 }}>Enterprise & Partners</span>
+                    </div>
+                    <h3 style={{ fontSize: 20, fontWeight: 800, margin: '0 0 6px', color: 'var(--navy)' }}>
+                      B2B & Partnerships
+                    </h3>
+                    <div style={{ fontSize: 13, color: 'var(--mu)', marginBottom: 16 }}>
+                      Institutional workflows and client portals.
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'baseline', gap: 6, marginBottom: 18 }}>
+                      <span style={{ fontSize: 28, fontWeight: 800, color: 'var(--navy)' }}>Custom</span>
+                      <span className="mu" style={{ fontSize: 13 }}>/ tailored pricing</span>
+                    </div>
+
+                    <div style={{ borderTop: '1px solid var(--bd)', paddingTop: 16, marginBottom: 16 }}>
+                      <div style={{ fontSize: 12.5, fontWeight: 600, color: 'var(--navy)', marginBottom: 6 }}>
+                        We partner with:
+                      </div>
+                      <div className="pricing-card-feature-item">
+                        <span style={{ color: 'var(--blue)', fontWeight: 700 }}>•</span>
+                        <span>Chartered Accountants (CAs)</span>
+                      </div>
+                      <div className="pricing-card-feature-item">
+                        <span style={{ color: 'var(--blue)', fontWeight: 700 }}>•</span>
+                        <span>Small and medium-sized businesses</span>
+                      </div>
+                      <div className="pricing-card-feature-item">
+                        <span style={{ color: 'var(--blue)', fontWeight: 700 }}>•</span>
+                        <span>Legal and compliance firms</span>
+                      </div>
+                      <div className="pricing-card-feature-item">
+                        <span style={{ color: 'var(--blue)', fontWeight: 700 }}>•</span>
+                        <span>Educational institutions</span>
+                      </div>
+                      <div className="pricing-card-feature-item">
+                        <span style={{ color: 'var(--blue)', fontWeight: 700 }}>•</span>
+                        <span>Organisations working with citizen services</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div className="pricing-card-why">
+                      <b>💡 Scale:</b> Dedicated multi-client management, bulk document OCR, and custom statutory rules integration.
+                    </div>
+                    <button
+                      className="btn o"
+                      onClick={() => {
+                        setActiveTab('ai');
+                        setViewMode('app');
+                        showToast('Opening Assistant for Partnership inquiries');
+                      }}
+                      style={{ width: '100%', marginTop: 16, fontWeight: 700 }}
+                    >
+                      Contact for Partnership
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* Footer */}
           <footer>
             <div className="wrap">
@@ -4838,6 +5081,7 @@ You are hereby directed to file your written reply in Form GST DRC-06 on the GST
                   <h4>Sections</h4>
                   <a href="#about">About</a>
                   <a href="#schemes">Government Schemes</a>
+                  <a href="#pricing">Pricing</a>
                 </div>
                 <div>
                   <h4>Grounded Portals</h4>

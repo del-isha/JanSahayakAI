@@ -1012,6 +1012,54 @@ input:checked + .slider:before {
   color: #93C5FD;
 }
 
+/* Landing Page Pricing Cards */
+.pricing-card {
+  background: var(--card);
+  border: 1px solid var(--bd);
+  border-radius: 14px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 8px rgba(20, 36, 58, 0.04);
+  position: relative;
+}
+.pricing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px -8px rgba(49, 95, 206, 0.12);
+  border-color: var(--blue);
+}
+.pricing-card.featured {
+  border: 2px solid var(--blue);
+  box-shadow: 0 8px 24px -4px rgba(49, 95, 206, 0.15);
+}
+.pricing-card-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13.5px;
+  color: var(--tx);
+  margin-bottom: 8px;
+  line-height: 1.45;
+}
+.pricing-card-why {
+  background: #FAF7F2;
+  border: 1px solid #F3EDE2;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 12.5px;
+  color: #555;
+  line-height: 1.45;
+  margin-top: 14px;
+}
+[data-theme="dark"] .pricing-card-why {
+  background: #1B2333;
+  border-color: #28354D;
+  color: #A0ABBA;
+}
+
+
 
 /* Authentic Website & Dashboard Polish */
 .landing-cream {
@@ -1281,4 +1329,52 @@ input:checked + .slider:before {
   border-color: #1E40AF;
   color: #93C5FD;
 }
+
+/* Landing Page Pricing Cards */
+.pricing-card {
+  background: var(--card);
+  border: 1px solid var(--bd);
+  border-radius: 14px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 8px rgba(20, 36, 58, 0.04);
+  position: relative;
+}
+.pricing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px -8px rgba(49, 95, 206, 0.12);
+  border-color: var(--blue);
+}
+.pricing-card.featured {
+  border: 2px solid var(--blue);
+  box-shadow: 0 8px 24px -4px rgba(49, 95, 206, 0.15);
+}
+.pricing-card-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13.5px;
+  color: var(--tx);
+  margin-bottom: 8px;
+  line-height: 1.45;
+}
+.pricing-card-why {
+  background: #FAF7F2;
+  border: 1px solid #F3EDE2;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 12.5px;
+  color: #555;
+  line-height: 1.45;
+  margin-top: 14px;
+}
+[data-theme="dark"] .pricing-card-why {
+  background: #1B2333;
+  border-color: #28354D;
+  color: #A0ABBA;
+}
+
 
