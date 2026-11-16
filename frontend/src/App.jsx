@@ -4632,6 +4632,249 @@ You are hereby directed to file your written reply in Form GST DRC-06 on the GST
             </div>
           </nav>
 
+          {/* Indian Tricolor Stripe Accent */}
+          <div className="tricolor-stripe" />
+
+          {/* CIVIC HERO BANNER SECTION (JanSahayak - Helper of the People) */}
+          <section className="civic-hero-section" id="hero">
+            <div className="wrap">
+              {/* Civic Tagline & Mission Header */}
+              <div style={{ textAlign: 'center', maxWidth: 860, margin: '0 auto 42px' }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: '#FFFBEB', border: '1px solid #FDE68A', padding: '6px 16px', borderRadius: 99, color: '#92400E', fontSize: 13, fontWeight: 700, marginBottom: 16 }}>
+                  <span>🇮🇳</span>
+                  <span>जन कल्याण एवं नागरिक सेवा · Jan Kalyan & Citizen Assistance</span>
+                </div>
+                <h1 className="serif-title" style={{ fontSize: 'clamp(32px, 4.6vw, 54px)', lineHeight: 1.15, marginBottom: 16 }}>
+                  Jan Sahayak means “Helper of the People”.
+                </h1>
+                <p style={{ fontSize: 18.5, color: '#4B5563', lineHeight: 1.6, maxWidth: 780, margin: '0 auto 28px' }}>
+                  Bringing government schemes, welfare allowances, and statutory assistance directly to every Indian citizen. Whether you are a student, farmer, woman entrepreneur, or family — discover your legal benefits with complete transparency and zero middleman markups.
+                </p>
+
+                {/* Primary Action Buttons */}
+                <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap', alignItems: 'center' }}>
+                  <a
+                    href="#schemes"
+                    className="btn p"
+                    style={{ fontSize: 15.5, padding: '12px 26px', borderRadius: 9, fontWeight: 700, background: 'var(--navy)', borderColor: 'var(--navy)' }}
+                  >
+                    🔍 Find Your Eligible Schemes (Free)
+                  </a>
+                  <button
+                    className="btn o"
+                    onClick={() => setViewMode('app')}
+                    style={{ fontSize: 15.5, padding: '12px 24px', borderRadius: 9, fontWeight: 700 }}
+                  >
+                    ⚡ Open Citizen Assistant Demo
+                  </button>
+                  <a
+                    href="#pricing"
+                    className="btn o"
+                    style={{ fontSize: 15.5, padding: '12px 20px', borderRadius: 9, fontWeight: 600, border: 'none', background: 'transparent' }}
+                  >
+                    View Pricing →
+                  </a>
+                </div>
+
+                {/* Civic Trust Guarantee Pills */}
+                <div style={{ display: 'flex', justifyContent: 'center', gap: 20, flexWrap: 'wrap', marginTop: 26, fontSize: 13.5, color: 'var(--mu)' }}>
+                  <span>✓ 44+ Verified Central & State Programs</span>
+                  <span>✓ Direct Benefit Transfer (DBT) Guides</span>
+                  <span>✓ 100% Free Public Verification</span>
+                  <span>✓ Grounded in Official Portals</span>
+                </div>
+              </div>
+
+              {/* 4 GOVERNMENT PORTAL BANNERS (Welfare for Common Citizens) */}
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 20, marginTop: 12 }}>
+                {/* Banner 1: Students & Higher Education */}
+                <div className="civic-portal-banner">
+                  <div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
+                      <span className="gov-portal-badge">
+                        <span>🎓</span>
+                        <span>scholarships.gov.in</span>
+                      </span>
+                      <span className="badge b-ok" style={{ fontSize: 11, fontWeight: 700 }}>Direct DBT</span>
+                    </div>
+
+                    <h3 style={{ fontSize: 18, fontWeight: 800, margin: '0 0 6px', color: 'var(--navy)' }}>
+                      Students & Scholarships
+                    </h3>
+                    <p style={{ fontSize: 13.5, color: '#4B5563', lineHeight: 1.5, margin: '0 0 14px' }}>
+                      Full tuition waivers, AICTE Pragati for girls, and post-matric merit stipends up to ₹50,000/year deposited directly into student accounts.
+                    </p>
+
+                    <div className="benefit-highlight-box" style={{ margin: '0 0 14px' }}>
+                      <span>✨</span>
+                      <span>100% Course Fee Waivers & Monthly Stipends</span>
+                    </div>
+                  </div>
+
+                  <div style={{ paddingTop: 12, borderTop: '1px solid var(--bd)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 8 }}>
+                    <span className="mu" style={{ fontSize: 12 }}>National Scholarship Portal</span>
+                    <a
+                      href="https://scholarships.gov.in"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn sm o"
+                      style={{ fontSize: 12, padding: '4px 10px', borderRadius: 6, fontWeight: 600 }}
+                    >
+                      Official Portal ↗
+                    </a>
+                  </div>
+                </div>
+
+                {/* Banner 2: Farmers & Kisan Parivar */}
+                <div className="civic-portal-banner">
+                  <div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
+                      <span className="gov-portal-badge">
+                        <span>🌾</span>
+                        <span>pmkisan.gov.in</span>
+                      </span>
+                      <span className="badge b-ok" style={{ fontSize: 11, fontWeight: 700 }}>Kisan Kalyan</span>
+                    </div>
+
+                    <h3 style={{ fontSize: 18, fontWeight: 800, margin: '0 0 6px', color: 'var(--navy)' }}>
+                      Farmers & Agriculture
+                    </h3>
+                    <p style={{ fontSize: 13.5, color: '#4B5563', lineHeight: 1.5, margin: '0 0 14px' }}>
+                      PM-KISAN ₹6,000 annual cash transfers, 60% capital subsidies for solar irrigation pumps (PM-KUSUM), and 4% subsidized crop loans via KCC.
+                    </p>
+
+                    <div className="benefit-highlight-box" style={{ margin: '0 0 14px' }}>
+                      <span>✨</span>
+                      <span>₹6,000/Yr Cash Transfer + 60% Solar Subsidy</span>
+                    </div>
+                  </div>
+
+                  <div style={{ paddingTop: 12, borderTop: '1px solid var(--bd)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 8 }}>
+                    <span className="mu" style={{ fontSize: 12 }}>Ministry of Agriculture & MNRE</span>
+                    <a
+                      href="https://pmkisan.gov.in"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn sm o"
+                      style={{ fontSize: 12, padding: '4px 10px', borderRadius: 6, fontWeight: 600 }}
+                    >
+                      Official Portal ↗
+                    </a>
+                  </div>
+                </div>
+
+                {/* Banner 3: Healthcare & Senior Citizens */}
+                <div className="civic-portal-banner">
+                  <div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
+                      <span className="gov-portal-badge">
+                        <span>🏥</span>
+                        <span>beneficiary.nha.gov.in</span>
+                      </span>
+                      <span className="badge b-ok" style={{ fontSize: 11, fontWeight: 700 }}>Ayushman</span>
+                    </div>
+
+                    <h3 style={{ fontSize: 18, fontWeight: 800, margin: '0 0 6px', color: 'var(--navy)' }}>
+                      Healthcare & Seniors 70+
+                    </h3>
+                    <p style={{ fontSize: 13.5, color: '#4B5563', lineHeight: 1.5, margin: '0 0 14px' }}>
+                      Universal cashless medical insurance of ₹5 Lakh/year across 29,000+ hospitals for families and senior citizens, plus generic medicines at 90% discount.
+                    </p>
+
+                    <div className="benefit-highlight-box" style={{ margin: '0 0 14px' }}>
+                      <span>✨</span>
+                      <span>₹5 Lakh Cashless Hospitalization per Family</span>
+                    </div>
+                  </div>
+
+                  <div style={{ paddingTop: 12, borderTop: '1px solid var(--bd)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 8 }}>
+                    <span className="mu" style={{ fontSize: 12 }}>National Health Authority</span>
+                    <a
+                      href="https://beneficiary.nha.gov.in"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn sm o"
+                      style={{ fontSize: 12, padding: '4px 10px', borderRadius: 6, fontWeight: 600 }}
+                    >
+                      Official Portal ↗
+                    </a>
+                  </div>
+                </div>
+
+                {/* Banner 4: Women & Micro-Entrepreneurs */}
+                <div className="civic-portal-banner">
+                  <div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
+                      <span className="gov-portal-badge">
+                        <span>👩</span>
+                        <span>mudra.org.in</span>
+                      </span>
+                      <span className="badge b-ok" style={{ fontSize: 11, fontWeight: 700 }}>Nari Shakti</span>
+                    </div>
+
+                    <h3 style={{ fontSize: 18, fontWeight: 800, margin: '0 0 6px', color: 'var(--navy)' }}>
+                      Women & Self-Employed
+                    </h3>
+                    <p style={{ fontSize: 13.5, color: '#4B5563', lineHeight: 1.5, margin: '0 0 14px' }}>
+                      Collateral-free business loans up to ₹10 Lakh, PMMVY maternity benefits of ₹5,000, and Lakhpati Didi community self-help credit linkages.
+                    </p>
+
+                    <div className="benefit-highlight-box" style={{ margin: '0 0 14px' }}>
+                      <span>✨</span>
+                      <span>₹50,000 to ₹10 Lakh Collateral-Free Loans</span>
+                    </div>
+                  </div>
+
+                  <div style={{ paddingTop: 12, borderTop: '1px solid var(--bd)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 8 }}>
+                    <span className="mu" style={{ fontSize: 12 }}>Ministry of Finance & WCD</span>
+                    <a
+                      href="https://www.mudra.org.in"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn sm o"
+                      style={{ fontSize: 12, padding: '4px 10px', borderRadius: 6, fontWeight: 600 }}
+                    >
+                      Official Portal ↗
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Official Government Portals Grounding Strip */}
+              <div style={{ marginTop: 42, paddingTop: 28, borderTop: '1px solid var(--bd)', textAlign: 'center' }}>
+                <div className="mu" style={{ fontSize: 12.5, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 16 }}>
+                  Direct Data Grounding Across Official Government of India Portals
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'center', gap: 12, flexWrap: 'wrap' }}>
+                  <a href="https://myscheme.gov.in" target="_blank" rel="noopener noreferrer" className="trust-portal-pill">
+                    <span>🏛️</span>
+                    <span>myScheme (National Scheme Portal)</span>
+                  </a>
+                  <a href="https://scholarships.gov.in" target="_blank" rel="noopener noreferrer" className="trust-portal-pill">
+                    <span>🎓</span>
+                    <span>National Scholarship Portal (NSP)</span>
+                  </a>
+                  <a href="https://pmkisan.gov.in" target="_blank" rel="noopener noreferrer" className="trust-portal-pill">
+                    <span>🌾</span>
+                    <span>PM-KISAN Samman Nidhi</span>
+                  </a>
+                  <a href="https://beneficiary.nha.gov.in" target="_blank" rel="noopener noreferrer" className="trust-portal-pill">
+                    <span>🏥</span>
+                    <span>National Health Authority (PM-JAY)</span>
+                  </a>
+                  <a href="https://www.startupindia.gov.in" target="_blank" rel="noopener noreferrer" className="trust-portal-pill">
+                    <span>🚀</span>
+                    <span>Startup India / DPIIT</span>
+                  </a>
+                  <a href="https://www.mca.gov.in" target="_blank" rel="noopener noreferrer" className="trust-portal-pill">
+                    <span>🏢</span>
+                    <span>Ministry of Corporate Affairs</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* ABOUT SECTION (Screenshot Exact - Image 2) */}
           <section className="s" id="about" style={{ padding: '72px 0 60px' }}>
             <div className="wrap">
