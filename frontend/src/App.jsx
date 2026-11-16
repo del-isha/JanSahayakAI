@@ -1446,8 +1446,14 @@ export default function App() {
         setEditedDraft(res.draft);
       }
       setIsEditingDraft(false);
-      if (res && res.extracted && res.extracted.category === 'COMPANY_INCORPORATION') {
-        setActiveDocDetailTab('startup_docs');
+      if (res && res.extracted) {
+        if (res.extracted.category === 'COMPANY_INCORPORATION') {
+          setActiveDocDetailTab('startup_docs');
+        } else if (res.extracted.category === 'LEARNER_LICENCE' || res.extracted.category === 'DRIVING_LICENCE') {
+          setActiveDocDetailTab('licence_roadmap');
+        } else {
+          setActiveDocDetailTab('overview');
+        }
       }
       fetchTrainedDocs();
       showToast('Document analysed & model successfully trained with extracted clauses!');

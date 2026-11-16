@@ -107,27 +107,34 @@ class DocumentAgent:
     def run(self, c):
         t = c["text"]
         low = t.lower()
+        fn = (c.get("filename") or "").lower()
+        search_corpus = f"{fn}\n{low}"
 
-        if re.search(r"certificate of incorporation|incorporat|companies act|crc manesar|registrar of companies|cin\s*[:#]?\s*u\d{5}|ks origin", low):
+        if re.search(r"certificate of incorporation|incorporat|companies act|crc manesar|registrar of companies|cin\s*[:#]?\s*u\d{5}|ks origin|\bcoi\b|\bspice\+", search_corpus):
             cat = "COMPANY_INCORPORATION"
-        elif re.search(r"learner(?:'s)?\s*licen[cs]e|learning\s*licen[cs]e|\bform\s*3\b|\bll\s*no\b|valid\s*for\s*180\s*days", low):
+        elif re.search(r"learner(?:'s)?\s*licen[cs]e|learning\s*licen[cs]e|\bform\s*3\b|\bll\s*no\b|\bll\b|valid\s*for\s*180\s*days", search_corpus):
             cat = "LEARNER_LICENCE"
-        elif re.search(r"driving licence|driving license|permanent\s*driving|\bdl\s*no\b|\bform\s*7\b|smart\s*card\s*dl|licensing\s*authority|parivahan|sarathi|rto|dl renewal", low):
+        elif re.search(r"driving\s*licen[cs]e|driving\s*lic|driver(?:'s)?\s*licen[cs]e|permanent\s*driving|\bdl\s*no\b|\bd\.?l\.?\b|\bform\s*7\b|smart\s*card\s*dl|licensing\s*authority|parivahan|sarathi|\brto\b|\brta\b|dl\s*renewal|motor\s*vehicle|class\s*of\s*vehicle|\bmcwg\b|\blmv\b", search_corpus):
             cat = "DRIVING_LICENCE"
-        elif re.search(r"sale deed|conveyance|encumbrance|stamp duty|registry|jamabandi|khasra|patwari|circle rate|property", low):
+        elif re.search(r"sale deed|conveyance|encumbrance|stamp duty|registry|jamabandi|khasra|patwari|circle rate|property", search_corpus):
             cat = "PROPERTY"
-        elif re.search(r"income cert|tehsildar|income slab|annual income|bpl card|family income", low):
+        elif re.search(r"income cert|tehsildar|income slab|annual income|bpl card|family income", search_corpus):
             cat = "INCOME_CERTIFICATE"
-        elif re.search(r"scholarship|post-matric|nsp|tuition fee|bonafide|marksheet|college", low):
+        elif re.search(r"scholarship|post-matric|nsp|tuition fee|bonafide|marksheet|college", search_corpus):
             cat = "SCHOLARSHIP"
-        elif re.search(r"marriage|sdm|hindu marriage|special marriage|wedding|witness", low):
+        elif re.search(r"\bmarriage\b|\bwedding\b|\bvivah\b|\bmatrimon|\bhindu marriage\b|\bspecial marriage\b", search_corpus):
             cat = "MARRIAGE_REGISTRATION"
-        elif re.search(r"gst|gstr|tax|income.tax|assessment|section 14[128]|tds", low):
+        elif re.search(r"gst|gstr|tax|income.tax|assessment|section 14[128]|tds", search_corpus):
             cat = "GST_TAX"
-        elif re.search(r"notice|show cause|challan|municipal|violation|demolition|unauthorized", low):
+        elif re.search(r"notice|show cause|challan|municipal|violation|demolition|unauthorized", search_corpus):
             cat = "GOVT_NOTICE"
         else:
-            cat = "OTHER"
+            if any(k in fn for k in ("driving", "licen", "license", "dl", "rto", "sarathi", "parivahan")):
+                cat = "DRIVING_LICENCE"
+            elif any(k in fn for k in ("learner", "ll")):
+                cat = "LEARNER_LICENCE"
+            else:
+                cat = "OTHER"
 
         cin = re.search(r"\b([UL]\d{5}[A-Z]{2}\d{4}PTC\d{6})\b", t, re.I)
         pan = re.search(r"\b([A-Z]{5}\d{4}[A-Z])\b", t)
