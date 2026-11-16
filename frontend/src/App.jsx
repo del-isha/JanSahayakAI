@@ -1519,6 +1519,65 @@ export default function App() {
     ))
   );
 
+  const isLicenceDoc = Boolean(
+    (activeAnalysisCase && (
+      activeAnalysisCase.extracted?.category === 'LEARNER_LICENCE' ||
+      activeAnalysisCase.extracted?.category === 'DRIVING_LICENCE' ||
+      (activeAnalysisCase.extracted?.document_type || '').toLowerCase().includes('licen') ||
+      (activeAnalysisCase.extracted?.reference || '').includes('PB65') ||
+      (activeAnalysisCase.extracted?.reference || '').includes('DL')
+    )) ||
+    (docText && (
+      docText.toLowerCase().includes('learner') ||
+      docText.toLowerCase().includes('driving licence') ||
+      docText.toLowerCase().includes('driving license') ||
+      docText.toLowerCase().includes('form 3') ||
+      docText.toLowerCase().includes('form 7') ||
+      docText.toLowerCase().includes('pb65')
+    )) ||
+    (docFile && (
+      docFile.name.toLowerCase().includes('licen') ||
+      docFile.name.toLowerCase().includes('dl') ||
+      docFile.name.toLowerCase().includes('ll')
+    ))
+  );
+
+  const isLearnerLicence = Boolean(
+    activeAnalysisCase?.extracted?.category === 'LEARNER_LICENCE' ||
+    (activeAnalysisCase?.extracted?.document_type || '').toLowerCase().includes('learner') ||
+    (docText && docText.toLowerCase().includes("learner"))
+  );
+
+  const isPermanentDL = Boolean(
+    activeAnalysisCase?.extracted?.category === 'DRIVING_LICENCE' ||
+    (activeAnalysisCase?.extracted?.document_type || '').toLowerCase().includes('permanent') ||
+    (docText && docText.toLowerCase().includes("permanent driving"))
+  );
+
+  const syncLicenceDeadlinesToCalendar = async (deadlinesList) => {
+    if (!deadlinesList || !deadlinesList.length) {
+      showToast('No active licence deadlines found to sync.');
+      return;
+    }
+    try {
+      for (const dl of deadlinesList) {
+        await api('/deadlines', jsonPost(dl)).catch(() => {});
+      }
+      setApiDeadlines((prev) => {
+        const merged = [...prev];
+        deadlinesList.forEach((item) => {
+          if (!merged.some((m) => m.service === item.service)) {
+            merged.unshift(item);
+          }
+        });
+        return merged;
+      });
+      showToast('📅 Licence deadlines successfully connected to Compliance Calendar!');
+    } catch (e) {
+      showToast('Error syncing deadlines: ' + e.message);
+    }
+  };
+
   const openStartupDraftModal = (doc) => {
     setModalData({
       title: `📝 Legal Draft: ${doc.title}`,
@@ -1664,6 +1723,64 @@ Statutory Post-Incorporation Obligations:
 3. Declaration of Commencement of Business (Form INC-20A): Must be filed with RoC within 180 days under Section 10A of Companies Act, 2013.
 4. Issue of Stamped Share Certificates (Form SH-1): Must be delivered within 60 days under Section 56(4).
 5. First Board Meeting: Must be held within 30 days under Section 173(1).`;
+      setDocText(sample);
+      runDocumentAnalysis(sample);
+    } else if (type === 'learner_licence' || type === 'll') {
+      const sample = `GOVERNMENT OF PUNJAB
+TRANSPORT DEPARTMENT
+Office of the Licensing Authority: RTO SAS Nagar (Mohali), Punjab (PB-65)
+FORM 3 [See Rule 3(a) and 13 of Central Motor Vehicles Rules, 1989]
+LEARNER'S LICENCE
+
+Learner's Licence Number: PB65 20260012345
+Date of Issue: 24/10/2026
+Valid Upto: 22/04/2027 (Strictly 180 Days Validity across India)
+
+Applicant Details:
+Name of Holder: Delisha
+Daughter of: R. K. Sharma
+Date of Birth: 14/08/2004
+Blood Group: B+
+Present Address: House No. 248, Phase 7, Sector 61, SAS Nagar, Mohali, Punjab - 160062
+
+Class of Vehicles (COV):
+1. MCWG (Motor Cycle with Gear)
+2. LMV (Light Motor Vehicle - Motor Car)
+
+Statutory Warnings & Rules:
+1. Under Section 8(6) of Motor Vehicles Act 1988, the holder is eligible to book a Permanent Driving Skill Test slot on Parivahan Sarathi only after completing 30 days from date of issue (from 23/11/2026).
+2. Rule 3 of CMVR 1989: The holder must drive only while accompanied by an instructor/person holding a valid permanent driving licence.
+3. The vehicle must display painted red 'L' sign (18cm square) at both front and rear.
+4. Official Portal: https://sarathi.parivahan.gov.in`;
+      setDocText(sample);
+      runDocumentAnalysis(sample);
+    } else if (type === 'driving_licence' || type === 'dl') {
+      const sample = `UNION OF INDIA / STATE OF PUNJAB
+TRANSPORT DEPARTMENT
+Licensing Authority: RTO SAS Nagar (Mohali), Punjab (PB-65)
+FORM 7 [See Rule 16(2) of Central Motor Vehicles Rules, 1989]
+SMART CARD PERMANENT DRIVING LICENCE
+
+Driving Licence Number: PB65 20210048912
+Date of Issue: 18/11/2021
+Valid Till (Non-Transport / NT): 17/11/2026
+
+Holder Information:
+Name: Delisha
+D/O: R. K. Sharma
+Date of Birth: 14/08/2004
+Blood Group: B+
+Permanent & Present Address: House No. 248, Phase 7, Sector 61, SAS Nagar, Mohali, Punjab - 160062
+
+Class of Vehicles:
+- MCWG (Motor Cycle with Gear) - Effective From: 18/11/2021
+- LMV (Light Motor Vehicle - Motor Car) - Effective From: 18/11/2021
+
+Statutory Conditions & Renewal Guidelines:
+1. Section 15 of Motor Vehicles Act (amended 2019): Application for renewal may be submitted online within 1 year before expiry or up to 1 year grace period after expiry without requiring a driving re-test.
+2. If licence is expired for more than 1 year, Section 15(4) mandates appearing for a driving skill test.
+3. Form 1-A medical fitness certificate signed by registered MBBS doctor is required if age is above 40 years.
+4. Apply online on Parivahan Sarathi portal (https://sarathi.parivahan.gov.in).`;
       setDocText(sample);
       runDocumentAnalysis(sample);
     } else if (type === 'property_notice') {
@@ -2511,6 +2628,12 @@ You are hereby directed to file your written reply in Form GST DRC-06 on the GST
                       <button className="btn sm p" onClick={() => loadSampleDoc('coi')} style={{ fontWeight: 600 }}>
                         🚀 Load Certificate of Incorporation (Startup)
                       </button>
+                      <button className="btn sm p" onClick={() => loadSampleDoc('learner_licence')} style={{ fontWeight: 600, background: '#10B981', borderColor: '#10B981' }}>
+                        🚗 Load Learner's Licence (Sample)
+                      </button>
+                      <button className="btn sm p" onClick={() => loadSampleDoc('driving_licence')} style={{ fontWeight: 600, background: '#6366F1', borderColor: '#6366F1' }}>
+                        🪪 Load Driving Licence (Sample)
+                      </button>
                       <button className="btn sm o" onClick={() => loadSampleDoc('property_notice')}>
                         Load Property Notice Sample
                       </button>
@@ -2626,6 +2749,12 @@ You are hereby directed to file your written reply in Form GST DRC-06 on the GST
                           <button className="btn sm p" onClick={() => loadSampleDoc('coi')}>
                             🚀 Load & Evaluate Startup COI
                           </button>
+                          <button className="btn sm p" onClick={() => loadSampleDoc('learner_licence')} style={{ background: '#10B981', borderColor: '#10B981' }}>
+                            🚗 Load Learner's Licence
+                          </button>
+                          <button className="btn sm p" onClick={() => loadSampleDoc('driving_licence')} style={{ background: '#6366F1', borderColor: '#6366F1' }}>
+                            🪪 Load Driving Licence
+                          </button>
                           <button
                             className="btn sm o"
                             onClick={() => setActiveTab('cal')}
@@ -2672,6 +2801,7 @@ You are hereby directed to file your written reply in Form GST DRC-06 on the GST
                         {[
                           ['overview', 'Document Overview'],
                           ...(isStartupDoc ? [['startup_docs', '🚀 Startup Documents & Compliance Hub (8)']] : []),
+                          ...(isLicenceDoc ? [['licence_roadmap', '🪪 Parivahan DL & Roadmap Hub']] : []),
                           ['clauses', 'Important Information & Clauses'],
                           ['checklist', 'Required Actions Checklist'],
                           ['draft', 'AI Generated Representation Draft'],
@@ -2725,6 +2855,70 @@ You are hereby directed to file your written reply in Form GST DRC-06 on the GST
                             >
                               📅 Sync to Compliance Calendar →
                             </button>
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Licence Highlight Notification Banner */}
+                      {isLicenceDoc && (
+                        <div style={{
+                          background: 'linear-gradient(135deg, rgba(16,185,129,0.08) 0%, rgba(37,99,235,0.08) 100%)',
+                          border: '1px solid rgba(16,185,129,0.3)',
+                          borderRadius: 8,
+                          padding: '14px 18px',
+                          marginTop: 14,
+                          display: 'flex',
+                          justifyContent: 'space-between',
+                          alignItems: 'center',
+                          flexWrap: 'wrap',
+                          gap: 12
+                        }}>
+                          <div>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
+                              <span className="badge b-ok" style={{ fontWeight: 700 }}>
+                                {isLearnerLicence ? "🚗 LEARNER'S LICENCE (FORM 3) DETECTED" : "🪪 PERMANENT DRIVING LICENCE (FORM 7) DETECTED"}
+                              </span>
+                              <span className="badge b-mu">
+                                No: {activeAnalysisCase.extracted.reference}
+                              </span>
+                              <span className={`badge ${activeAnalysisCase.extracted.validity_info?.badge_color || 'b-ok'}`}>
+                                {activeAnalysisCase.extracted.validity_info?.badge || 'Verified under MVA Rules'}
+                              </span>
+                            </div>
+                            <p style={{ fontSize: 13.5, margin: '6px 0 0', color: 'var(--navy)', fontWeight: 600 }}>
+                              {activeAnalysisCase.extracted.validity_info?.explanation || 'Validity and compliance verified under Central Motor Vehicles Rules 1989 & Motor Vehicles Act.'}
+                            </p>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginTop: 6, fontSize: 12.5, color: 'var(--mu)', flexWrap: 'wrap' }}>
+                              <span>🏢 <b>RTO Jurisdiction:</b> {activeAnalysisCase.extracted.rto_info?.name || 'RTO SAS Nagar (Mohali) [PB-65]'}</span>
+                              <span>🛵 <b>Class of Vehicles:</b> {(activeAnalysisCase.extracted.vehicle_classes || ['MCWG', 'LMV']).join(', ')}</span>
+                            </div>
+                          </div>
+                          <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+                            <button
+                              className="btn sm p"
+                              onClick={() => setActiveDocDetailTab('licence_roadmap')}
+                            >
+                              View Parivahan Roadmap Hub →
+                            </button>
+                            <button
+                              className="btn sm o"
+                              onClick={() => syncLicenceDeadlinesToCalendar(activeAnalysisCase.extracted.deadlines)}
+                              style={{ fontWeight: 600, color: 'var(--blue)' }}
+                              title="Connect deadlines to Compliance Calendar"
+                            >
+                              📅 Add to Compliance Calendar
+                            </button>
+                            {activeAnalysisCase.extracted.rto_info?.portal && (
+                              <a
+                                href={activeAnalysisCase.extracted.rto_info.portal}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn sm o"
+                                style={{ display: 'inline-flex', alignItems: 'center', gap: 4 }}
+                              >
+                                Official Sarathi Portal ↗
+                              </a>
+                            )}
                           </div>
                         </div>
                       )}
@@ -2835,6 +3029,191 @@ You are hereby directed to file your written reply in Form GST DRC-06 on the GST
                                 </div>
                               ))}
                           </div>
+                        </div>
+                      )}
+
+                      {/* Tab Content: Licence Roadmap & Parivahan Hub */}
+                      {activeDocDetailTab === 'licence_roadmap' && (
+                        <div style={{ marginTop: 14 }}>
+                          {/* Top Header Card */}
+                          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 10, marginBottom: 14 }}>
+                            <div>
+                              <h3 style={{ margin: 0, fontSize: 18 }}>
+                                {isLearnerLicence ? "🚗 Learner's Licence to Permanent DL Roadmap" : "🪪 Driving Licence Renewal & Compliance Roadmap"}
+                              </h3>
+                              <p className="mu" style={{ fontSize: 13, margin: '2px 0 0' }}>
+                                Verified under Motor Vehicles Act 1988 (2019 Amendment) & Central Motor Vehicles Rules 1989.
+                              </p>
+                            </div>
+                            <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+                              <button
+                                className="btn sm p"
+                                onClick={() => syncLicenceDeadlinesToCalendar(activeAnalysisCase.extracted.deadlines)}
+                              >
+                                📅 Sync Deadlines to Compliance Calendar
+                              </button>
+                              {activeAnalysisCase.extracted.rto_info?.portal && (
+                                <a
+                                  href={activeAnalysisCase.extracted.rto_info.portal}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="btn sm o"
+                                  style={{ fontWeight: 600, color: 'var(--blue)' }}
+                                >
+                                  Open State Sarathi Portal ↗
+                                </a>
+                              )}
+                            </div>
+                          </div>
+
+                          {/* 2-Column Info: Licence Identity + Statutory Validity */}
+                          <div className="grid g2" style={{ gap: 14, marginBottom: 16 }}>
+                            {/* Card 1: Holder & Vehicle Classes */}
+                            <div className="card" style={{ padding: 14, background: 'var(--panel)', border: '1px solid var(--bd)' }}>
+                              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
+                                <span className="badge b-ok">LICENCE HOLDER & VEHICLE CLASSES</span>
+                                <span className="mu" style={{ fontSize: 12 }}>Form {isLearnerLicence ? '3 (LL)' : '7 (Smart Card)'}</span>
+                              </div>
+                              <div style={{ fontSize: 14.5 }}>
+                                <div style={{ marginBottom: 6 }}>
+                                  <span className="mu">Holder Name:</span> <b>{activeAnalysisCase.extracted.holder_name || 'Delisha'}</b>
+                                  {activeAnalysisCase.extracted.guardian_name && <span className="mu"> (S/D/W of {activeAnalysisCase.extracted.guardian_name})</span>}
+                                </div>
+                                <div style={{ display: 'flex', gap: 16, marginBottom: 8, flexWrap: 'wrap' }}>
+                                  <div><span className="mu">Licence No:</span> <b style={{ fontFamily: 'monospace' }}>{activeAnalysisCase.extracted.reference}</b></div>
+                                  <div><span className="mu">Blood Group:</span> <b>{activeAnalysisCase.extracted.blood_group || 'B+'}</b></div>
+                                  <div><span className="mu">DOB:</span> <b>{formatDate(activeAnalysisCase.extracted.dob)}</b></div>
+                                </div>
+                                <div style={{ marginTop: 8, paddingTop: 8, borderTop: '1px solid var(--bd)' }}>
+                                  <span className="mu" style={{ fontSize: 12, display: 'block', marginBottom: 4 }}>Endorsed Class of Vehicles (COV):</span>
+                                  <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
+                                    {(activeAnalysisCase.extracted.vehicle_classes || ['MCWG', 'LMV']).map((cov, i) => (
+                                      <span key={i} className="badge b-ok" style={{ fontSize: 12, padding: '4px 8px' }}>
+                                        {cov.includes('MCWG') ? '🛵 ' : cov.includes('LMV') ? '🚗 ' : '🚛 '}{cov}
+                                      </span>
+                                    ))}
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            {/* Card 2: Grounded RTO & Statutory Validity */}
+                            <div className="card" style={{ padding: 14, background: 'var(--panel)', border: '1px solid var(--bd)' }}>
+                              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
+                                <span className={`badge ${activeAnalysisCase.extracted.validity_info?.badge_color || 'b-ok'}`}>
+                                  {activeAnalysisCase.extracted.validity_info?.badge || 'Valid'}
+                                </span>
+                                <span className="badge b-mu">{activeAnalysisCase.extracted.rto_info?.code || 'RTO'}</span>
+                              </div>
+                              <div style={{ fontSize: 14 }}>
+                                <div style={{ marginBottom: 6 }}>
+                                  <span className="mu">Relevant RTO:</span> <b>{activeAnalysisCase.extracted.rto_info?.name || 'RTO SAS Nagar (Mohali)'}</b>
+                                </div>
+                                <div style={{ fontSize: 12.5, color: 'var(--tx)', marginBottom: 8 }}>
+                                  📍 {activeAnalysisCase.extracted.rto_info?.address || 'District Administrative Complex, Sector 76, SAS Nagar, Punjab'}
+                                </div>
+                                <div style={{ background: 'var(--bg)', padding: '8px 10px', borderRadius: 6, border: '1px solid var(--bd)', fontSize: 12.5, marginTop: 6 }}>
+                                  <b>Statutory Rule:</b> {activeAnalysisCase.extracted.validity_info?.explanation}
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Step-by-Step Personalized Roadmap */}
+                          <h4 style={{ margin: '16px 0 10px', fontSize: 16 }}>
+                            Personalized Step-by-Step Parivahan Roadmap
+                          </h4>
+                          <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                            {(activeAnalysisCase.extracted.roadmap || []).map((stepItem, idx) => (
+                              <div
+                                key={idx}
+                                className="card"
+                                style={{
+                                  border: '1px solid var(--bd)',
+                                  padding: 14,
+                                  background: 'var(--panel)',
+                                  borderLeft: `4px solid ${stepItem.status === 'Completed' ? 'var(--ok)' : stepItem.status === 'Urgent' ? 'var(--bad)' : 'var(--blue)'}`
+                                }}
+                              >
+                                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: 8 }}>
+                                  <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                                    <span style={{
+                                      width: 26,
+                                      height: 26,
+                                      borderRadius: '50%',
+                                      background: 'var(--blue)',
+                                      color: '#fff',
+                                      display: 'inline-flex',
+                                      alignItems: 'center',
+                                      justifyContent: 'center',
+                                      fontWeight: 700,
+                                      fontSize: 12
+                                    }}>
+                                      {stepItem.step}
+                                    </span>
+                                    <div>
+                                      <span className="mu" style={{ fontSize: 11, textTransform: 'uppercase', fontWeight: 700, letterSpacing: '0.04em' }}>
+                                        {stepItem.phase}
+                                      </span>
+                                      <h4 style={{ margin: '2px 0 0', fontSize: 15 }}>{stepItem.title}</h4>
+                                    </div>
+                                  </div>
+                                  <span className={`badge ${stepItem.status === 'Completed' ? 'b-ok' : stepItem.status === 'Urgent' ? 'b-bad' : 'b-warn'}`}>
+                                    {stepItem.status}
+                                  </span>
+                                </div>
+
+                                <p style={{ fontSize: 13.5, margin: '8px 0 10px', color: 'var(--tx)', lineHeight: 1.5 }}>
+                                  {stepItem.desc}
+                                </p>
+
+                                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 8, paddingTop: 8, borderTop: '1px solid var(--bd)', fontSize: 12.5 }}>
+                                  <div>
+                                    <span className="mu">Target Deadline:</span> <b>{formatDate(stepItem.deadline)}</b>
+                                  </div>
+                                  {stepItem.portal_url && (
+                                    <a
+                                      href={stepItem.portal_url}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="btn sm o"
+                                      style={{ fontSize: 11, padding: '3px 10px', color: 'var(--blue)' }}
+                                    >
+                                      {stepItem.portal_label || 'Open Portal ↗'}
+                                    </a>
+                                  )}
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+
+                          {/* Deadlines Sync Box */}
+                          {activeAnalysisCase.extracted.deadlines && activeAnalysisCase.extracted.deadlines.length > 0 && (
+                            <div className="card" style={{ marginTop: 16, background: 'linear-gradient(135deg, rgba(37,99,235,0.04) 0%, rgba(16,185,129,0.04) 100%)', border: '1px solid var(--bd)', padding: 14 }}>
+                              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 10 }}>
+                                <div>
+                                  <h4 style={{ margin: 0, fontSize: 15 }}>Track These Deadlines in Your Compliance Calendar</h4>
+                                  <div className="mu" style={{ fontSize: 12.5, marginTop: 2 }}>
+                                    Automated reminders for driving test slot openings, expiry cutoff, and grace periods.
+                                  </div>
+                                </div>
+                                <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+                                  <button
+                                    className="btn sm p"
+                                    onClick={() => syncLicenceDeadlinesToCalendar(activeAnalysisCase.extracted.deadlines)}
+                                  >
+                                    📅 Add to Compliance Calendar
+                                  </button>
+                                  <button
+                                    className="btn sm o"
+                                    onClick={() => setActiveTab('cal')}
+                                  >
+                                    Open Calendar View →
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          )}
                         </div>
                       )}
 

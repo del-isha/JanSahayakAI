@@ -1,7 +1,7 @@
 import os, io, re
 from typing import Optional, List, Dict, Any
 from datetime import date, datetime
-from fastapi import FastAPI, UploadFile, File, Form, HTTPException
+from fastapi import FastAPI, UploadFile, File, Form, HTTPException, Body
 from fastapi.responses import RedirectResponse
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -216,6 +216,13 @@ def reset_trained_documents():
 @app.get("/api/deadlines")
 def get_deadlines():
     return rules.citizen_deadlines()
+
+@app.post("/api/deadlines")
+def add_deadline(item: dict = Body(...)):
+    exists = any(d.get("service") == item.get("service") for d in rules.CITIZEN_DEADLINES)
+    if not exists:
+        rules.CITIZEN_DEADLINES.insert(0, item)
+    return {"ok": True, "message": "Deadline added to Compliance Calendar", "deadlines": rules.citizen_deadlines()}
 
 # -------------------------------------------------------------
 # 3. Government Schemes & Benefits Discovery (AI Agent Search)

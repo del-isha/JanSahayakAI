@@ -834,19 +834,37 @@ KB = {
         "src": "NSP Central Sector Scheme Guidelines 2026",
         "ver": "2026-01"
     },
-    "DRIVING_LICENCE": {
-        "title": "Driving Licence Renewal & Service Request",
-        "dept": "Ministry of Road Transport & Highways (RTO / Parivahan)",
+    "LEARNER_LICENCE": {
+        "title": "Learner's Licence (Form 3) & Permanent DL Application Roadmap",
+        "dept": "Ministry of Road Transport & Highways (MoRTH) / State Transport Authority (Parivahan Sarathi)",
         "docs": [
-            "Original Expired / Expiring Driving Licence",
-            "Form 9 (Application for Renewal of Driving Licence)",
-            "Form 1-A (Medical Fitness Certificate signed by MBBS Doctor if age > 40)",
-            "Aadhaar Card / Proof of Current Address",
-            "Passport Size Photographs"
+            "Form 2 (Application for Permanent Driving Licence on Parivahan Sarathi)",
+            "Original Learner's Licence (Form 3 in physical or DigiLocker format)",
+            "Form 1 (Self-Declaration of Physical Fitness) / Form 1-A (Medical Certificate if age > 40)",
+            "Proof of Age (Aadhaar Card / 10th School Marksheet / Passport / Birth Certificate)",
+            "Proof of Current Address (Aadhaar / Voter ID / Utility Bill / Domicile Certificate)",
+            "Parivahan DL Driving Skill Test Slot Appointment Slip",
+            "Online Fee Payment Receipt (Form 2 + Driving Test Fee + Smart Card Fee)"
         ],
-        "fees": "Renewal fee: ₹200 (within grace period). Late renewal attracts ₹300 + ₹1,000/year penalty.",
-        "portal": "Parivahan Sewa (https://parivahan.gov.in/sarathiservice)",
-        "src": "Motor Vehicles (Amendment) Act & CMV Rules",
+        "fees": "Statutory fees: Driving Test Fee ₹300 per class + DL Issue Fee ₹200 + Smart Card Fee ₹200 (~₹500 to ₹700 total on Parivahan).",
+        "portal": "Parivahan Sarathi Portal (https://sarathi.parivahan.gov.in)",
+        "src": "Motor Vehicles Act 1988 (Section 8, 9) & Central Motor Vehicles Rules 1989 (Rules 3, 10, 11, 14, 15)",
+        "ver": "2026-01"
+    },
+    "DRIVING_LICENCE": {
+        "title": "Permanent Driving Licence (Form 7) Renewal & Verification",
+        "dept": "Ministry of Road Transport & Highways (MoRTH) / State Transport Authority (Parivahan Sarathi)",
+        "docs": [
+            "Original Expired / Expiring Driving Licence (Smart Card or Book)",
+            "Form 2 / Form 9 (Application for Renewal of Driving Licence on Sarathi)",
+            "Form 1 (Physical Fitness Self-Declaration) or Form 1-A (MBBS Doctor Medical Certificate if age > 40)",
+            "Proof of Current Address (if changing address / RTO jurisdiction)",
+            "Recent Passport-size Photograph and Signature",
+            "Online Renewal Fee Payment Receipt"
+        ],
+        "fees": "Renewal fee: ₹200 + Form 7 Smart Card fee: ₹200 (Total ₹400 within 1-year window). If expired beyond 1 year, ₹300 + ₹1,000/year late penalty and driving re-test applies under Section 15(4).",
+        "portal": "Parivahan Sarathi Portal (https://sarathi.parivahan.gov.in)",
+        "src": "Motor Vehicles (Amendment) Act 2019 (Section 14, 15) & Central Motor Vehicles Rules 1989 (Rule 18)",
         "ver": "2026-01"
     },
     "MARRIAGE_REGISTRATION": {
@@ -908,3 +926,563 @@ KB = {
         "ver": "2026-01"
     }
 }
+
+# -------------------------------------------------------------
+# RTO Registry & Grounded Regional Transport Offices
+# -------------------------------------------------------------
+RTO_REGISTRY = {
+    # Punjab
+    "PB-65": {
+        "code": "PB-65",
+        "name": "RTO SAS Nagar (Mohali)",
+        "district": "SAS Nagar (Mohali)",
+        "state": "Punjab",
+        "address": "District Administrative Complex, Sector 76, SAS Nagar, Punjab 160071",
+        "portal": "https://sarathi.parivahan.gov.in/sarathiservice/stateSelection.do",
+        "state_code": "PB"
+    },
+    "PB-11": {
+        "code": "PB-11",
+        "name": "RTO Patiala",
+        "district": "Patiala",
+        "state": "Punjab",
+        "address": "Mini Secretariat, Patiala, Punjab 147001",
+        "portal": "https://sarathi.parivahan.gov.in/sarathiservice/stateSelection.do",
+        "state_code": "PB"
+    },
+    "PB-10": {
+        "code": "PB-10",
+        "name": "RTO Ludhiana",
+        "district": "Ludhiana",
+        "state": "Punjab",
+        "address": "Near Mini Secretariat, Ferozepur Road, Ludhiana, Punjab 141001",
+        "portal": "https://sarathi.parivahan.gov.in/sarathiservice/stateSelection.do",
+        "state_code": "PB"
+    },
+    "PB-08": {
+        "code": "PB-08",
+        "name": "RTO Jalandhar",
+        "district": "Jalandhar",
+        "state": "Punjab",
+        "address": "Administrative Complex, Ladowali Road, Jalandhar, Punjab 144001",
+        "portal": "https://sarathi.parivahan.gov.in/sarathiservice/stateSelection.do",
+        "state_code": "PB"
+    },
+    "PB-02": {
+        "code": "PB-02",
+        "name": "RTO Amritsar",
+        "district": "Amritsar",
+        "state": "Punjab",
+        "address": "District Administrative Complex, Court Road, Amritsar, Punjab 143001",
+        "portal": "https://sarathi.parivahan.gov.in/sarathiservice/stateSelection.do",
+        "state_code": "PB"
+    },
+    # Haryana
+    "HR-03": {
+        "code": "HR-03",
+        "name": "RTA Panchkula",
+        "district": "Panchkula",
+        "state": "Haryana",
+        "address": "Mini Secretariat, Sector 1, Panchkula, Haryana 134112",
+        "portal": "https://sarathi.parivahan.gov.in/sarathiservice/stateSelection.do",
+        "state_code": "HR"
+    },
+    "HR-26": {
+        "code": "HR-26",
+        "name": "RTO Gurugram (North)",
+        "district": "Gurugram",
+        "state": "Haryana",
+        "address": "Mini Secretariat, Rajiv Chowk, Gurugram, Haryana 122001",
+        "portal": "https://sarathi.parivahan.gov.in/sarathiservice/stateSelection.do",
+        "state_code": "HR"
+    },
+    "HR-38": {
+        "code": "HR-38",
+        "name": "RTA Faridabad",
+        "district": "Faridabad",
+        "state": "Haryana",
+        "address": "Mini Secretariat, Sector 12, Faridabad, Haryana 121007",
+        "portal": "https://sarathi.parivahan.gov.in/sarathiservice/stateSelection.do",
+        "state_code": "HR"
+    },
+    # Chandigarh
+    "CH-01": {
+        "code": "CH-01",
+        "name": "Registering & Licensing Authority (RLA), Chandigarh",
+        "district": "Chandigarh",
+        "state": "Chandigarh",
+        "address": "Registering & Licensing Authority, Sector 17, Chandigarh 160017",
+        "portal": "https://sarathi.parivahan.gov.in/sarathiservice/stateSelection.do",
+        "state_code": "CH"
+    },
+    # Delhi
+    "DL-01": {
+        "code": "DL-01",
+        "name": "MLO Mall Road (North Delhi)",
+        "district": "North Delhi",
+        "state": "Delhi",
+        "address": "5/9 Under Hill Road, Mall Road, Delhi 110054",
+        "portal": "https://sarathi.parivahan.gov.in/sarathiservice/stateSelection.do",
+        "state_code": "DL"
+    },
+    "DL-04": {
+        "code": "DL-04",
+        "name": "MLO Janakpuri (West Delhi)",
+        "district": "West Delhi",
+        "state": "Delhi",
+        "address": "District Centre, Janakpuri, New Delhi 110058",
+        "portal": "https://sarathi.parivahan.gov.in/sarathiservice/stateSelection.do",
+        "state_code": "DL"
+    },
+    # Maharashtra
+    "MH-01": {
+        "code": "MH-01",
+        "name": "RTO Mumbai (Central/Tardeo)",
+        "district": "Mumbai City",
+        "state": "Maharashtra",
+        "address": "Old Bodyguard Lane, Tulsiwadi, Tardeo, Mumbai, Maharashtra 400034",
+        "portal": "https://sarathi.parivahan.gov.in/sarathiservice/stateSelection.do",
+        "state_code": "MH"
+    },
+    "MH-12": {
+        "code": "MH-12",
+        "name": "RTO Pune",
+        "district": "Pune",
+        "state": "Maharashtra",
+        "address": "Near Sangam Bridge, Pune, Maharashtra 411001",
+        "portal": "https://sarathi.parivahan.gov.in/sarathiservice/stateSelection.do",
+        "state_code": "MH"
+    },
+    # Karnataka
+    "KA-01": {
+        "code": "KA-01",
+        "name": "RTO Bengaluru (Central/Koramangala)",
+        "district": "Bengaluru Urban",
+        "state": "Karnataka",
+        "address": "BDA Complex, Koramangala, Bengaluru, Karnataka 560034",
+        "portal": "https://sarathi.parivahan.gov.in/sarathiservice/stateSelection.do",
+        "state_code": "KA"
+    },
+    # Uttar Pradesh
+    "UP-16": {
+        "code": "UP-16",
+        "name": "RTO Gautam Buddha Nagar (Noida)",
+        "district": "Gautam Buddha Nagar",
+        "state": "Uttar Pradesh",
+        "address": "Sector 32, Near City Center Metro Station, Noida, UP 201301",
+        "portal": "https://sarathi.parivahan.gov.in/sarathiservice/stateSelection.do",
+        "state_code": "UP"
+    },
+    "UP-32": {
+        "code": "UP-32",
+        "name": "RTO Lucknow",
+        "district": "Lucknow",
+        "state": "Uttar Pradesh",
+        "address": "Transport Nagar, Lucknow, UP 226012",
+        "portal": "https://sarathi.parivahan.gov.in/sarathiservice/stateSelection.do",
+        "state_code": "UP"
+    }
+}
+
+def resolve_rto(licence_no=None, text="", state=None, district=None):
+    """Identifies the relevant RTO based on licence number prefix, document text, or citizen location."""
+    import re
+    combined = f"{licence_no or ''} {text or ''} {district or ''} {state or ''}".upper()
+
+    # 1. Check licence number prefix (e.g., PB65, PB-65, HR03, HR-03, CH01, DL04, etc.)
+    code_match = re.search(r"\b([A-Z]{2})[- ]?(\d{2})\b", (licence_no or "").upper())
+    if code_match:
+        norm_code = f"{code_match.group(1)}-{code_match.group(2)}"
+        if norm_code in RTO_REGISTRY:
+            return RTO_REGISTRY[norm_code]
+
+    # Also search code in combined text
+    for rto_code, data in RTO_REGISTRY.items():
+        clean_code = rto_code.replace("-", "")
+        if re.search(rf"\b({rto_code}|{clean_code})\b", combined, re.I):
+            return data
+
+    # 2. Check District / City keywords
+    low = combined.lower()
+    if any(k in low for k in ("mohali", "sas nagar", "phase 7", "sector 61", "sector 76")):
+        return RTO_REGISTRY["PB-65"]
+    if any(k in low for k in ("panchkula", "manesar", "sector 10 panchkula")):
+        return RTO_REGISTRY["HR-03"]
+    if any(k in low for k in ("chandigarh", "sector 17")):
+        return RTO_REGISTRY["CH-01"]
+    if "patiala" in low:
+        return RTO_REGISTRY["PB-11"]
+    if "ludhiana" in low:
+        return RTO_REGISTRY["PB-10"]
+    if "jalandhar" in low:
+        return RTO_REGISTRY["PB-08"]
+    if "amritsar" in low:
+        return RTO_REGISTRY["PB-02"]
+    if "gurugram" in low or "gurgaon" in low:
+        return RTO_REGISTRY["HR-26"]
+    if "faridabad" in low:
+        return RTO_REGISTRY["HR-38"]
+    if "noida" in low or "gautam buddha" in low:
+        return RTO_REGISTRY["UP-16"]
+    if "lucknow" in low:
+        return RTO_REGISTRY["UP-32"]
+    if "pune" in low:
+        return RTO_REGISTRY["MH-12"]
+    if "mumbai" in low:
+        return RTO_REGISTRY["MH-01"]
+    if "bengaluru" in low or "bangalore" in low:
+        return RTO_REGISTRY["KA-01"]
+    if "delhi" in low:
+        return RTO_REGISTRY["DL-04"]
+
+    # 3. State-level fallback
+    if "punjab" in low:
+        return {
+            "code": "PB-STATE",
+            "name": "State Transport Commissioner, Punjab",
+            "district": "Punjab State Jurisdiction",
+            "state": "Punjab",
+            "address": "Sector 17, Chandigarh, Punjab 160017",
+            "portal": "https://sarathi.parivahan.gov.in/sarathiservice/stateSelection.do",
+            "state_code": "PB"
+        }
+    if "haryana" in low:
+        return {
+            "code": "HR-STATE",
+            "name": "Transport Department, Haryana",
+            "district": "Haryana State Jurisdiction",
+            "state": "Haryana",
+            "address": "30 Bays Building, Sector 17, Chandigarh, Haryana 160017",
+            "portal": "https://sarathi.parivahan.gov.in/sarathiservice/stateSelection.do",
+            "state_code": "HR"
+        }
+
+    # Default MoRTH central
+    return {
+        "code": "MoRTH-CENTRAL",
+        "name": "Ministry of Road Transport & Highways (Parivahan Sewa)",
+        "district": "Central National Portal",
+        "state": "All India",
+        "address": "Transport Bhawan, 1, Parliament Street, New Delhi 110001",
+        "portal": "https://sarathi.parivahan.gov.in",
+        "state_code": "CENTRAL"
+    }
+
+def verify_licence_validity(cat: str, issue_date: date | None, expiry_date: date | None, dob: date | None = None) -> dict:
+    """Verifies licence validity under current Motor Vehicles Act & Central Motor Vehicles Rules."""
+    today = date.today()
+
+    if cat == "LEARNER_LICENCE":
+        # Section 8(6) MVA: Learner's Licence is valid for exactly 180 days (6 months) across India
+        d_issue = issue_date or today
+        d_expiry = expiry_date or (d_issue + timedelta(days=180))
+        d_slot_opens = d_issue + timedelta(days=30)  # Rule: Slot can be booked after 30 days
+
+        days_since_issue = (today - d_issue).days
+        days_to_expiry = (d_expiry - today).days
+
+        if days_since_issue < 30:
+            days_to_slot = 30 - days_since_issue
+            return {
+                "status": "WAITING_TEST_PERIOD",
+                "badge": "30-Day Practice Period",
+                "badge_color": "b-warn",
+                "is_valid": True,
+                "can_book_dl_test": False,
+                "days_left": days_to_expiry,
+                "slot_opens_on": d_slot_opens.isoformat(),
+                "expiry_date": d_expiry.isoformat(),
+                "headline": f"30-day practice period in progress (Opens in {days_to_slot} days)",
+                "explanation": f"Under Section 8(6) of Motor Vehicles Act, you must hold a Learner's Licence for at least 30 days before appearing for the permanent driving skill test. Your test slot booking opens on {d_slot_opens.strftime('%d %B %Y')}."
+            }
+        elif days_to_expiry >= 0:
+            urgency = "b-bad" if days_to_expiry <= 30 else "b-ok"
+            return {
+                "status": "ELIGIBLE_FOR_DL_TEST",
+                "badge": "Eligible Now for DL Test",
+                "badge_color": urgency,
+                "is_valid": True,
+                "can_book_dl_test": True,
+                "days_left": days_to_expiry,
+                "slot_opens_on": d_slot_opens.isoformat(),
+                "expiry_date": d_expiry.isoformat(),
+                "headline": f"Eligible to book Permanent DL Test ({days_to_expiry} days left)",
+                "explanation": f"Mandatory 30-day waiting period is completed! You are fully eligible to book your Permanent Driving Skill Test slot on the Parivahan Sarathi portal before your Learner's Licence expires on {d_expiry.strftime('%d %B %Y')}."
+            }
+        else:
+            return {
+                "status": "EXPIRED",
+                "badge": "Learner's Licence Expired",
+                "badge_color": "b-bad",
+                "is_valid": False,
+                "can_book_dl_test": False,
+                "days_left": 0,
+                "slot_opens_on": d_slot_opens.isoformat(),
+                "expiry_date": d_expiry.isoformat(),
+                "headline": f"Learner's Licence expired {abs(days_to_expiry)} days ago",
+                "explanation": f"Under Rule 10 of Central Motor Vehicles Rules, an expired Learner's Licence cannot be renewed or extended. You must apply for a fresh Learner's Licence on the official Sarathi portal."
+            }
+
+    else:
+        # Permanent Driving Licence (DRIVING_LICENCE)
+        # Section 14 & 15 MVA (amended 2019):
+        # - Renewal window opens 1 year before expiry
+        # - Grace period without driving re-test extends up to 1 year after expiry
+        # - After 1 year past expiry, driving re-test is mandatory under Section 15(4)
+        d_expiry = expiry_date or (today + timedelta(days=365))
+        days_left = (d_expiry - today).days
+
+        if days_left > 365:
+            return {
+                "status": "ACTIVE",
+                "badge": "Active & Valid",
+                "badge_color": "b-ok",
+                "is_valid": True,
+                "can_renew_online": False,
+                "days_left": days_left,
+                "expiry_date": d_expiry.isoformat(),
+                "renewal_opens_on": (d_expiry - timedelta(days=365)).isoformat(),
+                "headline": f"Valid & Active ({days_left} days remaining)",
+                "explanation": f"Your permanent driving licence is legally valid and in good standing until {d_expiry.strftime('%d %B %Y')}. Online renewal on Parivahan will open 1 year prior to expiry on {(d_expiry - timedelta(days=365)).strftime('%d %B %Y')}."
+            }
+        elif 0 <= days_left <= 365:
+            return {
+                "status": "RENEWAL_WINDOW_OPEN",
+                "badge": "Renewal Window Open",
+                "badge_color": "b-warn",
+                "is_valid": True,
+                "can_renew_online": True,
+                "days_left": days_left,
+                "expiry_date": d_expiry.isoformat(),
+                "renewal_opens_on": (d_expiry - timedelta(days=365)).isoformat(),
+                "headline": f"Statutory Renewal Window Open ({days_left} days left)",
+                "explanation": f"Under amended Section 15 of Motor Vehicles Act, citizens can renew their Driving Licence up to 1 year in advance without penalty. We recommend initiating online renewal on Sarathi before {d_expiry.strftime('%d %B %Y')}."
+            }
+        elif -365 <= days_left < 0:
+            days_passed = abs(days_left)
+            days_grace_left = 365 - days_passed
+            return {
+                "status": "GRACE_PERIOD",
+                "badge": "In 1-Year Grace Period",
+                "badge_color": "b-bad",
+                "is_valid": False,
+                "can_renew_online": True,
+                "days_left": days_grace_left,
+                "expiry_date": d_expiry.isoformat(),
+                "grace_ends_on": (d_expiry + timedelta(days=365)).isoformat(),
+                "headline": f"Expired {days_passed} days ago (Grace period active: {days_grace_left} days left)",
+                "explanation": f"Your licence expired on {d_expiry.strftime('%d %B %Y')}. Under Section 15 of MVA 2019, you are within the 1-year grace period ending {(d_expiry + timedelta(days=365)).strftime('%d %B %Y')}. You can renew online without appearing for a driving skill re-test!"
+            }
+        else:
+            days_passed = abs(days_left)
+            return {
+                "status": "LAPSED_RETEST_REQUIRED",
+                "badge": "Lapsed (> 1 Year Expired)",
+                "badge_color": "b-bad",
+                "is_valid": False,
+                "can_renew_online": True,
+                "days_left": 0,
+                "expiry_date": d_expiry.isoformat(),
+                "headline": f"Lapsed {days_passed} days ago - Driving Re-test Required",
+                "explanation": f"Licence expired on {d_expiry.strftime('%d %B %Y')}. Because more than 1 year has elapsed, Section 15(4) of the Motor Vehicles Act mandates that you must re-appear and pass a fresh driving skill test before the licensing officer."
+            }
+
+def generate_licence_roadmap(cat: str, extracted: dict, rto_info: dict, validity_info: dict) -> list[dict]:
+    """Generates personalized step-by-step roadmap explaining eligibility, deadlines, documents, and Sarathi procedure."""
+    sarathi_link = rto_info.get("portal") or "https://sarathi.parivahan.gov.in"
+    rto_name = rto_info.get("name", "Designated RTO")
+    rto_code = rto_info.get("code", "RTO")
+
+    if cat == "LEARNER_LICENCE":
+        return [
+            {
+                "step": 1,
+                "phase": "Mandatory Practice & Compliance",
+                "title": "Complete 30-Day Driving Practice & Display 'L' Board",
+                "desc": "Under Section 8(6) of Motor Vehicles Act & Rule 3 of CMVR, hold your Learner's Licence for at least 30 days before appearing for the permanent DL test. Ensure you always drive with a licensed permanent DL holder and display red 'L' plates (18cm square) at vehicle front and rear.",
+                "deadline": validity_info.get("slot_opens_on"),
+                "status": "Completed" if validity_info.get("can_book_dl_test") else "In Progress",
+                "portal_label": "Motor Vehicles Rules 1989",
+                "portal_url": "https://morth.nic.in"
+            },
+            {
+                "step": 2,
+                "phase": "Document Compilation",
+                "title": "Compile Mandatory Documents for Permanent DL",
+                "desc": "Prepare: (1) Form 2 application printout, (2) Original Learner's Licence (Form 3), (3) Form 1 self-declaration of physical fitness (Form 1-A medical cert if commercial or age > 40), (4) Aadhaar card / Address proof, (5) Proof of age (10th certificate/Birth cert), and (6) Vehicle Registration Certificate (RC) and Insurance of vehicle used for test.",
+                "deadline": validity_info.get("slot_opens_on"),
+                "status": "Action Required",
+                "portal_label": "Download Form 1 & Form 2",
+                "portal_url": "https://parivahan.gov.in/parivahan/en/content/all-forms"
+            },
+            {
+                "step": 3,
+                "phase": "Online Portal Application",
+                "title": f"Submit Application for Permanent DL on Parivahan Sarathi ({rto_code})",
+                "desc": f"Visit Sarathi Parivahan -> Select {rto_info.get('state', 'State')} -> Click 'Apply for Driving Licence'. Enter your Learner's Licence Number ({extracted.get('reference', 'LL No')}) and Date of Birth. Select classes: {', '.join(extracted.get('vehicle_classes', ['MCWG', 'LMV']))}. Confirm jurisdiction as {rto_name}.",
+                "deadline": validity_info.get("expiry_date"),
+                "status": "Ready for Portal Filing",
+                "portal_label": "Apply for DL on Sarathi ↗",
+                "portal_url": sarathi_link
+            },
+            {
+                "step": 4,
+                "phase": "Statutory Fee Payment",
+                "title": "Pay Government DL Fees Online",
+                "desc": "Pay online via Bharatkosh / Sarathi e-Payment gateway. Statutory fee breakdown: Driving Test Fee (₹300) + DL Issue Fee (₹200) + Smart Card Form 7 Fee (₹200). Save and print the e-Payment receipt.",
+                "deadline": validity_info.get("expiry_date"),
+                "status": "Action Required",
+                "portal_label": "Pay Sarathi Fee ↗",
+                "portal_url": sarathi_link
+            },
+            {
+                "step": 5,
+                "phase": "Slot Booking",
+                "title": f"Book Driving Skill Test Slot at {rto_name} Automated Track (ADTT)",
+                "desc": f"Under Sarathi 'Appointments' -> 'DL Slot Booking', select your preferred date and time slot at the Automated Driving Test Track (ADTT) in {rto_info.get('district', 'RTO')}. Download and print the Appointment Slip.",
+                "deadline": validity_info.get("expiry_date"),
+                "status": "Urgent" if validity_info.get("days_left", 180) <= 30 else "Action Required",
+                "portal_label": "Book DL Test Slot ↗",
+                "portal_url": sarathi_link
+            },
+            {
+                "step": 6,
+                "phase": "Skill Test Execution",
+                "title": "Appear for Driving Skill Test on Designated Track",
+                "desc": "Arrive 30 minutes early at the testing track with: (1) Vehicle matching your licence category (e.g. car for LMV, bike for MCWG), (2) Valid RC, Insurance, and PUC for the vehicle, (3) Original appointment slip and Learner's Licence. Complete track maneuvers (Parallel parking, 8-figure, gradient climb).",
+                "deadline": validity_info.get("expiry_date"),
+                "status": "Pending Test",
+                "portal_label": "View Test Track Guidelines",
+                "portal_url": "https://parivahan.gov.in"
+            },
+            {
+                "step": 7,
+                "phase": "Licence Issuance & Digital Download",
+                "title": "Receive Physical Smart Card DL & Endorse on DigiLocker / mParivahan",
+                "desc": "Upon clearing the test, the Licensing Officer approves your Permanent Driving Licence. Your official Smart Card (Form 7) is dispatched to your registered address via Speed Post with tracking number. Instantly download your legally valid digital DL on DigiLocker or mParivahan app.",
+                "deadline": "Within 7-15 days of test",
+                "status": "Upcoming",
+                "portal_label": "DigiLocker Transport ↗",
+                "portal_url": "https://www.digilocker.gov.in"
+            }
+        ]
+
+    else:
+        # DRIVING_LICENCE (Permanent DL Renewal)
+        return [
+            {
+                "step": 1,
+                "phase": "Eligibility & Medical Verification",
+                "title": "Verify Medical Fitness Certificate (Form 1 / Form 1-A)",
+                "desc": f"Under Section 15 of Motor Vehicles Act: If applicant age is under 40 years, only online self-declaration Form 1 is needed. If applicant age is 40 years or older (or holding a transport endorsement), a medical fitness certificate in Form 1-A signed by a registered MBBS medical practitioner with seal is mandatory.",
+                "deadline": validity_info.get("expiry_date"),
+                "status": "Action Required",
+                "portal_label": "Download Form 1-A Medical Format",
+                "portal_url": "https://parivahan.gov.in/parivahan/en/content/all-forms"
+            },
+            {
+                "step": 2,
+                "phase": "Online Portal Application",
+                "title": f"Initiate DL Renewal on Parivahan Sarathi ({rto_name})",
+                "desc": f"Visit Sarathi Portal -> Select {rto_info.get('state', 'State')} -> Click 'Apply for DL Renewal' or 'Services on DL'. Enter DL Number ({extracted.get('reference', 'DL No')}) and Date of Birth. Verify pre-filled details and confirm RTO jurisdiction as {rto_name} ({rto_code}).",
+                "deadline": validity_info.get("expiry_date"),
+                "status": "Action Required",
+                "portal_label": "Sarathi DL Services ↗",
+                "portal_url": sarathi_link
+            },
+            {
+                "step": 3,
+                "phase": "Document Upload & Address Proof",
+                "title": "Upload Existing DL Copy & Updated Proof of Address",
+                "desc": "Upload scanned copy of your expiring/expired Driving Licence. If your current address has changed, upload updated Aadhaar / Voter ID / Utility Bill for faceless address update on your licence.",
+                "deadline": validity_info.get("expiry_date"),
+                "status": "Action Required",
+                "portal_label": "Upload Documents on Sarathi ↗",
+                "portal_url": sarathi_link
+            },
+            {
+                "step": 4,
+                "phase": "Fee Payment & Biometrics",
+                "title": "Pay Statutory Renewal Fee (₹400) & Complete Aadhaar e-KYC",
+                "desc": "Pay online renewal fee: ₹200 (Form 9 renewal) + ₹200 (Smart Card Form 7 fee). In states with faceless e-KYC (Punjab, Haryana, Delhi, Maharashtra), authentication is completed via Aadhaar OTP without requiring in-person RTO visits.",
+                "deadline": validity_info.get("expiry_date"),
+                "status": "Action Required",
+                "portal_label": "Pay Renewal Fee ↗",
+                "portal_url": sarathi_link
+            },
+            {
+                "step": 5,
+                "phase": "Dispatch & DigiLocker Sync",
+                "title": "Speed Post Delivery of Smart Card & DigiLocker Digital Endorsement",
+                "desc": "Track your application status using Application Reference Number. Renewed smart card DL is printed and dispatched to your residence by India Post Speed Post. Digital DL reflects immediately on DigiLocker and mParivahan apps for paperless traffic verification.",
+                "deadline": "Within 10-20 days of renewal",
+                "status": "Upcoming",
+                "portal_label": "India Post Tracking ↗",
+                "portal_url": "https://www.indiapost.gov.in"
+            }
+        ]
+
+def generate_licence_deadlines(cat: str, extracted: dict, rto_info: dict, validity_info: dict) -> list[dict]:
+    """Generates official compliance deadlines for calendar integration."""
+    deadlines = []
+    ref = extracted.get("reference", "Licence")
+    rto_name = rto_info.get("name", "RTO")
+    portal = rto_info.get("portal", "https://sarathi.parivahan.gov.in")
+
+    if cat == "LEARNER_LICENCE":
+        # Deadline 1: Slot Booking Window Opens (30 days from issue)
+        if validity_info.get("slot_opens_on"):
+            deadlines.append({
+                "service": f"Permanent DL Driving Test Slot Booking Opens (LL: {ref})",
+                "authority": f"{rto_name} / Parivahan Sarathi",
+                "due": validity_info.get("slot_opens_on"),
+                "grace_period": "Eligible to book test slot after 30 days of LL issue under Section 8(6) MVA",
+                "fee": "₹300 test fee + ₹200 DL fee + ₹200 smart card fee",
+                "portal": portal,
+                "category": "Licence",
+                "status": "Upcoming" if not validity_info.get("can_book_dl_test") else "Action Required"
+            })
+
+        # Deadline 2: LL Expiry Date (180 days from issue)
+        if validity_info.get("expiry_date"):
+            deadlines.append({
+                "service": f"Learner's Licence Statutory Expiry (LL: {ref})",
+                "authority": f"{rto_name} / Parivahan Sarathi",
+                "due": validity_info.get("expiry_date"),
+                "grace_period": "Strictly 180 days validity. Non-renewable; fresh application required if lapsed.",
+                "fee": "₹200 fresh LL fee if expired",
+                "portal": portal,
+                "category": "Licence",
+                "status": "Urgent" if validity_info.get("days_left", 180) <= 30 else "Action Required"
+            })
+
+    else:
+        # DRIVING_LICENCE (Permanent DL)
+        # Deadline 1: DL Expiry Date
+        if validity_info.get("expiry_date"):
+            deadlines.append({
+                "service": f"Driving Licence Renewal Due Date (DL: {ref})",
+                "authority": f"{rto_name} / Parivahan Sarathi",
+                "due": validity_info.get("expiry_date"),
+                "grace_period": "Can be renewed online up to 1 year in advance without penalty",
+                "fee": "₹200 renewal fee + ₹200 smart card fee",
+                "portal": portal,
+                "category": "Licence",
+                "status": "Urgent" if validity_info.get("days_left", 365) <= 30 else "Action Required"
+            })
+
+        # Deadline 2: 1-Year Grace Period End (Mandatory re-test cutoff)
+        if validity_info.get("grace_ends_on"):
+            deadlines.append({
+                "service": f"DL 1-Year Grace Period Cutoff (DL: {ref})",
+                "authority": f"{rto_name} / Parivahan Sarathi",
+                "due": validity_info.get("grace_ends_on"),
+                "grace_period": "After this date, Section 15(4) MVA mandates appearing for a driving skill re-test",
+                "fee": "Late penalty ₹300 + ₹1,000/year after 1 year + re-test fee",
+                "portal": portal,
+                "category": "Licence",
+                "status": "Urgent"
+            })
+
+    return deadlines
+
