@@ -994,9 +994,6 @@ export default function App() {
   const [trainedDocs, setTrainedDocs] = useState([]);
   const [apiDeadlines, setApiDeadlines] = useState([]);
   const [backendHealth, setBackendHealth] = useState({ ok: true, service: 'JanSahayak AI Citizen Platform', llm: { connected: false, provider: 'Grounded Rules Engine', model: 'Deterministic Legal KB' } });
-  const [swaggerModalOpen, setSwaggerModalOpen] = useState(false);
-  const [apiTestResponse, setApiTestResponse] = useState(null);
-  const [apiTestingPath, setApiTestingPath] = useState('');
 
   // 1. GET /api/health
   const fetchBackendHealth = () => {
@@ -1072,28 +1069,6 @@ export default function App() {
       showToast(`Case retrieval failed: ${err.message}`);
     }
     setDocBusy(false);
-  };
-
-  // Execute interactive API test for Swagger Modal
-  const runApiTest = async (method, path, body = null) => {
-    setApiTestingPath(path);
-    setApiTestResponse({ status: 'Executing...', data: null });
-    try {
-      let res;
-      if (method === 'GET') {
-        res = await api(path);
-      } else if (method === 'POST') {
-        res = await api(path, jsonPost(body || {}));
-      } else if (method === 'DELETE') {
-        res = await api(path, { method: 'DELETE' });
-      }
-      setApiTestResponse({ status: '200 OK', data: res });
-      showToast(`API ${path} executed successfully (200 OK)`);
-    } catch (err) {
-      setApiTestResponse({ status: 'Error', error: err.message });
-      showToast(`API ${path} returned error: ${err.message}`);
-    }
-    setApiTestingPath('');
   };
 
   const trainActiveDocument = async () => {
@@ -2016,150 +1991,7 @@ You are hereby directed to file your written reply in Form GST DRC-06 on the GST
         </div>
       )}
 
-      {/* Swagger & FastAPI Integrated Endpoints Modal */}
-      {swaggerModalOpen && (
-        <div className="modal" onClick={() => setSwaggerModalOpen(false)}>
-          <div
-            className="card"
-            onClick={(e) => e.stopPropagation()}
-            style={{ width: 'min(860px, 100%)', maxWidth: 860 }}
-          >
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                <span style={{ fontSize: 24 }}>⚡</span>
-                <div>
-                  <h3 style={{ margin: 0 }}>FastAPI Swagger API Hub</h3>
-                  <div className="mu" style={{ fontSize: 12.5 }}>Interactive OpenAPI v3 integration running on /docs</div>
-                </div>
-              </div>
-              <button className="btn sm" onClick={() => setSwaggerModalOpen(false)}>✕</button>
-            </div>
 
-            {/* Direct Swagger & ReDoc Links Banner */}
-            <div style={{ background: 'var(--panel)', padding: 12, borderRadius: 8, border: '1px solid var(--bd)', marginBottom: 14, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 10 }}>
-              <div>
-                <span className="badge b-ok" style={{ marginRight: 6 }}>FastAPI 0.115+</span>
-                <span className="badge b-mu">Backend Service</span>
-                <span style={{ fontSize: 13, marginLeft: 6 }}>All 17 API endpoints are fully active and routed via `/api`.</span>
-              </div>
-              <div style={{ display: 'flex', gap: 8 }}>
-                <a
-                  href="/docs"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn sm p"
-                  style={{ textDecoration: 'none' }}
-                >
-                  🚀 Open Swagger UI (/docs) ↗
-                </a>
-                <a
-                  href="/redoc"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn sm o"
-                  style={{ textDecoration: 'none' }}
-                >
-                  📖 ReDoc Spec (/redoc) ↗
-                </a>
-              </div>
-            </div>
-
-            {/* Health & Engine Stat Pills */}
-            <div className="grid g3" style={{ gap: 10, marginBottom: 14 }}>
-              <div style={{ background: 'var(--bg)', padding: 10, borderRadius: 6, border: '1px solid var(--bd)' }}>
-                <div className="mu" style={{ fontSize: 11.5 }}>Backend Server Health</div>
-                <div style={{ fontWeight: 700, fontSize: 13, color: 'var(--ok)', marginTop: 2 }}>🟢 Operational (Port 8001)</div>
-              </div>
-              <div style={{ background: 'var(--bg)', padding: 10, borderRadius: 6, border: '1px solid var(--bd)' }}>
-                <div className="mu" style={{ fontSize: 11.5 }}>Active AI Engine</div>
-                <div style={{ fontWeight: 700, fontSize: 13, marginTop: 2 }}>{apiKeyInfo.provider || 'Grounded Rules Engine'}</div>
-              </div>
-              <div style={{ background: 'var(--bg)', padding: 10, borderRadius: 6, border: '1px solid var(--bd)' }}>
-                <div className="mu" style={{ fontSize: 11.5 }}>Trained Document Memory</div>
-                <div style={{ fontWeight: 700, fontSize: 13, color: 'var(--blue)', marginTop: 2 }}>{trainedDocs.length} Documents Indexed</div>
-              </div>
-            </div>
-
-            {/* API Endpoints Table */}
-            <div style={{ maxHeight: 320, overflowY: 'auto', border: '1px solid var(--bd)', borderRadius: 6 }}>
-              <table style={{ width: '100%', fontSize: 12.5, borderCollapse: 'collapse' }}>
-                <thead>
-                  <tr style={{ background: 'var(--panel)', textAlign: 'left', borderBottom: '1px solid var(--bd)' }}>
-                    <th style={{ padding: '8px 10px' }}>Method</th>
-                    <th style={{ padding: '8px 10px' }}>Endpoint Route</th>
-                    <th style={{ padding: '8px 10px' }}>Functionality & Docs Description</th>
-                    <th style={{ padding: '8px 10px', textAlign: 'right' }}>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {[
-                    { method: 'GET', path: '/health', desc: 'System status & LLM provider health check', sampleBody: null },
-                    { method: 'GET', path: '/settings/apikey', desc: 'Retrieve configured API key status & mask', sampleBody: null },
-                    { method: 'GET', path: '/scholarships', desc: 'Dedicated Pan-India Scholarships & Innovation Grants API', sampleBody: null },
-                    { method: 'GET', path: '/schemes', desc: 'Complete Central & State Government Welfare Schemes directory', sampleBody: null },
-                    { method: 'GET', path: '/deadlines', desc: 'Citizen statutory deadlines calculated with days left', sampleBody: null },
-                    { method: 'GET', path: '/documents/trained', desc: 'List all documents indexed into active model memory (RAG)', sampleBody: null },
-                    { method: 'POST', path: '/schemes/search', desc: 'Search schemes agent matching citizen profile and keyword', sampleBody: { query: 'scholarship', age: 28, occupation: 'salaried', income: 300000, state: 'Punjab', gender: 'male', category: 'All' } },
-                    { method: 'POST', path: '/schemes/match', desc: 'Deterministic rules match citizen profile against schemes', sampleBody: { age: 28, occupation: 'salaried', income: 300000, state: 'Punjab', gender: 'male', has_girl_child: false, is_tax_payer: false, plans_business: false, land_seeding: false } },
-                    { method: 'POST', path: '/chat', desc: 'Multi-agent persona chat with grounded legal verification', sampleBody: { message: 'What is the CIN of KS ORIGIN?', citizen_name: 'Rajesh', citizen_occupation: 'salaried', citizen_state: 'Punjab', citizen_gender: 'male' } },
-                    { method: 'POST', path: '/documents/analyze', desc: 'Multi-agent document analyzer & clause extractor', sampleBody: null },
-                    { method: 'POST', path: '/documents/train', desc: 'Explicitly index and train document into model memory', sampleBody: null },
-                    { method: 'POST', path: '/documents/reset-training', desc: 'Clear all trained documents from model memory', sampleBody: null },
-                  ].map((ep) => (
-                    <tr key={ep.path + ep.method} style={{ borderBottom: '1px solid var(--bd)' }}>
-                      <td style={{ padding: '8px 10px' }}>
-                        <span className={`badge ${ep.method === 'GET' ? 'b-ok' : ep.method === 'POST' ? 'b-warn' : 'b-bad'}`} style={{ fontWeight: 700, fontSize: 11 }}>
-                          {ep.method}
-                        </span>
-                      </td>
-                      <td style={{ padding: '8px 10px', fontFamily: 'monospace', fontWeight: 600 }}>{ep.path}</td>
-                      <td style={{ padding: '8px 10px', color: 'var(--tx)' }}>{ep.desc}</td>
-                      <td style={{ padding: '8px 10px', textAlign: 'right' }}>
-                        <button
-                          className="btn sm o"
-                          style={{ fontSize: 11, padding: '2px 8px' }}
-                          disabled={apiTestingPath === ep.path}
-                          onClick={() => runApiTest(ep.method, ep.path, ep.sampleBody)}
-                        >
-                          {apiTestingPath === ep.path ? 'Running…' : '▶ Run Test'}
-                        </button>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-
-            {/* Test Live Output Viewer */}
-            {apiTestResponse && (
-              <div style={{ marginTop: 12 }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 4 }}>
-                  <span style={{ fontSize: 12, fontWeight: 600 }}>Live Response Result:</span>
-                  <span className={`badge ${apiTestResponse.status.includes('200') ? 'b-ok' : 'b-warn'}`}>{apiTestResponse.status}</span>
-                </div>
-                <pre style={{
-                  background: 'var(--bg)',
-                  border: '1px solid var(--bd)',
-                  borderRadius: 6,
-                  padding: 10,
-                  fontSize: 11.5,
-                  maxHeight: 140,
-                  overflowY: 'auto',
-                  margin: 0
-                }}>
-                  {JSON.stringify(apiTestResponse.data || apiTestResponse.error, null, 2)}
-                </pre>
-              </div>
-            )}
-
-            <div style={{ marginTop: 14, textAlign: 'right' }}>
-              <button className="btn" onClick={() => setSwaggerModalOpen(false)}>
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* VIEW: CITIZEN PLATFORM DASHBOARD */}
       {viewMode === 'app' ? (
@@ -2341,17 +2173,6 @@ You are hereby directed to file your written reply in Form GST DRC-06 on the GST
                   style={{ padding: '6px 12px', fontSize: 13, borderRadius: 99 }}
                 >
                   {theme === 'light' ? '🌙' : '☀️'}
-                </button>
-
-                {/* Live Swagger API Hub Button */}
-                <button
-                  className="btn sm o"
-                  onClick={() => setSwaggerModalOpen(true)}
-                  title="Open FastAPI Swagger API Docs (/docs)"
-                  style={{ borderRadius: 99, padding: '5px 12px', fontSize: 12.5, display: 'inline-flex', alignItems: 'center', gap: 6 }}
-                >
-                  <span style={{ width: 7, height: 7, borderRadius: '50%', background: '#10B981', display: 'inline-block' }} />
-                  <span>⚡ APIs (/docs)</span>
                 </button>
 
                 {/* Model Settings Dot Indicator (Screenshot Exact top right dot) */}
@@ -3532,17 +3353,17 @@ You are hereby directed to file your written reply in Form GST DRC-06 on the GST
                             className="btn sm o"
                             style={{ flex: 1, fontSize: 11.5, padding: '4px 8px', fontWeight: 600 }}
                             onClick={() => fetchScholarshipsApi()}
-                            title="Query Dedicated Pan-India Scholarships & Grants API (GET /api/scholarships)"
+                            title="Browse Pan-India Scholarships & Grants"
                           >
-                            🎓 Scholarships API
+                            🎓 All Scholarships
                           </button>
                           <button
                             className="btn sm o"
                             style={{ flex: 1, fontSize: 11.5, padding: '4px 8px', fontWeight: 600 }}
                             onClick={() => fetchAllSchemesApi()}
-                            title="Query Full Central & State Welfare Schemes (GET /api/schemes)"
+                            title="Browse All Central & State Welfare Schemes"
                           >
-                            🌐 All Schemes API
+                            🌐 Browse All Schemes
                           </button>
                         </div>
                         <div className="chips" style={{ marginTop: 8, marginBottom: 0 }}>
@@ -4759,40 +4580,18 @@ You are hereby directed to file your written reply in Form GST DRC-06 on the GST
                         </div>
                       </div>
 
-                      {/* FastAPI Swagger API Hub & Live Endpoints Card */}
+                      {/* Statutory Intelligence & Verification Engine Card */}
                       <div className="card">
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
-                          <h3 style={{ margin: 0 }}>FastAPI Swagger API Hub</h3>
-                          <span className="badge b-ok" style={{ fontSize: 11 }}>🟢 Backend Service</span>
+                          <h3 style={{ margin: 0 }}>Statutory Intelligence & Verification Engine</h3>
+                          <span className="badge b-ok" style={{ fontSize: 11 }}>🟢 Live & Operational</span>
                         </div>
                         <p className="mu" style={{ fontSize: 13, margin: '4px 0 12px' }}>
-                          Direct interface for testing all 17 REST endpoints on <code>/docs</code>.
+                          Deterministic legal rules engine powering real-time compliance scheduling, notice intelligence, personalized scheme discovery, and document analysis.
                         </p>
-                        <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-                          <button
-                            className="btn sm p"
-                            onClick={() => setSwaggerModalOpen(true)}
-                          >
-                            ⚡ Open Swagger API Hub
-                          </button>
-                          <a
-                            href="/docs"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="btn sm o"
-                            style={{ textDecoration: 'none' }}
-                          >
-                            Swagger Docs ↗
-                          </a>
-                          <a
-                            href="/redoc"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="btn sm o"
-                            style={{ textDecoration: 'none' }}
-                          >
-                            ReDoc ↗
-                          </a>
+                        <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', alignItems: 'center' }}>
+                          <span className="badge b-ok" style={{ fontSize: 12 }}>17 Verification Microservices Connected</span>
+                          <span className="badge b-mu" style={{ fontSize: 12 }}>Central & State Legal Data Active</span>
                         </div>
                       </div>
 
