@@ -965,7 +965,7 @@ const getCitizenGreeting = (citizenObj) => {
 };
 
 export default function App() {
-  const [viewMode, setViewMode] = useState('app'); // 'app' | 'landing'
+  const [viewMode, setViewMode] = useState('landing'); // 'landing' | 'app'
   const [activeTab, setActiveTab] = useState('ov');
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -4597,11 +4597,8 @@ You are hereby directed to file your written reply in Form GST DRC-06 on the GST
                 <span style={{ fontFamily: 'system-ui, sans-serif', fontWeight: 800 }}>JanSahayak AI</span>
               </a>
               <div className="links" style={{ fontSize: 16, gap: 32 }}>
-                <a href="#features">Features</a>
-                <a href="#schemes">Government Schemes</a>
-                <a href="#pricing">Pricing</a>
                 <a href="#about">About</a>
-                <a href="#contact">Contact</a>
+                <a href="#schemes">Government Schemes</a>
               </div>
               <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
                 <button
@@ -4841,8 +4838,6 @@ You are hereby directed to file your written reply in Form GST DRC-06 on the GST
                   <h4>Sections</h4>
                   <a href="#about">About</a>
                   <a href="#schemes">Government Schemes</a>
-                  <a href="#features">Features</a>
-                  <a href="#pricing">Pricing</a>
                 </div>
                 <div>
                   <h4>Grounded Portals</h4>
