@@ -1119,7 +1119,6 @@ export default function App() {
   const [loginOtp, setLoginOtp] = useState('');
 
   // API Key & Model Intelligence State
-  const [apiKeyModalOpen, setApiKeyModalOpen] = useState(false);
   const [apiKeyInfo, setApiKeyInfo] = useState({
     connected: false,
     provider: 'JanSahayak Trained Rules Engine',
@@ -1151,7 +1150,6 @@ export default function App() {
       const res = await api('/settings/apikey', jsonPost({ provider: apiProvider, api_key: inputApiKey.trim() }));
       setApiKeyInfo(res.status || { connected: true, provider: apiProvider, model: 'custom' });
       setInputApiKey('');
-      setApiKeyModalOpen(false);
       showToast(res.message || 'API Key connected successfully!');
     } catch (err) {
       showToast('Error saving key: ' + err.message);
@@ -1922,77 +1920,6 @@ You are hereby directed to file your written reply in Form GST DRC-06 on the GST
         </div>
       )}
 
-      {/* AI Model Intelligence & API Key Configuration Modal */}
-      {apiKeyModalOpen && (
-        <div className="modal" onClick={() => setApiKeyModalOpen(false)}>
-          <div className="card" onClick={(e) => e.stopPropagation()} style={{ maxWidth: 520, width: '100%' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
-              <h3 style={{ margin: 0 }}>AI Model & API Key Configuration</h3>
-              <button className="btn sm" onClick={() => setApiKeyModalOpen(false)}>✕</button>
-            </div>
-
-            <div className="card" style={{ background: 'var(--panel)', border: '1px solid var(--bd)', padding: 12, marginBottom: 14 }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <div>
-                  <div style={{ fontSize: 11, textTransform: 'uppercase', color: 'var(--mu)', fontWeight: 700, letterSpacing: '0.04em' }}>
-                    Active Intelligence Engine
-                  </div>
-                  <b style={{ fontSize: 15, display: 'flex', alignItems: 'center', gap: 6, marginTop: 3 }}>
-                    <span style={{ color: apiKeyInfo.connected ? '#10B981' : '#3B82F6', fontSize: 13 }}>●</span>
-                    {apiKeyInfo.provider}
-                  </b>
-                </div>
-                <span className={`badge ${apiKeyInfo.connected ? 'b-ok' : 'b-mu'}`} style={{ fontSize: 11 }}>
-                  {apiKeyInfo.model}
-                </span>
-              </div>
-              <div style={{ fontSize: 12, color: 'var(--mu)', marginTop: 8 }}>
-                Status: {apiKeyInfo.connected ? `Live LLM Connected (${apiKeyInfo.masked_key})` : 'Built-in Statutory Rules Engine (100% deterministic & verified; no API key needed)'}
-              </div>
-            </div>
-
-            <div style={{ marginBottom: 14 }}>
-              <label className="mu" style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', display: 'block', marginBottom: 6, letterSpacing: '0.04em' }}>
-                Connect API Key (Google Gemini / Claude / OpenAI)
-              </label>
-              <p className="mu" style={{ fontSize: 12.5, margin: '0 0 10px' }}>
-                You can use JanSahayak with the trained statutory rules engine, or connect your API key for advanced generative reasoning on complex notices.
-              </p>
-
-              <div style={{ display: 'flex', gap: 8, marginBottom: 12 }}>
-                <select
-                  className="in sm"
-                  style={{ width: 150 }}
-                  value={apiProvider}
-                  onChange={(e) => setApiProvider(e.target.value)}
-                >
-                  <option value="gemini">Google Gemini</option>
-                  <option value="anthropic">Anthropic Claude</option>
-                  <option value="openai">OpenAI GPT</option>
-                </select>
-                <input
-                  type="password"
-                  className="in sm"
-                  style={{ flex: 1 }}
-                  placeholder={`Paste your ${apiProvider === 'gemini' ? 'Gemini (AIza...)' : apiProvider === 'anthropic' ? 'Anthropic (sk-ant...)' : 'OpenAI (sk-...)'} key`}
-                  value={inputApiKey}
-                  onChange={(e) => setInputApiKey(e.target.value)}
-                />
-              </div>
-
-              <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 8 }}>
-                <button className="btn sm" onClick={() => setApiKeyModalOpen(false)}>Cancel</button>
-                <button className="btn sm p" disabled={apiKeySaving} onClick={saveApiKey}>
-                  {apiKeySaving ? 'Connecting…' : 'Save & Connect Model'}
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
-
-
       {/* VIEW: CITIZEN PLATFORM DASHBOARD */}
       {viewMode === 'app' ? (
         <div className="app-container">
@@ -2173,23 +2100,6 @@ You are hereby directed to file your written reply in Form GST DRC-06 on the GST
                   style={{ padding: '6px 12px', fontSize: 13, borderRadius: 99 }}
                 >
                   {theme === 'light' ? '🌙' : '☀️'}
-                </button>
-
-                {/* Model Settings Dot Indicator (Screenshot Exact top right dot) */}
-                <button
-                  onClick={() => setApiKeyModalOpen(true)}
-                  title={`AI Model: ${apiKeyInfo.provider}. Click to configure API Key.`}
-                  style={{
-                    background: 'none',
-                    border: 'none',
-                    cursor: 'pointer',
-                    padding: 4,
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    lineHeight: 1
-                  }}
-                >
-                  <span style={{ width: 8, height: 8, borderRadius: '50%', background: apiKeyInfo.connected ? '#10B981' : '#2563EB', display: 'inline-block' }} />
                 </button>
               </div>
             </div>
